@@ -4,4 +4,4 @@
 - Created two queues Hot / Cold
 - Created rules to move leads to one of to two queues based on Score value. 
 
-BCrichlow
+BCrichlow - 4.16.24

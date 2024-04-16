@@ -1,0 +1,359 @@
+type salesforce.Problem {
+  salesforce.Picklist Category {
+    apiName = "Problem.Category"
+    label = "Category"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "Problem.Description"
+    length = 32000
+    label = "Description"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Impact {
+    apiName = "Problem.Impact"
+    restricted = false
+    _required = true
+    label = "Impact"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.CasePriority
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "Problem.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Hierarchy ParentProblemId {
+    apiName = "Problem.ParentProblemId"
+    relationshipName = "ParentProblem"
+    referenceTo = [
+      salesforce.Problem,
+    ]
+    label = "Parent Problem ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Priority {
+    apiName = "Problem.Priority"
+    valueSet = [
+      {
+        fullName = "Critical"
+        isActive = true
+        label = "Critical"
+        default = true
+      },
+      {
+        fullName = "High"
+        isActive = true
+        label = "High"
+        default = false
+      },
+      {
+        fullName = "Moderate"
+        isActive = true
+        label = "Moderate"
+        default = false
+      },
+      {
+        fullName = "Low"
+        isActive = true
+        label = "Low"
+        default = false
+      },
+    ]
+    restricted = false
+    _required = true
+    label = "Priority"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text PriorityOverrideReason {
+    apiName = "Problem.PriorityOverrideReason"
+    length = 255
+    label = "Priority Override Reason"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime ResolutionDateTime {
+    apiName = "Problem.ResolutionDateTime"
+    label = "Resolution Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea ResolutionSummary {
+    apiName = "Problem.ResolutionSummary"
+    length = 32000
+    label = "Resolution Summary"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup ResolvedById {
+    apiName = "Problem.ResolvedById"
+    relationshipName = "ResolvedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "User ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea RootCauseSummary {
+    apiName = "Problem.RootCauseSummary"
+    length = 32000
+    label = "Root Cause Summary"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "Problem.Status"
+    valueSet = [
+      {
+        fullName = "New"
+        isActive = true
+        label = "New"
+        default = true
+      },
+      {
+        fullName = "Open"
+        isActive = true
+        label = "Open"
+        default = false
+      },
+      {
+        fullName = "Root Case Analysis"
+        isActive = true
+        label = "Root Case Analysis"
+        default = false
+      },
+      {
+        fullName = "Fix In Progress"
+        isActive = true
+        label = "Fix In Progress"
+        default = false
+      },
+      {
+        fullName = "Resolved"
+        isActive = true
+        label = "Resolved"
+        default = false
+      },
+      {
+        fullName = "Closed"
+        isActive = true
+        label = "Closed"
+        default = false
+      },
+      {
+        fullName = "Pending Change"
+        isActive = true
+        label = "Pending Change"
+        default = false
+      },
+      {
+        fullName = "Known Error"
+        isActive = true
+        label = "Known Error"
+        default = false
+      },
+      {
+        fullName = "Work In Progress"
+        isActive = true
+        label = "Work In Progress"
+        default = false
+      },
+    ]
+    restricted = false
+    _required = true
+    label = "Status"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist StatusCode {
+    apiName = "Problem.StatusCode"
+    valueSet = [
+      {
+        fullName = "New"
+        isActive = true
+        label = "New"
+        default = true
+      },
+      {
+        fullName = "Open"
+        isActive = true
+        label = "Open"
+        default = false
+      },
+      {
+        fullName = "RootCauseAnalysis"
+        isActive = true
+        label = "Root Case Analysis"
+        default = false
+      },
+      {
+        fullName = "FixInProgress"
+        isActive = true
+        label = "Fix In Progress"
+        default = false
+      },
+      {
+        fullName = "Resolved"
+        isActive = true
+        label = "Resolved"
+        default = false
+      },
+      {
+        fullName = "Closed"
+        isActive = true
+        label = "Closed"
+        default = false
+      },
+      {
+        fullName = "PendingChange"
+        isActive = true
+        label = "Pending Change"
+        default = false
+      },
+      {
+        fullName = "KnownError"
+        isActive = true
+        label = "Known Error"
+        default = false
+      },
+      {
+        fullName = "WorkInProgress"
+        isActive = true
+        label = "Work In Progress"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Status Code"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist SubCategory {
+    apiName = "Problem.SubCategory"
+    label = "Sub-Category"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Subject {
+    apiName = "Problem.Subject"
+    length = 255
+    _required = true
+    label = "Subject"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Picklist Urgency {
+    apiName = "Problem.Urgency"
+    restricted = false
+    _required = true
+    label = "Urgency"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.CasePriority
+  }
+  serviceid Id {
+    apiName = "Problem.Id"
+    label = "Problem ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "Problem.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber ProblemNumber {
+    apiName = "Problem.ProblemNumber"
+    label = "Problem Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "Problem.CreatedDate"
+    label = "Created On"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "Problem.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "Problem.LastModifiedDate"
+    label = "Last Modified On"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "Problem.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "Problem.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

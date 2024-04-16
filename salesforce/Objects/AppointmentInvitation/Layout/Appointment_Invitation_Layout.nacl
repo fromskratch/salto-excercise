@@ -1,0 +1,110 @@
+salesforce.Layout AppointmentInvitation_Appointment_Invitation_Layout@bss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "General Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.AppointmentInvitation.field.OwnerId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AppointmentInvitation.field.BookingStartDate
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AppointmentInvitation.field.BookingEndDate
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AppointmentInvitation.field.AppointmentTopicId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AppointmentInvitation.field.ServiceTerritoryId
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.AppointmentInvitation.field.InvitationNumber
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AppointmentInvitation.field.InvitationIdentifier
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AppointmentInvitation.field.InvitationUrl
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AppointmentInvitation.field.UrlExpiryDate
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AppointmentInvitation.field.IsActive
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "System Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.AppointmentInvitation.field.CreatedById
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.AppointmentInvitation.field.LastModifiedById
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Custom Links"
+      style = "CustomLinks"
+    },
+  ]
+  relatedLists = [
+    {
+      fields = [
+        "Name",
+        "ParticipantServiceResource",
+      ]
+      relatedList = "AppointmentInvitees"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "AppointmentInvitation-Appointment Invitation Layout"
+  _parent = [
+    salesforce.AppointmentInvitation,
+  ]
+  _alias = "AppointmentInvitation-Appointment Invitation Layout"
+}

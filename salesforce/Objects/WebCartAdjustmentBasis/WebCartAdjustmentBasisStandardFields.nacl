@@ -1,0 +1,109 @@
+type salesforce.WebCartAdjustmentBasis {
+  salesforce.Text AdjustmentBasisDetail {
+    apiName = "WebCartAdjustmentBasis.AdjustmentBasisDetail"
+    length = 255
+    label = "Adjustment Basis Detail"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup AdjustmentBasisReferenceId {
+    apiName = "WebCartAdjustmentBasis.AdjustmentBasisReferenceId"
+    relationshipName = "AdjustmentBasisReference"
+    referenceTo = [
+      salesforce.Coupon,
+    ]
+    label = "Coupon ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MasterDetail WebCartId {
+    apiName = "WebCartAdjustmentBasis.WebCartId"
+    relationshipName = "WebCart"
+    referenceTo = [
+      salesforce.WebCart,
+    ]
+    _required = true
+    label = "Cart ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "WebCartAdjustmentBasis.Id"
+    label = "Cart Adjustment Basis ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WebCartAdjustmentBasis.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "WebCartAdjustmentBasis.Name"
+    length = 255
+    _required = true
+    label = "Cart Adjustment Basis Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WebCartAdjustmentBasis.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WebCartAdjustmentBasis.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WebCartAdjustmentBasis.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WebCartAdjustmentBasis.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WebCartAdjustmentBasis.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

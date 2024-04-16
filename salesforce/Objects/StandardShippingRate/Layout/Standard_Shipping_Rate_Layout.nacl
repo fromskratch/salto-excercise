@@ -1,0 +1,59 @@
+salesforce.Layout StandardShippingRate_Standard_Shipping_Rate_Layout@bsss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.StandardShippingRate.field.ShippingZoneId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.StandardShippingRate.field.ConditionFactor
+            },
+            {
+              behavior = "Required"
+              field = salesforce.StandardShippingRate.field.ConditionRangeMax
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.StandardShippingRate.field.Price
+            },
+            {
+              behavior = "Required"
+              field = salesforce.StandardShippingRate.field.ConditionRangeMin
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "StandardShippingRate-Standard Shipping Rate Layout"
+  _parent = [
+    salesforce.StandardShippingRate,
+  ]
+  _alias = "StandardShippingRate-Standard Shipping Rate Layout"
+}

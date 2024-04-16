@@ -1,0 +1,99 @@
+salesforce.Layout LocationGroup_Location_Group_Layout@bss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "LocationGroupInformation"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.LocationGroup.field.LocationGroupName
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.LocationGroup.field.ExternalReference
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.LocationGroup.field.IsEnabled
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.LocationGroup.field.Description
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.LocationGroup.field.ShouldSyncWithOci
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "System Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.LocationGroup.field.CreatedById
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.LocationGroup.field.OwnerId
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.LocationGroup.field.LastModifiedById
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  relatedLists = [
+    {
+      fields = [
+        "Name",
+        "LocationName",
+        "LocationExternalReference",
+        "CreatedBy",
+      ]
+      relatedList = "LocationGroupAssignments"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "LocationGroup-Location Group Layout"
+  _parent = [
+    salesforce.LocationGroup,
+  ]
+  _alias = "LocationGroup-Location Group Layout"
+}

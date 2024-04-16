@@ -1,0 +1,70 @@
+salesforce.Layout Shift_Shift_Layout@bs {
+  excludeButtons = [
+    "Submit",
+  ]
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = true
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.Shift.field.StartTime
+            },
+            {
+              behavior = "Required"
+              field = salesforce.Shift.field.Status
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Shift.field.ServiceTerritoryId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.Shift.field.TimeSlotType
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.Shift.field.EndTime
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Shift.field.WorkTypeGroupId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Shift.field.ServiceResourceId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Shift.field.Label
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Custom Links"
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "Shift-Shift Layout"
+  _parent = [
+    salesforce.Shift,
+  ]
+  _alias = "Shift-Shift Layout"
+}

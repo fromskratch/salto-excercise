@@ -1,0 +1,178 @@
+type salesforce.FulfillmentOrder {
+  annotations {
+    serviceid apiName {
+    }
+    serviceid metadataType {
+    }
+    string label {
+    }
+    hidden_string keyPrefix {
+    }
+    salesforce.ActionOverride actionOverrides {
+    }
+    string compactLayoutAssignment {
+    }
+    string description {
+    }
+    boolean enableDataTranslation {
+    }
+    boolean enableDivisions {
+    }
+    boolean enableEnhancedLookup {
+    }
+    boolean enableFeeds {
+    }
+    boolean enableHistory {
+    }
+    boolean enableLicensing {
+    }
+    boolean enablePublishStatusTracking {
+    }
+    string externalDataSource {
+    }
+    string externalName {
+    }
+    string externalRepository {
+    }
+    salesforce.HistoryRetentionPolicy historyRetentionPolicy {
+    }
+    salesforce.MktDataLakeAttributes mktDataLakeAttributes {
+    }
+    salesforce.MktDataModelAttributes mktDataModelAttributes {
+    }
+    salesforce.ProfileSearchLayouts profileSearchLayouts {
+    }
+    boolean recordTypeTrackFeedHistory {
+    }
+    boolean recordTypeTrackHistory {
+    }
+    salesforce.SearchLayouts searchLayouts {
+    }
+    salesforce.SharingRecalculation sharingRecalculations {
+    }
+    string externalSharingModel {
+    }
+    hidden_string internalId {
+    }
+  }
+  apiName = "FulfillmentOrder"
+  metadataType = "CustomObject"
+  label = "Fulfillment Order"
+  actionOverrides = [
+    {
+      actionName = "CancelEdit"
+      type = "Default"
+    },
+    {
+      actionName = "CancelEdit"
+      formFactor = "Large"
+      type = "Default"
+    },
+    {
+      actionName = "CancelEdit"
+      formFactor = "Small"
+      type = "Default"
+    },
+    {
+      actionName = "Edit"
+      type = "Default"
+    },
+    {
+      actionName = "Edit"
+      formFactor = "Large"
+      type = "Default"
+    },
+    {
+      actionName = "Edit"
+      formFactor = "Small"
+      type = "Default"
+    },
+    {
+      actionName = "List"
+      type = "Default"
+    },
+    {
+      actionName = "List"
+      formFactor = "Large"
+      type = "Default"
+    },
+    {
+      actionName = "List"
+      formFactor = "Small"
+      type = "Default"
+    },
+    {
+      actionName = "SaveEdit"
+      type = "Default"
+    },
+    {
+      actionName = "SaveEdit"
+      formFactor = "Large"
+      type = "Default"
+    },
+    {
+      actionName = "SaveEdit"
+      formFactor = "Small"
+      type = "Default"
+    },
+    {
+      actionName = "Tab"
+      type = "Default"
+    },
+    {
+      actionName = "Tab"
+      formFactor = "Large"
+      type = "Default"
+    },
+    {
+      actionName = "Tab"
+      formFactor = "Small"
+      type = "Default"
+    },
+    {
+      actionName = "View"
+      type = "Default"
+    },
+    {
+      actionName = "View"
+      formFactor = "Large"
+      type = "Default"
+    },
+    {
+      actionName = "View"
+      formFactor = "Small"
+      type = "Default"
+    },
+  ]
+  compactLayoutAssignment = "SYSTEM"
+  enableFeeds = false
+  externalSharingModel = "Private"
+  searchLayouts = {
+    customTabListAdditionalFields = [
+      "Status",
+      "FulfilledToName",
+      "FulfilledFromLocation",
+      "Invoice",
+    ]
+    lookupDialogsAdditionalFields = [
+      "Status",
+      "FulfilledToName",
+      "FulfilledFromLocation",
+      "Invoice",
+    ]
+    lookupPhoneDialogsAdditionalFields = [
+      "Status",
+      "FulfilledToName",
+      "FulfilledFromLocation",
+      "Invoice",
+      "FulfilledToPhone",
+    ]
+    searchResultsAdditionalFields = [
+      "Status",
+      "FulfilledToName",
+      "FulfilledFromLocation",
+      "Invoice",
+    ]
+  }
+  _alias = "Fulfillment Order"
+}

@@ -1,0 +1,306 @@
+type salesforce.PromotionTarget {
+  salesforce.Currency AdjustmentAmount {
+    apiName = "PromotionTarget.AdjustmentAmount"
+    label = "Adjustment Amount"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 18
+    queryable = true
+  }
+  salesforce.Percent AdjustmentPercent {
+    apiName = "PromotionTarget.AdjustmentPercent"
+    label = "Adjustment Percent"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 5
+    queryable = true
+  }
+  salesforce.Picklist AdjustmentType {
+    apiName = "PromotionTarget.AdjustmentType"
+    valueSet = [
+      {
+        fullName = "FixedAmountOffLineItemTotal"
+        isActive = true
+        label = "Fixed Amount Off Line Item Total"
+        default = false
+      },
+      {
+        fullName = "FixedAmountOffTransaction"
+        isActive = true
+        label = "Fixed Amount Off Transaction"
+        default = false
+      },
+      {
+        fullName = "FixedAmountOffUnitPrice"
+        isActive = true
+        label = "Fixed Amount Off Unit Price"
+        default = false
+      },
+      {
+        fullName = "FixedPrice"
+        isActive = true
+        label = "Fixed Price"
+        default = false
+      },
+      {
+        fullName = "PercentageDiscount"
+        isActive = true
+        label = "Percentage Discount"
+        default = false
+      },
+      {
+        fullName = "TotalFixedPrice"
+        isActive = true
+        label = "Total Fixed Price"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Adjustment Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Unknown IsMinItemCountRequired {
+    apiName = "PromotionTarget.IsMinItemCountRequired"
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "PromotionTarget.Name"
+    label = "Promotion Target Name"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.MasterDetail PromotionId {
+    apiName = "PromotionTarget.PromotionId"
+    relationshipName = "Promotion"
+    referenceTo = [
+      salesforce.Promotion,
+    ]
+    _required = true
+    label = "Promotion ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup PromotionTierId {
+    apiName = "PromotionTarget.PromotionTierId"
+    relationshipName = "PromotionTier"
+    referenceTo = [
+      salesforce.PromotionTier,
+    ]
+    label = "Promotion Tier ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number RestrictionQuantity {
+    apiName = "PromotionTarget.RestrictionQuantity"
+    inlineHelpText = "Enter how many products can receive this discount. Leave blank for an unlimited quantity. This field is mandatory if the Adjustment Type is Total Fixed Price."
+    label = "Quantity Limit"
+    precision = 18
+    scale = 0
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Unknown RestrictionType {
+    apiName = "PromotionTarget.RestrictionType"
+    _hidden_value = true
+  }
+  salesforce.Lookup TargetId {
+    apiName = "PromotionTarget.TargetId"
+    relationshipName = "Target"
+    referenceTo = [
+      salesforce.Product2,
+      salesforce.ProductCategory,
+    ]
+    label = "Target ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist TargetOperator {
+    apiName = "PromotionTarget.TargetOperator"
+    valueSet = [
+      {
+        fullName = "NONE"
+        isActive = true
+        label = "None"
+        default = false
+      },
+      {
+        fullName = "EQUAL_TO"
+        isActive = true
+        label = "Equal to"
+        default = false
+      },
+      {
+        fullName = "NOT_EQUAL_TO"
+        isActive = true
+        label = "Not Equal to"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Target Operator"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text TargetProductCategoryName {
+    apiName = "PromotionTarget.TargetProductCategoryName"
+    length = 200
+    label = "Target Category Name"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text TargetProductName {
+    apiName = "PromotionTarget.TargetProductName"
+    length = 255
+    label = "Target Product Name"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text TargetProductSku {
+    apiName = "PromotionTarget.TargetProductSku"
+    length = 180
+    label = "Target Product SKU"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist TargetType {
+    apiName = "PromotionTarget.TargetType"
+    valueSet = [
+      {
+        fullName = "Product"
+        isActive = true
+        label = "Product"
+        default = false
+      },
+      {
+        fullName = "ProductCategory"
+        isActive = true
+        label = "Product Category"
+        default = false
+      },
+      {
+        fullName = "Transaction"
+        isActive = true
+        label = "Transaction"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Target Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "PromotionTarget.Id"
+    label = "Promotion Target ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "PromotionTarget.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "PromotionTarget.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "PromotionTarget.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "PromotionTarget.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "PromotionTarget.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "PromotionTarget.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist TargetRuleCriteriaType {
+    apiName = "PromotionTarget.TargetRuleCriteriaType"
+    valueSet = [
+      {
+        fullName = "All"
+        isActive = true
+        label = "All"
+        default = false
+      },
+      {
+        fullName = "Any"
+        isActive = true
+        label = "Any"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Target Rule Criteria Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

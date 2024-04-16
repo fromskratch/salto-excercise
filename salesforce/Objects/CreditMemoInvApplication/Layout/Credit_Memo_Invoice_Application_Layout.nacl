@@ -1,0 +1,148 @@
+salesforce.Layout CreditMemoInvApplication_Credit_Memo_Invoice_Application_Layout@bssss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = true
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.CreditMemoInvApplication.field.CreditMemoInvoiceNumber
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CreditMemoInvApplication.field.CreditMemoId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CreditMemoInvApplication.field.HasBeenUnapplied
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.CreditMemoInvApplication.field.Type
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CreditMemoInvApplication.field.InvoiceId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.CreditMemoInvApplication.field.Description
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Balances"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.CreditMemoInvApplication.field.Amount
+            },
+          ]
+        },
+        {
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "AdditionalInformation"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.CreditMemoInvApplication.field.AssociatedLineId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CreditMemoInvApplication.field.Date
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.CreditMemoInvApplication.field.AppliedDate
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.CreditMemoInvApplication.field.UnappliedDate
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "SystemInformation"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.CreditMemoInvApplication.field.CreatedById
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.CreditMemoInvApplication.field.CreatedDate
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.CreditMemoInvApplication.field.LastModifiedById
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.CreditMemoInvApplication.field.LastModifiedDate
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "CreditMemoInvApplication-Credit Memo Invoice Application Layout"
+  _parent = [
+    salesforce.CreditMemoInvApplication,
+  ]
+  _alias = "CreditMemoInvApplication-Credit Memo Invoice Application Layout"
+}

@@ -1,0 +1,229 @@
+salesforce.Layout WebCart_Cart_Layout@bs {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.TotalProductLineItemCount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.TotalLineItemsWithErrors
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.TotalAdjustmentAmount
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WebCart.field.Name
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.WebCart.field.LastModifiedDate
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WebCart.field.WebStoreId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WebCart.field.PoNumber
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.WebCart.field.CreatedById
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.TotalProductCount
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.WebCart.field.OwnerId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WebCart.field.AccountId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.WebCart.field.BillingAddress
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.WebCart.field.CreatedDate
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.UniqueProductCount
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "AdditionalInformation"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.WebCart.field.Status
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.TaxLocaleType
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.WebCart.field.Type
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.IsSecondary
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "PaymentInformation"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.WebCart.field.PaymentMethodId
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.IsRepricingNeeded
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.LastRepricingDate
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.WebCart.field.PaymentGroupId
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "CostInformation"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.TotalListAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.TotalProductAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.TotalProductTaxAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.TotalAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.GrandTotalAmount
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.TotalChargeAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.TotalChargeTaxAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCart.field.TotalTaxAmount
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  miniLayout = {
+    fields = [
+      "TotalProductLineItemCount",
+      "TotalLineItemsWithErrors",
+      "TotalAdjustmentAmount",
+    ]
+  }
+  relatedLists = [
+    {
+      fields = [
+        "Name",
+        "Product2",
+        "Quantity",
+        "SalesPrice",
+        "CreatedDate",
+      ]
+      relatedList = "CartItems"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "WebCart-Cart Layout"
+  _parent = [
+    salesforce.WebCart,
+  ]
+  _alias = "WebCart-Cart Layout"
+}

@@ -1,0 +1,63 @@
+salesforce.Layout CartValidationOutput_Cart_Validation_Output_Layout@bsss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.CartValidationOutput.field.CartId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartValidationOutput.field.RelatedEntityId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartValidationOutput.field.BackgroundOperationId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartValidationOutput.field.Type
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartValidationOutput.field.Level
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.CartValidationOutput.field.Message
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.CartValidationOutput.field.IsDismissed
+            },
+          ]
+        },
+      ]
+      style = "OneColumn"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "CartValidationOutput-Cart Validation Output Layout"
+  _parent = [
+    salesforce.CartValidationOutput,
+  ]
+  _alias = "CartValidationOutput-Cart Validation Output Layout"
+}

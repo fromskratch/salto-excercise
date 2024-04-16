@@ -1,0 +1,124 @@
+type salesforce.AssignedResource {
+  salesforce.Lookup EventId {
+    apiName = "AssignedResource.EventId"
+    relationshipName = "Event"
+    referenceTo = [
+      salesforce.Event,
+    ]
+    label = "Activity ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsRequiredResource {
+    apiName = "AssignedResource.IsRequiredResource"
+    defaultValue = false
+    label = "Required Resource"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Role {
+    apiName = "AssignedResource.Role"
+    label = "Role"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MasterDetail ServiceAppointmentId {
+    apiName = "AssignedResource.ServiceAppointmentId"
+    relationshipName = "ServiceAppointment"
+    referenceTo = [
+      salesforce.ServiceAppointment,
+    ]
+    _required = true
+    label = "Service Appointment ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup ServiceResourceId {
+    apiName = "AssignedResource.ServiceResourceId"
+    relationshipName = "ServiceResource"
+    referenceTo = [
+      salesforce.ServiceResource,
+    ]
+    _required = true
+    label = "Service Resource ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "AssignedResource.Id"
+    label = "Assigned Resource ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "AssignedResource.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber AssignedResourceNumber {
+    apiName = "AssignedResource.AssignedResourceNumber"
+    label = "Assigned Resource Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "AssignedResource.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "AssignedResource.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "AssignedResource.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "AssignedResource.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "AssignedResource.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

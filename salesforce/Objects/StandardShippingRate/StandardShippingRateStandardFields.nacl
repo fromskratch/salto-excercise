@@ -1,0 +1,139 @@
+type salesforce.StandardShippingRate {
+  serviceid Id {
+    apiName = "StandardShippingRate.Id"
+    label = "StandardShippingRate ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "StandardShippingRate.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "StandardShippingRate.Name"
+    length = 255
+    _required = true
+    label = "StandardShippingRate Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "StandardShippingRate.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "StandardShippingRate.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "StandardShippingRate.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "StandardShippingRate.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "StandardShippingRate.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ShippingZoneId {
+    apiName = "StandardShippingRate.ShippingZoneId"
+    relationshipName = "ShippingZone"
+    referenceTo = [
+      salesforce.ShippingRateArea,
+    ]
+    _required = true
+    label = "ShippingZone ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Currency Price {
+    apiName = "StandardShippingRate.Price"
+    label = "Price"
+    createable = true
+    updateable = true
+    scale = 0
+    precision = 18
+    queryable = true
+  }
+  salesforce.Picklist ConditionFactor {
+    apiName = "StandardShippingRate.ConditionFactor"
+    valueSet = [
+      {
+        fullName = "OrderPriceFactor"
+        isActive = true
+        label = "OrderPriceFactor"
+        default = false
+      },
+      {
+        fullName = "OrderWeightFactor"
+        isActive = true
+        label = "OrderWeightFactor"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Condition Factor"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number ConditionRangeMin {
+    apiName = "StandardShippingRate.ConditionRangeMin"
+    label = "Condition Range Min"
+    precision = 18
+    scale = 0
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Number ConditionRangeMax {
+    apiName = "StandardShippingRate.ConditionRangeMax"
+    label = "Condition Range Max"
+    precision = 18
+    scale = 0
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+}

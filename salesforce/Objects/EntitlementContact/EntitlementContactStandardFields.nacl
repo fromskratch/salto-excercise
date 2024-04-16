@@ -1,0 +1,97 @@
+type salesforce.EntitlementContact {
+  salesforce.MasterDetail ContactId {
+    apiName = "EntitlementContact.ContactId"
+    relationshipName = "Contact"
+    referenceTo = [
+      salesforce.Contact,
+    ]
+    _required = true
+    label = "Contact ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.MasterDetail EntitlementId {
+    apiName = "EntitlementContact.EntitlementId"
+    relationshipName = "Entitlement"
+    referenceTo = [
+      salesforce.Entitlement,
+    ]
+    _required = true
+    label = "Entitlement ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "EntitlementContact.Id"
+    label = "Entitlement Contact ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "EntitlementContact.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "EntitlementContact.Name"
+    label = "Entitlement Contact"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "EntitlementContact.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "EntitlementContact.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "EntitlementContact.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "EntitlementContact.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "EntitlementContact.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

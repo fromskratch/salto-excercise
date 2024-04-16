@@ -1,0 +1,143 @@
+type salesforce.ProblemRelatedItem {
+  salesforce.Lookup AssetId {
+    apiName = "ProblemRelatedItem.AssetId"
+    relationshipName = "Asset"
+    referenceTo = [
+      salesforce.Asset,
+    ]
+    _required = true
+    label = "Asset ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.LongTextArea Comment {
+    apiName = "ProblemRelatedItem.Comment"
+    length = 32000
+    label = "Comment"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist ImpactLevel {
+    apiName = "ProblemRelatedItem.ImpactLevel"
+    restricted = false
+    label = "Impact Level"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.CasePriority
+  }
+  salesforce.Picklist ImpactType {
+    apiName = "ProblemRelatedItem.ImpactType"
+    valueSet = [
+      {
+        fullName = "Business-Blocking"
+        isActive = true
+        label = "Business-Blocking"
+        default = true
+      },
+      {
+        fullName = "Partially Business-Blocking"
+        isActive = true
+        label = "Partially Business-Blocking"
+        default = false
+      },
+      {
+        fullName = "Not Business-Blocking"
+        isActive = true
+        label = "Not Business-Blocking"
+        default = false
+      },
+    ]
+    restricted = false
+    _required = true
+    label = "Impact Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "ProblemRelatedItem.Name"
+    label = "Problem Related Item Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.MasterDetail ProblemId {
+    apiName = "ProblemRelatedItem.ProblemId"
+    relationshipName = "Problem"
+    referenceTo = [
+      salesforce.Problem,
+    ]
+    _required = true
+    label = "Problem ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ProblemRelatedItem.Id"
+    label = "Problem Related Item ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ProblemRelatedItem.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ProblemRelatedItem.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ProblemRelatedItem.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ProblemRelatedItem.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ProblemRelatedItem.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ProblemRelatedItem.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

@@ -1,0 +1,145 @@
+type salesforce.CaseRelatedIssue {
+  salesforce.MasterDetail CaseId {
+    apiName = "CaseRelatedIssue.CaseId"
+    relationshipName = "Case"
+    referenceTo = [
+      salesforce.Case,
+    ]
+    _required = true
+    label = "Case ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "CaseRelatedIssue.Name"
+    label = "Case Related Issue Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist RelatedEntityType {
+    apiName = "CaseRelatedIssue.RelatedEntityType"
+    valueSet = [
+      {
+        fullName = "Incident"
+        isActive = true
+        label = "Incident"
+        default = false
+      },
+      {
+        fullName = "Problem"
+        isActive = true
+        label = "Problem"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Related Issue Type"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup RelatedIssueId {
+    apiName = "CaseRelatedIssue.RelatedIssueId"
+    relationshipName = "RelatedIssue"
+    referenceTo = [
+      salesforce.Incident,
+      salesforce.Problem,
+    ]
+    _required = true
+    label = "Related Issue ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Picklist RelationshipType {
+    apiName = "CaseRelatedIssue.RelationshipType"
+    valueSet = [
+      {
+        fullName = "Root Cause"
+        isActive = true
+        label = "Root Cause"
+        default = true
+      },
+      {
+        fullName = "Similar"
+        isActive = true
+        label = "Similar"
+        default = false
+      },
+    ]
+    restricted = false
+    _required = true
+    label = "Relationship Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "CaseRelatedIssue.Id"
+    label = "Case Related Issue ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "CaseRelatedIssue.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "CaseRelatedIssue.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "CaseRelatedIssue.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "CaseRelatedIssue.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "CaseRelatedIssue.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "CaseRelatedIssue.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

@@ -1,0 +1,9 @@
+salesforce.ListView ReturnOrder_All_ReturnOrders {
+  fullName = "ReturnOrder.All_ReturnOrders"
+  filterScope = "Everything"
+  label = "All Return Orders"
+  _parent = [
+    salesforce.ReturnOrder,
+  ]
+  _alias = "All Return Orders"
+}

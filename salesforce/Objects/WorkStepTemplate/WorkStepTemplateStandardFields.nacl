@@ -1,0 +1,264 @@
+type salesforce.WorkStepTemplate {
+  salesforce.Picklist ActionDefinition {
+    apiName = "WorkStepTemplate.ActionDefinition"
+    inlineHelpText = "Find and select the associated global action, quick action, screen flow, or mobile flow."
+    valueSet = [
+      {
+        fullName = "cms_orch__CMS_NotifyRequester"
+        isActive = true
+        label = "CMS: Notify Content Author"
+        default = false
+      },
+      {
+        fullName = "cms_orch__CMS_ReviewContent"
+        isActive = true
+        label = "CMS: Review Content"
+        default = false
+      },
+      {
+        fullName = "cms_orch__CMS_ReviseContent"
+        isActive = true
+        label = "CMS: Submit Content for Review"
+        default = false
+      },
+      {
+        fullName = "cms_orch__CMS_WithdrawReviewRequest"
+        isActive = true
+        label = "CMS: Withdraw Review Request"
+        default = false
+      },
+      {
+        fullName = "runtime_payments__GeneratePaymentLink"
+        isActive = true
+        label = "Generate Payment Link"
+        default = false
+      },
+      {
+        fullName = "setup_service_experience__Create_Case"
+        isActive = true
+        label = "Create a Case"
+        default = false
+      },
+      {
+        fullName = "setup_service_experience__Reset_Pwd"
+        isActive = true
+        label = "Reset Password"
+        default = false
+      },
+      {
+        fullName = "setup_service_experience__Verify_Cust"
+        isActive = true
+        label = "Verify Identity"
+        default = false
+      },
+      {
+        fullName = "SendEmail"
+        isActive = true
+        label = "Email"
+        default = false
+      },
+      {
+        fullName = "LogACall"
+        isActive = true
+        label = "Log a Call"
+        default = false
+      },
+      {
+        fullName = "NewAccount"
+        isActive = true
+        label = "New Account"
+        default = false
+      },
+      {
+        fullName = "NewCase"
+        isActive = true
+        label = "New Case"
+        default = false
+      },
+      {
+        fullName = "NewContact"
+        isActive = true
+        label = "New Contact"
+        default = false
+      },
+      {
+        fullName = "_NewQuipDocument"
+        isActive = true
+        label = "New Document"
+        default = false
+      },
+      {
+        fullName = "NewEvent"
+        isActive = true
+        label = "New Event"
+        default = false
+      },
+      {
+        fullName = "NewGroup"
+        isActive = true
+        label = "New Group"
+        default = false
+      },
+      {
+        fullName = "NewLead"
+        isActive = true
+        label = "New Lead"
+        default = false
+      },
+      {
+        fullName = "NewNote"
+        isActive = true
+        label = "New Note"
+        default = false
+      },
+      {
+        fullName = "NewOpportunity"
+        isActive = true
+        label = "New Opportunity"
+        default = false
+      },
+      {
+        fullName = "NewTask"
+        isActive = true
+        label = "New Task"
+        default = false
+      },
+      {
+        fullName = "_SendConversationMessage"
+        isActive = true
+        label = "Send Message"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Action Definition"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist ActionType {
+    apiName = "WorkStepTemplate.ActionType"
+    valueSet = [
+      {
+        fullName = "Flow"
+        isActive = true
+        label = "Flow"
+        default = false
+      },
+      {
+        fullName = "QuickAction"
+        isActive = true
+        label = "Quick Action"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Action Type"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "WorkStepTemplate.Description"
+    length = 500
+    label = "Description"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsActive {
+    apiName = "WorkStepTemplate.IsActive"
+    label = "Active"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Name {
+    apiName = "WorkStepTemplate.Name"
+    length = 255
+    _required = true
+    label = "Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "WorkStepTemplate.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "WorkStepTemplate.Id"
+    label = "Work Step Template ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WorkStepTemplate.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WorkStepTemplate.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WorkStepTemplate.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WorkStepTemplate.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WorkStepTemplate.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WorkStepTemplate.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

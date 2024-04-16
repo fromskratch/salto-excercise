@@ -1,0 +1,16 @@
+salesforce.ListView FulfillmentOrder_all_fulfillment_orders {
+  fullName = "FulfillmentOrder.all_fulfillment_orders"
+  filterScope = "Everything"
+  filters = [
+    {
+      field = "IsArchived"
+      operation = "equals"
+      value = "0"
+    },
+  ]
+  label = "All Fulfillment Orders"
+  _parent = [
+    salesforce.FulfillmentOrder,
+  ]
+  _alias = "All Fulfillment Orders"
+}

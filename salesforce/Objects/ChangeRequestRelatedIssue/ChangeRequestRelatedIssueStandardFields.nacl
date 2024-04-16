@@ -1,0 +1,152 @@
+type salesforce.ChangeRequestRelatedIssue {
+  salesforce.MasterDetail ChangeRequestId {
+    apiName = "ChangeRequestRelatedIssue.ChangeRequestId"
+    relationshipName = "ChangeRequest"
+    referenceTo = [
+      salesforce.ChangeRequest,
+    ]
+    _required = true
+    label = "Change Request ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "ChangeRequestRelatedIssue.Name"
+    label = "Change Request Related Issue Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist RelatedEntityType {
+    apiName = "ChangeRequestRelatedIssue.RelatedEntityType"
+    valueSet = [
+      {
+        fullName = "Incident"
+        isActive = true
+        label = "Incident"
+        default = false
+      },
+      {
+        fullName = "Problem"
+        isActive = true
+        label = "Problem"
+        default = false
+      },
+      {
+        fullName = "Case"
+        isActive = true
+        label = "Case"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Related Issue Type"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup RelatedIssueId {
+    apiName = "ChangeRequestRelatedIssue.RelatedIssueId"
+    relationshipName = "RelatedIssue"
+    referenceTo = [
+      salesforce.Case,
+      salesforce.Incident,
+      salesforce.Problem,
+    ]
+    _required = true
+    label = "Related Issue ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Picklist RelationshipType {
+    apiName = "ChangeRequestRelatedIssue.RelationshipType"
+    valueSet = [
+      {
+        fullName = "Caused By"
+        isActive = true
+        label = "Caused By"
+        default = true
+      },
+      {
+        fullName = "Resolved By"
+        isActive = true
+        label = "Resolved By"
+        default = false
+      },
+    ]
+    restricted = false
+    _required = true
+    label = "Relationship Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ChangeRequestRelatedIssue.Id"
+    label = "Change Request Related Issue ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ChangeRequestRelatedIssue.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ChangeRequestRelatedIssue.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ChangeRequestRelatedIssue.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ChangeRequestRelatedIssue.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ChangeRequestRelatedIssue.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ChangeRequestRelatedIssue.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

@@ -1,0 +1,21 @@
+salesforce.ListView Case_AllOpenCases {
+  fullName = "Case.AllOpenCases"
+  filterScope = "Everything"
+  filters = [
+    {
+      field = "CASES.CREATED_DATE_DATE_ONLY"
+      operation = "equals"
+      value = "LAST_N_DAYS:30"
+    },
+    {
+      field = "CASES.CLOSED"
+      operation = "equals"
+      value = "0"
+    },
+  ]
+  label = "All Open Cases"
+  _parent = [
+    salesforce.Case,
+  ]
+  _alias = "All Open Cases"
+}

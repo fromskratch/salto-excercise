@@ -1,0 +1,198 @@
+type salesforce.TimeSlot {
+  salesforce.Picklist DayOfWeek {
+    apiName = "TimeSlot.DayOfWeek"
+    valueSet = [
+      {
+        fullName = "Sunday"
+        isActive = true
+        label = "Sunday"
+        default = true
+      },
+      {
+        fullName = "Monday"
+        isActive = true
+        label = "Monday"
+        default = false
+      },
+      {
+        fullName = "Tuesday"
+        isActive = true
+        label = "Tuesday"
+        default = false
+      },
+      {
+        fullName = "Wednesday"
+        isActive = true
+        label = "Wednesday"
+        default = false
+      },
+      {
+        fullName = "Thursday"
+        isActive = true
+        label = "Thursday"
+        default = false
+      },
+      {
+        fullName = "Friday"
+        isActive = true
+        label = "Friday"
+        default = false
+      },
+      {
+        fullName = "Saturday"
+        isActive = true
+        label = "Saturday"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Day of Week"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Time EndTime {
+    apiName = "TimeSlot.EndTime"
+    _required = true
+    label = "End Time"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number MaxAppointments {
+    apiName = "TimeSlot.MaxAppointments"
+    label = "Maximum Appointments"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.MasterDetail OperatingHoursId {
+    apiName = "TimeSlot.OperatingHoursId"
+    relationshipName = "OperatingHours"
+    referenceTo = [
+      salesforce.OperatingHours,
+    ]
+    _required = true
+    label = "Operating Hour ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Time StartTime {
+    apiName = "TimeSlot.StartTime"
+    _required = true
+    label = "Start Time"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Type {
+    apiName = "TimeSlot.Type"
+    valueSet = [
+      {
+        fullName = "Normal"
+        isActive = true
+        label = "Normal"
+        default = true
+      },
+      {
+        fullName = "Extended"
+        isActive = true
+        label = "Extended"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup WorkTypeGroupId {
+    apiName = "TimeSlot.WorkTypeGroupId"
+    relationshipName = "WorkTypeGroup"
+    referenceTo = [
+      salesforce.WorkTypeGroup,
+    ]
+    label = "Work Type Group ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "TimeSlot.Id"
+    label = "Time Slot ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "TimeSlot.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber TimeSlotNumber {
+    apiName = "TimeSlot.TimeSlotNumber"
+    label = "Name"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "TimeSlot.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "TimeSlot.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "TimeSlot.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "TimeSlot.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "TimeSlot.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

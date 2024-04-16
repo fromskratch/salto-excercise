@@ -1,0 +1,147 @@
+salesforce.Layout WorkStep_Work_Step_Layout@bss {
+  excludeButtons = [
+    "Submit",
+  ]
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.WorkStep.field.Name
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WorkStep.field.WorkOrderId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.WorkStep.field.ActionDefinition
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.WorkStep.field.Status
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WorkStep.field.ParentRecordId
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.WorkStep.field.WorkPlanId
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WorkStep.field.WorkOrderLineItemId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.WorkStep.field.ExecutionOrder
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WorkStep.field.ParentRecordType
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Description"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.WorkStep.field.Description
+            },
+          ]
+        },
+      ]
+      style = "OneColumn"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "System Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.WorkStep.field.CreatedById
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.WorkStep.field.LastModifiedById
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Custom Links"
+      style = "CustomLinks"
+    },
+  ]
+  relatedLists = [
+    {
+      fields = [
+        "TASK.SUBJECT",
+        "TASK.WHO_NAME",
+        "ACTIVITY.TASK",
+        "TASK.DUE_DATE",
+        "TASK.STATUS",
+        "TASK.PRIORITY",
+        "CORE.USERS.FULL_NAME",
+      ]
+      relatedList = "RelatedActivityList"
+    },
+    {
+      relatedList = "RelatedEntityHistoryList"
+    },
+    {
+      relatedList = "RelatedFileList"
+    },
+    {
+      fields = [
+        "CreatedDate",
+        "StepStatus",
+        "OriginalActor",
+        "Actor",
+        "Comments",
+      ]
+      relatedList = "RelatedProcessHistoryList"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "WorkStep-Work Step Layout"
+  _parent = [
+    salesforce.WorkStep,
+  ]
+  _alias = "WorkStep-Work Step Layout"
+}

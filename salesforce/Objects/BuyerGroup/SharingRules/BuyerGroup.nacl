@@ -1,0 +1,7 @@
+salesforce.SharingRules BuyerGroup {
+  fullName = "BuyerGroup"
+  _parent = [
+    salesforce.BuyerGroup,
+  ]
+  _alias = "BuyerGroup"
+}

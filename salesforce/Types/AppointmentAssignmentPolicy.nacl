@@ -1,0 +1,66 @@
+type salesforce.AppointmentAssignmentPolicy {
+  annotations {
+    serviceid metadataType {
+    }
+    boolean hasMetaFile {
+    }
+    string folderType {
+    }
+    string folderContentType {
+    }
+    string suffix {
+    }
+    string dirName {
+    }
+  }
+  serviceid fullName {
+  }
+  string masterLabel {
+  }
+  string policyApplicableDuration {
+    _restriction = {
+      enforce_value = false
+      values = [
+        "Monthly",
+        "ParameterBased",
+        "Weekly",
+      ]
+    }
+  }
+  string policyType {
+    _restriction = {
+      enforce_value = false
+      values = [
+        "loadBalancing",
+      ]
+    }
+  }
+  string utilizationFactor {
+    _restriction = {
+      enforce_value = false
+      values = [
+        "NumberOfAppointments",
+        "TotalAppointmentDuration",
+      ]
+    }
+  }
+  string internalId {
+    _hidden_value = true
+    localOnly = true
+  }
+  suffix = "policy"
+  dirName = "appointmentAssignmentPolicies"
+  metadataType = "AppointmentAssignmentPolicy"
+  _important_values = [
+    {
+      value = "fullName"
+      highlighted = true
+      indexed = false
+    },
+    {
+      value = "masterLabel"
+      highlighted = true
+      indexed = false
+    },
+  ]
+}

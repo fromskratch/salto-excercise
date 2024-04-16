@@ -1,0 +1,70 @@
+type salesforce.ExternalAIModel {
+  annotations {
+    serviceid metadataType {
+    }
+    boolean hasMetaFile {
+    }
+    string folderType {
+    }
+    string folderContentType {
+    }
+    string suffix {
+    }
+    string dirName {
+    }
+  }
+  serviceid fullName {
+  }
+  string applicationSourceType {
+    _restriction = {
+      enforce_value = false
+      values = [
+        "ARTICLE_RECOMMENDATION",
+        "EAR_FOR_CONVERSATION",
+        "EAR_FOR_VOICE",
+        "FAQ",
+        "FTEST",
+        "REPLY_RECOMMENDATION",
+        "USE_CASE_EXPLORER",
+        "UTTERANCE_RECOMMENDATION",
+      ]
+    }
+  }
+  string externalModelKey {
+  }
+  string externalModelStatus {
+    _restriction = {
+      enforce_value = false
+      values = [
+        "DISABLED",
+        "ENABLED",
+        "PAUSED",
+      ]
+    }
+  }
+  string name {
+  }
+  number threshold {
+  }
+  string trainingJobName {
+  }
+  string internalId {
+    _hidden_value = true
+    localOnly = true
+  }
+  suffix = "externalAIModel"
+  dirName = "externalAIModels"
+  metadataType = "ExternalAIModel"
+  _important_values = [
+    {
+      value = "fullName"
+      highlighted = true
+      indexed = false
+    },
+    {
+      value = "name"
+      highlighted = true
+      indexed = false
+    },
+  ]
+}

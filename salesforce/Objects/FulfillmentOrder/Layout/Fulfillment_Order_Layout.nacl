@@ -1,0 +1,169 @@
+salesforce.Layout FulfillmentOrder_Fulfillment_Order_Layout@bss {
+  layoutSections = [
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = true
+      label = "Fulfillment Order Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.FulfillmentOrder.field.AccountId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.FulfillmentOrder.field.InvoiceId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.FulfillmentOrder.field.Type
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.FulfillmentOrder.field.Status
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Shipping Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.FulfillmentOrder.field.FulfilledToAddress
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.FulfillmentOrder.field.FulfilledToEmailAddress
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.FulfillmentOrder.field.FulfilledFromLocationId
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.FulfillmentOrder.field.FulfilledToName
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.FulfillmentOrder.field.FulfilledToPhone
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Totals"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrder.field.ItemCount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrder.field.TotalProductTaxAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrder.field.TotalDeliveryTaxAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrder.field.TotalAdjustmentTaxAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrder.field.TotalTaxAmount
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrder.field.TotalProductAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrder.field.TotalDeliveryAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrder.field.TotalAdjustmentAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrder.field.TotalAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrder.field.GrandTotalAmount
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  relatedLists = [
+    {
+      fields = [
+        "Name",
+        "Product2",
+        "Quantity",
+        "TotalAmount",
+      ]
+      relatedList = "FulfillmentOrderLineItems"
+    },
+    {
+      fields = [
+        "Name",
+        "TrackingNumber",
+        "TrackingUrl",
+        "Status",
+      ]
+      relatedList = "FulfillmentOrderShipments"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "FulfillmentOrder-Fulfillment Order Layout"
+  _parent = [
+    salesforce.FulfillmentOrder,
+  ]
+  _alias = "FulfillmentOrder-Fulfillment Order Layout"
+}

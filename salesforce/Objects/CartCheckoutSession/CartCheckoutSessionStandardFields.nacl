@@ -1,0 +1,166 @@
+type salesforce.CartCheckoutSession {
+  serviceid Id {
+    apiName = "CartCheckoutSession.Id"
+    label = "Cart Checkout Session ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "CartCheckoutSession.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "CartCheckoutSession.Name"
+    length = 255
+    _required = true
+    label = "Name"
+    createable = false
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "CartCheckoutSession.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "CartCheckoutSession.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "CartCheckoutSession.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "CartCheckoutSession.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "CartCheckoutSession.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup WebCartId {
+    apiName = "CartCheckoutSession.WebCartId"
+    relationshipName = "WebCart"
+    referenceTo = [
+      salesforce.WebCart,
+    ]
+    _required = true
+    label = "Cart ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text State {
+    apiName = "CartCheckoutSession.State"
+    length = 30
+    _required = true
+    label = "State"
+    createable = false
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text NextState {
+    apiName = "CartCheckoutSession.NextState"
+    length = 30
+    label = "Next State"
+    createable = false
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Checkbox IsProcessing {
+    apiName = "CartCheckoutSession.IsProcessing"
+    defaultValue = false
+    label = "Is Processing"
+    createable = false
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup BackgroundOperationId {
+    apiName = "CartCheckoutSession.BackgroundOperationId"
+    relationshipName = "BackgroundOperation"
+    referenceTo = [
+      "BackgroundOperation",
+    ]
+    label = "Background Operation ID"
+    createable = false
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsArchived {
+    apiName = "CartCheckoutSession.IsArchived"
+    defaultValue = false
+    label = "Is Archived"
+    createable = false
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup OrderId {
+    apiName = "CartCheckoutSession.OrderId"
+    relationshipName = "Order"
+    referenceTo = [
+      salesforce.Order,
+    ]
+    label = "Order ID"
+    createable = false
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsError {
+    apiName = "CartCheckoutSession.IsError"
+    defaultValue = false
+    label = "Is Error"
+    createable = false
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text OrderReferenceNumber {
+    apiName = "CartCheckoutSession.OrderReferenceNumber"
+    length = 36
+    label = "Order Reference Number"
+    createable = false
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+}

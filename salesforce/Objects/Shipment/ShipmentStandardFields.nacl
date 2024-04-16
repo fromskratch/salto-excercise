@@ -1,0 +1,177 @@
+type salesforce.Shipment {
+  salesforce.Unknown ActualDeliveryDate {
+    apiName = "Shipment.ActualDeliveryDate"
+    _hidden_value = true
+  }
+  salesforce.Lookup DeliveredToId {
+    apiName = "Shipment.DeliveredToId"
+    _hidden_value = true
+  }
+  salesforce.Unknown Description {
+    apiName = "Shipment.Description"
+    _hidden_value = true
+  }
+  salesforce.Lookup DestinationLocationId {
+    apiName = "Shipment.DestinationLocationId"
+    relationshipName = "DestinationLocation"
+    referenceTo = [
+      salesforce.Location,
+    ]
+    label = "Destination Location ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Unknown ExpectedDeliveryDate {
+    apiName = "Shipment.ExpectedDeliveryDate"
+    _hidden_value = true
+  }
+  salesforce.Lookup FulfillmentOrderId {
+    apiName = "Shipment.FulfillmentOrderId"
+    _hidden_value = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "Shipment.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist Provider {
+    apiName = "Shipment.Provider"
+    _hidden_value = true
+  }
+  salesforce.Lookup ReturnOrderId {
+    apiName = "Shipment.ReturnOrderId"
+    _hidden_value = true
+  }
+  salesforce.Unknown ShipFromAddress {
+    apiName = "Shipment.ShipFromAddress"
+    _hidden_value = true
+  }
+  salesforce.Unknown ShipToAddress {
+    apiName = "Shipment.ShipToAddress"
+    _hidden_value = true
+  }
+  salesforce.Text ShipToName {
+    apiName = "Shipment.ShipToName"
+    length = 255
+    _required = true
+    label = "Ship To Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup SourceLocationId {
+    apiName = "Shipment.SourceLocationId"
+    relationshipName = "SourceLocation"
+    referenceTo = [
+      salesforce.Location,
+    ]
+    label = "Source Location ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "Shipment.Status"
+    _hidden_value = true
+  }
+  salesforce.Summary TotalItemsQuantity {
+    apiName = "Shipment.TotalItemsQuantity"
+    label = "Total Items Quantity"
+    precision = 18
+    scale = 2
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Unknown TrackingNumber {
+    apiName = "Shipment.TrackingNumber"
+    _hidden_value = true
+  }
+  salesforce.Unknown TrackingUrl {
+    apiName = "Shipment.TrackingUrl"
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "Shipment.Id"
+    label = "Shipment ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "Shipment.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber ShipmentNumber {
+    apiName = "Shipment.ShipmentNumber"
+    label = "Shipment Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "Shipment.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "Shipment.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "Shipment.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "Shipment.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "Shipment.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

@@ -1,0 +1,122 @@
+type salesforce.CartRelatedItem {
+  serviceid Id {
+    apiName = "CartRelatedItem.Id"
+    label = "Cart Related Item ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "CartRelatedItem.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "CartRelatedItem.Name"
+    length = 255
+    _required = true
+    label = "Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "CartRelatedItem.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "CartRelatedItem.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "CartRelatedItem.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "CartRelatedItem.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "CartRelatedItem.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ParentCartItemId {
+    apiName = "CartRelatedItem.ParentCartItemId"
+    relationshipName = "ParentCartItem"
+    referenceTo = [
+      salesforce.CartItem,
+    ]
+    _required = true
+    label = "Cart Item ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup ChildCartItemId {
+    apiName = "CartRelatedItem.ChildCartItemId"
+    relationshipName = "ChildCartItem"
+    referenceTo = [
+      salesforce.CartItem,
+    ]
+    _required = true
+    label = "Cart Item ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist RelationshipType {
+    apiName = "CartRelatedItem.RelationshipType"
+    valueSet = [
+      {
+        fullName = "Bundle"
+        isActive = true
+        label = "Bundle"
+        default = false
+      },
+      {
+        fullName = "ChargeFor"
+        isActive = true
+        label = "ChargeFor"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Type of relationship between parent and child"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

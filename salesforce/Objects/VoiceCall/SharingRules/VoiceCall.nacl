@@ -1,0 +1,7 @@
+salesforce.SharingRules VoiceCall {
+  fullName = "VoiceCall"
+  _parent = [
+    salesforce.VoiceCall,
+  ]
+  _alias = "VoiceCall"
+}

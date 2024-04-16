@@ -1,0 +1,130 @@
+type salesforce.ResourcePreference {
+  salesforce.Picklist PreferenceType {
+    apiName = "ResourcePreference.PreferenceType"
+    valueSet = [
+      {
+        fullName = "Preferred"
+        isActive = true
+        label = "Preferred"
+        default = true
+      },
+      {
+        fullName = "Required"
+        isActive = true
+        label = "Required"
+        default = false
+      },
+      {
+        fullName = "Excluded"
+        isActive = true
+        label = "Excluded"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Preference Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MasterDetail RelatedRecordId {
+    apiName = "ResourcePreference.RelatedRecordId"
+    relationshipName = "RelatedRecord"
+    referenceTo = [
+      salesforce.Account,
+      salesforce.Asset,
+      salesforce.Location,
+      salesforce.WorkOrder,
+      salesforce.WorkOrderLineItem,
+    ]
+    _required = true
+    label = "Related Record ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.AutoNumber ResourcePreferenceNumber {
+    apiName = "ResourcePreference.ResourcePreferenceNumber"
+    label = "Resource Preference Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ServiceResourceId {
+    apiName = "ResourcePreference.ServiceResourceId"
+    relationshipName = "ServiceResource"
+    referenceTo = [
+      salesforce.ServiceResource,
+    ]
+    _required = true
+    label = "Resource ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ResourcePreference.Id"
+    label = "Resource Preference ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ResourcePreference.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ResourcePreference.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ResourcePreference.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ResourcePreference.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ResourcePreference.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ResourcePreference.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

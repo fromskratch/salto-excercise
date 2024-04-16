@@ -1,0 +1,7 @@
+salesforce.SharingRules ServiceAppointmentAttendee {
+  fullName = "ServiceAppointmentAttendee"
+  _parent = [
+    salesforce.ServiceAppointmentAttendee,
+  ]
+  _alias = "ServiceAppointmentAttendee"
+}

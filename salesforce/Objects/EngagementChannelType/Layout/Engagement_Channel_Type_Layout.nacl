@@ -1,0 +1,68 @@
+salesforce.Layout EngagementChannelType_Engagement_Channel_Type_Layout@bsss {
+  excludeButtons = [
+    "Submit",
+  ]
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.EngagementChannelType.field.Name
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.EngagementChannelType.field.ContactPointType
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.EngagementChannelType.field.IsActive
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.EngagementChannelType.field.OwnerId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.EngagementChannelType.field.UsageType
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsTopToBottom"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Custom Links"
+      style = "CustomLinks"
+    },
+  ]
+  relatedLists = [
+    {
+      fields = [
+        "Name",
+        "Shift",
+      ]
+      relatedList = "ShiftEngagementChannels"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "EngagementChannelType-Engagement Channel Type Layout"
+  _parent = [
+    salesforce.EngagementChannelType,
+  ]
+  _alias = "EngagementChannelType-Engagement Channel Type Layout"
+}

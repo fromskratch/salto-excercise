@@ -1,0 +1,130 @@
+salesforce.Layout GuestUserAnomalyEventStore_Guest_User_Anomaly_Event_Store_Layout@bsssss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = false
+      label = "Event Details"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.GuestUserAnomalyEventStore.field.GuestUserAnomalyEventNumber
+            },
+            {
+              behavior = "Required"
+              field = salesforce.GuestUserAnomalyEventStore.field.EventIdentifier
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.GuestUserAnomalyEventStore.field.Summary
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.GuestUserAnomalyEventStore.field.EventDate
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.GuestUserAnomalyEventStore.field.Score
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = false
+      label = "Event Data"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.GuestUserAnomalyEventStore.field.TotalControllerEvents
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.GuestUserAnomalyEventStore.field.UserAgent
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.GuestUserAnomalyEventStore.field.SoqlCommands
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.GuestUserAnomalyEventStore.field.RequestedEntities
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.GuestUserAnomalyEventStore.field.UserType
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = false
+      label = "System Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.GuestUserAnomalyEventStore.field.UserId
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.GuestUserAnomalyEventStore.field.SourceIp
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  relatedLists = [
+    {
+      fields = [
+        "Name",
+        "Response",
+      ]
+      relatedList = "RelatedFeedback"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "GuestUserAnomalyEventStore-Guest User Anomaly Event Store Layout"
+  _parent = [
+    salesforce.GuestUserAnomalyEventStore,
+  ]
+  _alias = "GuestUserAnomalyEventStore-Guest User Anomaly Event Store Layout"
+}

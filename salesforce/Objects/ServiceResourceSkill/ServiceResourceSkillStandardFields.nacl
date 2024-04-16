@@ -1,0 +1,122 @@
+type salesforce.ServiceResourceSkill {
+  salesforce.DateTime EffectiveEndDate {
+    apiName = "ServiceResourceSkill.EffectiveEndDate"
+    label = "End Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime EffectiveStartDate {
+    apiName = "ServiceResourceSkill.EffectiveStartDate"
+    _required = true
+    label = "Start Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MasterDetail ServiceResourceId {
+    apiName = "ServiceResourceSkill.ServiceResourceId"
+    relationshipName = "ServiceResource"
+    referenceTo = [
+      salesforce.ServiceResource,
+    ]
+    _required = true
+    label = "Resource ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup SkillId {
+    apiName = "ServiceResourceSkill.SkillId"
+    relationshipName = "Skill"
+    referenceTo = [
+      salesforce.Skill,
+    ]
+    _required = true
+    label = "Skill ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number SkillLevel {
+    apiName = "ServiceResourceSkill.SkillLevel"
+    label = "Skill Level"
+    precision = 4
+    scale = 2
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ServiceResourceSkill.Id"
+    label = "Resource Skill ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ServiceResourceSkill.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber SkillNumber {
+    apiName = "ServiceResourceSkill.SkillNumber"
+    label = "Resource Skill Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ServiceResourceSkill.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ServiceResourceSkill.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ServiceResourceSkill.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ServiceResourceSkill.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ServiceResourceSkill.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

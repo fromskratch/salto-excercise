@@ -1,0 +1,137 @@
+type salesforce.ChangeRequestRelatedItem {
+  salesforce.Lookup AssetId {
+    apiName = "ChangeRequestRelatedItem.AssetId"
+    relationshipName = "Asset"
+    referenceTo = [
+      salesforce.Asset,
+    ]
+    _required = true
+    label = "Asset ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.MasterDetail ChangeRequestId {
+    apiName = "ChangeRequestRelatedItem.ChangeRequestId"
+    relationshipName = "ChangeRequest"
+    referenceTo = [
+      salesforce.ChangeRequest,
+    ]
+    _required = true
+    label = "Change Request ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.LongTextArea Comment {
+    apiName = "ChangeRequestRelatedItem.Comment"
+    length = 32000
+    label = "Comment"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist ImpactLevel {
+    apiName = "ChangeRequestRelatedItem.ImpactLevel"
+    restricted = false
+    label = "Impact Level"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.CasePriority
+  }
+  salesforce.AutoNumber Name {
+    apiName = "ChangeRequestRelatedItem.Name"
+    label = "Change Request Related Item Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist RelationshipType {
+    apiName = "ChangeRequestRelatedItem.RelationshipType"
+    valueSet = [
+      {
+        fullName = "Broke Item"
+        isActive = true
+        label = "Broke Item"
+        default = true
+      },
+      {
+        fullName = "Fixed Item"
+        isActive = true
+        label = "Fixed Item"
+        default = false
+      },
+    ]
+    restricted = false
+    _required = true
+    label = "Relationship Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ChangeRequestRelatedItem.Id"
+    label = "Change Request Related Item ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ChangeRequestRelatedItem.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ChangeRequestRelatedItem.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ChangeRequestRelatedItem.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ChangeRequestRelatedItem.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ChangeRequestRelatedItem.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ChangeRequestRelatedItem.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

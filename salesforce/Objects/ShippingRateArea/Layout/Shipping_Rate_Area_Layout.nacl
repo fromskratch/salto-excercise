@@ -1,0 +1,55 @@
+salesforce.Layout ShippingRateArea_Shipping_Rate_Area_Layout@bsss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.ShippingRateArea.field.ShippingRateGroupId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.ShippingRateArea.field.Countries
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.ShippingRateArea.field.Name
+            },
+            {
+              behavior = "Required"
+              field = salesforce.ShippingRateArea.field.Regions
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "ShippingRateArea-Shipping Rate Area Layout"
+  _parent = [
+    salesforce.ShippingRateArea,
+  ]
+  _alias = "ShippingRateArea-Shipping Rate Area Layout"
+}

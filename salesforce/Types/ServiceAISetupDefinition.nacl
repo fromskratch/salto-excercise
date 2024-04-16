@@ -1,0 +1,71 @@
+type salesforce.ServiceAISetupDefinition {
+  annotations {
+    serviceid metadataType {
+    }
+    boolean hasMetaFile {
+    }
+    string folderType {
+    }
+    string folderContentType {
+    }
+    string suffix {
+    }
+    string dirName {
+    }
+  }
+  serviceid fullName {
+  }
+  string appSourceType {
+    _restriction = {
+      enforce_value = false
+      values = [
+        "ARTICLE_RECOMMENDATION",
+        "EAR_FOR_CONVERSATION",
+        "EAR_FOR_VOICE",
+        "FAQ",
+        "FTEST",
+        "REPLY_RECOMMENDATION",
+        "USE_CASE_EXPLORER",
+        "UTTERANCE_RECOMMENDATION",
+      ]
+    }
+  }
+  string name {
+  }
+  string setupStatus {
+    _restriction = {
+      enforce_value = false
+      values = [
+        "ARCHIVED",
+        "FIELDS_SELECTED",
+        "READY_FOR_REVIEW",
+        "READY_TO_ACTIVATE",
+        "RETIRED",
+        "SERVING",
+        "TRAINING",
+        "TRAINING_FAILURE",
+      ]
+    }
+  }
+  string supportedLanguages {
+  }
+  string internalId {
+    _hidden_value = true
+    localOnly = true
+  }
+  suffix = "serviceAISetupDescription"
+  dirName = "serviceAISetupDescriptions"
+  metadataType = "ServiceAISetupDefinition"
+  _important_values = [
+    {
+      value = "fullName"
+      highlighted = true
+      indexed = false
+    },
+    {
+      value = "name"
+      highlighted = true
+      indexed = false
+    },
+  ]
+}

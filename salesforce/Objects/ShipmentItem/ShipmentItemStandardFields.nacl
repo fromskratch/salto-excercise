@@ -1,0 +1,152 @@
+type salesforce.ShipmentItem {
+  salesforce.Text Description {
+    apiName = "ShipmentItem.Description"
+    length = 255
+    label = "Description"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime ExpectedDeliveryDate {
+    apiName = "ShipmentItem.ExpectedDeliveryDate"
+    label = "Expected Delivery Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup FulfillmentOrderLineItemId {
+    apiName = "ShipmentItem.FulfillmentOrderLineItemId"
+    _hidden_value = true
+  }
+  salesforce.Lookup Product2Id {
+    apiName = "ShipmentItem.Product2Id"
+    relationshipName = "Product2"
+    referenceTo = [
+      salesforce.Product2,
+    ]
+    label = "Product ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Quantity {
+    apiName = "ShipmentItem.Quantity"
+    _required = true
+    label = "Quantity"
+    precision = 18
+    scale = 2
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Lookup ReturnOrderLineItemId {
+    apiName = "ShipmentItem.ReturnOrderLineItemId"
+    _hidden_value = true
+  }
+  salesforce.MasterDetail ShipmentId {
+    apiName = "ShipmentItem.ShipmentId"
+    relationshipName = "Shipment"
+    referenceTo = [
+      salesforce.Shipment,
+    ]
+    _required = true
+    label = "Shipment ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.AutoNumber ShipmentItemNumber {
+    apiName = "ShipmentItem.ShipmentItemNumber"
+    label = "Shipment Item Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text TrackingNumber {
+    apiName = "ShipmentItem.TrackingNumber"
+    length = 255
+    label = "Tracking Number"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Url TrackingUrl {
+    apiName = "ShipmentItem.TrackingUrl"
+    label = "Tracking URL"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "ShipmentItem.Id"
+    label = "Shipment Item ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ShipmentItem.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ShipmentItem.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ShipmentItem.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ShipmentItem.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ShipmentItem.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ShipmentItem.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

@@ -1,0 +1,433 @@
+type salesforce.WorkStep {
+  salesforce.Picklist ActionDefinition {
+    apiName = "WorkStep.ActionDefinition"
+    inlineHelpText = "Find and select the associated global action, quick action, screen flow, or mobile flow."
+    valueSet = [
+      {
+        fullName = "cms_orch__CMS_NotifyRequester"
+        isActive = true
+        label = "CMS: Notify Content Author"
+        default = false
+      },
+      {
+        fullName = "cms_orch__CMS_ReviewContent"
+        isActive = true
+        label = "CMS: Review Content"
+        default = false
+      },
+      {
+        fullName = "cms_orch__CMS_ReviseContent"
+        isActive = true
+        label = "CMS: Submit Content for Review"
+        default = false
+      },
+      {
+        fullName = "cms_orch__CMS_WithdrawReviewRequest"
+        isActive = true
+        label = "CMS: Withdraw Review Request"
+        default = false
+      },
+      {
+        fullName = "runtime_payments__GeneratePaymentLink"
+        isActive = true
+        label = "Generate Payment Link"
+        default = false
+      },
+      {
+        fullName = "setup_service_experience__Create_Case"
+        isActive = true
+        label = "Create a Case"
+        default = false
+      },
+      {
+        fullName = "setup_service_experience__Reset_Pwd"
+        isActive = true
+        label = "Reset Password"
+        default = false
+      },
+      {
+        fullName = "setup_service_experience__Verify_Cust"
+        isActive = true
+        label = "Verify Identity"
+        default = false
+      },
+      {
+        fullName = "SendEmail"
+        isActive = true
+        label = "Email"
+        default = false
+      },
+      {
+        fullName = "LogACall"
+        isActive = true
+        label = "Log a Call"
+        default = false
+      },
+      {
+        fullName = "NewAccount"
+        isActive = true
+        label = "New Account"
+        default = false
+      },
+      {
+        fullName = "NewCase"
+        isActive = true
+        label = "New Case"
+        default = false
+      },
+      {
+        fullName = "NewContact"
+        isActive = true
+        label = "New Contact"
+        default = false
+      },
+      {
+        fullName = "_NewQuipDocument"
+        isActive = true
+        label = "New Document"
+        default = false
+      },
+      {
+        fullName = "NewEvent"
+        isActive = true
+        label = "New Event"
+        default = false
+      },
+      {
+        fullName = "NewGroup"
+        isActive = true
+        label = "New Group"
+        default = false
+      },
+      {
+        fullName = "NewLead"
+        isActive = true
+        label = "New Lead"
+        default = false
+      },
+      {
+        fullName = "NewNote"
+        isActive = true
+        label = "New Note"
+        default = false
+      },
+      {
+        fullName = "NewOpportunity"
+        isActive = true
+        label = "New Opportunity"
+        default = false
+      },
+      {
+        fullName = "NewTask"
+        isActive = true
+        label = "New Task"
+        default = false
+      },
+      {
+        fullName = "_SendConversationMessage"
+        isActive = true
+        label = "Send Message"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Action Definition"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist ActionType {
+    apiName = "WorkStep.ActionType"
+    valueSet = [
+      {
+        fullName = "Flow"
+        isActive = true
+        label = "Flow"
+        default = false
+      },
+      {
+        fullName = "QuickAction"
+        isActive = true
+        label = "Quick Action"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Action Type"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "WorkStep.Description"
+    length = 500
+    label = "Description"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime EndTime {
+    apiName = "WorkStep.EndTime"
+    label = "End Time"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number ExecutionOrder {
+    apiName = "WorkStep.ExecutionOrder"
+    label = "Execution Order"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Text Name {
+    apiName = "WorkStep.Name"
+    length = 255
+    _required = true
+    label = "Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup ParentRecordId {
+    apiName = "WorkStep.ParentRecordId"
+    relationshipName = "ParentRecord"
+    referenceTo = [
+      salesforce.ChangeRequest,
+      salesforce.WorkOrder,
+      salesforce.WorkOrderLineItem,
+    ]
+    _required = true
+    label = "Parent Record ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text ParentRecordType {
+    apiName = "WorkStep.ParentRecordType"
+    length = 50
+    label = "Parent Record Type"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup PausedFlowInterviewId {
+    apiName = "WorkStep.PausedFlowInterviewId"
+    relationshipName = "PausedFlowInterview"
+    referenceTo = [
+      "FlowInterview",
+    ]
+    label = "Paused Flow Interview ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime StartTime {
+    apiName = "WorkStep.StartTime"
+    label = "Start Time"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "WorkStep.Status"
+    valueSet = [
+      {
+        fullName = "New"
+        isActive = true
+        label = "New"
+        default = true
+      },
+      {
+        fullName = "In Progress"
+        isActive = true
+        label = "In Progress"
+        default = false
+      },
+      {
+        fullName = "Paused"
+        isActive = true
+        label = "Paused"
+        default = false
+      },
+      {
+        fullName = "Completed"
+        isActive = true
+        label = "Completed"
+        default = false
+      },
+      {
+        fullName = "Not Applicable"
+        isActive = true
+        label = "Not Applicable"
+        default = false
+      },
+    ]
+    restricted = false
+    label = "Status"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist StatusCategory {
+    apiName = "WorkStep.StatusCategory"
+    valueSet = [
+      {
+        fullName = "New"
+        isActive = true
+        label = "New"
+        default = true
+      },
+      {
+        fullName = "InProgress"
+        isActive = true
+        label = "In Progress"
+        default = false
+      },
+      {
+        fullName = "Paused"
+        isActive = true
+        label = "Paused"
+        default = false
+      },
+      {
+        fullName = "Completed"
+        isActive = true
+        label = "Completed"
+        default = false
+      },
+      {
+        fullName = "NotApplicable"
+        isActive = true
+        label = "Not Applicable"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Status Category"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup WorkOrderId {
+    apiName = "WorkStep.WorkOrderId"
+    relationshipName = "WorkOrder"
+    referenceTo = [
+      salesforce.WorkOrder,
+    ]
+    label = "Work Order ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup WorkOrderLineItemId {
+    apiName = "WorkStep.WorkOrderLineItemId"
+    relationshipName = "WorkOrderLineItem"
+    referenceTo = [
+      salesforce.WorkOrderLineItem,
+    ]
+    label = "Work Order Line Item ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number WorkPlanExecutionOrder {
+    apiName = "WorkStep.WorkPlanExecutionOrder"
+    label = "Work Plan Execution Order"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.MasterDetail WorkPlanId {
+    apiName = "WorkStep.WorkPlanId"
+    relationshipName = "WorkPlan"
+    referenceTo = [
+      salesforce.WorkPlan,
+    ]
+    _required = true
+    label = "Work Plan ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "WorkStep.Id"
+    label = "Work Step ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WorkStep.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WorkStep.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WorkStep.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WorkStep.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WorkStep.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WorkStep.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

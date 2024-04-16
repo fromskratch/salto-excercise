@@ -1,0 +1,90 @@
+salesforce.Layout CartTax_Cart_Tax_Layout@bss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.CartTax.field.CartItemId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartTax.field.CartId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartTax.field.CreatedDate
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartTax.field.CartItemPriceAdjustmentId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartTax.field.TaxType
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartTax.field.TaxCalculationDate
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartTax.field.Amount
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartTax.field.TaxRate
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartTax.field.Name
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartTax.field.Description
+            },
+          ]
+        },
+        {
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  miniLayout = {
+    fields = [
+      "CartItemId",
+      "CartId",
+      "CreatedDate",
+      "CartItemPriceAdjustmentId",
+      "TaxType",
+      "TaxCalculationDate",
+      "Amount",
+      "TaxRate",
+      "Name",
+      "Description",
+    ]
+  }
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "CartTax-Cart Tax Layout"
+  _parent = [
+    salesforce.CartTax,
+  ]
+  _alias = "CartTax-Cart Tax Layout"
+}

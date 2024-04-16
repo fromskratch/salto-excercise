@@ -1,0 +1,269 @@
+type salesforce.Entitlement {
+  salesforce.MasterDetail AccountId {
+    apiName = "Entitlement.AccountId"
+    relationshipName = "Account"
+    referenceTo = [
+      salesforce.Account,
+    ]
+    _required = true
+    label = "Account ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup AssetId {
+    apiName = "Entitlement.AssetId"
+    relationshipName = "Asset"
+    referenceTo = [
+      salesforce.Asset,
+    ]
+    label = "Asset ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup BusinessHoursId {
+    apiName = "Entitlement.BusinessHoursId"
+    relationshipName = "BusinessHours"
+    referenceTo = [
+      "BusinessHours",
+    ]
+    label = "Business Hours ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number CasesPerEntitlement {
+    apiName = "Entitlement.CasesPerEntitlement"
+    label = "Cases Per Entitlement"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Lookup ContractLineItemId {
+    apiName = "Entitlement.ContractLineItemId"
+    relationshipName = "ContractLineItem"
+    referenceTo = [
+      salesforce.ContractLineItem,
+    ]
+    label = "Contract Line Item ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Date EndDate {
+    apiName = "Entitlement.EndDate"
+    label = "End Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsPerIncident {
+    apiName = "Entitlement.IsPerIncident"
+    defaultValue = false
+    label = "Per Incident"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup LocationId {
+    apiName = "Entitlement.LocationId"
+    relationshipName = "Location"
+    referenceTo = [
+      salesforce.Location,
+    ]
+    label = "Location ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Name {
+    apiName = "Entitlement.Name"
+    length = 255
+    _required = true
+    label = "Entitlement Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Number RemainingCases {
+    apiName = "Entitlement.RemainingCases"
+    label = "Remaining Cases"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Number RemainingWorkOrders {
+    apiName = "Entitlement.RemainingWorkOrders"
+    label = "Remaining Work Orders"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Lookup ServiceContractId {
+    apiName = "Entitlement.ServiceContractId"
+    relationshipName = "ServiceContract"
+    referenceTo = [
+      salesforce.ServiceContract,
+    ]
+    label = "Service Contract ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup SlaProcessId {
+    apiName = "Entitlement.SlaProcessId"
+    relationshipName = "SlaProcess"
+    referenceTo = [
+      "SlaProcess",
+    ]
+    label = "Entitlement Process ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Date StartDate {
+    apiName = "Entitlement.StartDate"
+    label = "Start Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "Entitlement.Status"
+    valueSet = [
+      {
+        fullName = "Inactive"
+        isActive = true
+        label = "Inactive"
+        default = false
+      },
+      {
+        fullName = "Active"
+        isActive = true
+        label = "Active"
+        default = false
+      },
+      {
+        fullName = "Expired"
+        isActive = true
+        label = "Expired"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Status"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Unknown StatusIndicator {
+    apiName = "Entitlement.StatusIndicator"
+    _hidden_value = true
+  }
+  salesforce.Lookup SvcApptBookingWindowsId {
+    apiName = "Entitlement.SvcApptBookingWindowsId"
+    relationshipName = "SvcApptBookingWindows"
+    referenceTo = [
+      salesforce.OperatingHours,
+    ]
+    label = "Operating Hour ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Type {
+    apiName = "Entitlement.Type"
+    restricted = false
+    label = "Type"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.EntitlementType
+  }
+  salesforce.Number WorkOrdersPerEntitlement {
+    apiName = "Entitlement.WorkOrdersPerEntitlement"
+    label = "Work Orders Per Entitlement"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "Entitlement.Id"
+    label = "Entitlement ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "Entitlement.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "Entitlement.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "Entitlement.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "Entitlement.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "Entitlement.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "Entitlement.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

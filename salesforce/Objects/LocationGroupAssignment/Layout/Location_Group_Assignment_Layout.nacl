@@ -1,0 +1,76 @@
+salesforce.Layout LocationGroupAssignment_Location_Group_Assignment_Layout@bsss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "LocationGroupAssignmentInformation"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.LocationGroupAssignment.field.LocationGroupAssignment
+            },
+            {
+              behavior = "Required"
+              field = salesforce.LocationGroupAssignment.field.LocationId
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.LocationGroupAssignment.field.LocationGroupId
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "System Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.LocationGroupAssignment.field.CreatedById
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.LocationGroupAssignment.field.LastModifiedById
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "LocationGroupAssignment-Location Group Assignment Layout"
+  _parent = [
+    salesforce.LocationGroupAssignment,
+  ]
+  _alias = "LocationGroupAssignment-Location Group Assignment Layout"
+}

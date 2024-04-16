@@ -1,0 +1,9 @@
+salesforce.ListView Waitlist_My_Waitlists {
+  fullName = "Waitlist.My_Waitlists"
+  filterScope = "Mine"
+  label = "My Waitlists"
+  _parent = [
+    salesforce.Waitlist,
+  ]
+  _alias = "My Waitlists"
+}

@@ -1,0 +1,169 @@
+type salesforce.AppointmentScheduleLog {
+  serviceid Id {
+    apiName = "AppointmentScheduleLog.Id"
+    label = "Appointment Schedule Log ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "AppointmentScheduleLog.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "AppointmentScheduleLog.Name"
+    label = "Name"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "AppointmentScheduleLog.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "AppointmentScheduleLog.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "AppointmentScheduleLog.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "AppointmentScheduleLog.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "AppointmentScheduleLog.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup AppointmentScheduleAggrId {
+    apiName = "AppointmentScheduleLog.AppointmentScheduleAggrId"
+    relationshipName = "AppointmentScheduleAggr"
+    referenceTo = [
+      "AppointmentScheduleAggr",
+    ]
+    _required = true
+    label = "Appointment Schedule Aggregate ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup ServiceResourceId {
+    apiName = "AppointmentScheduleLog.ServiceResourceId"
+    relationshipName = "ServiceResource"
+    referenceTo = [
+      salesforce.ServiceResource,
+    ]
+    label = "Resource ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Date AppointmentDate {
+    apiName = "AppointmentScheduleLog.AppointmentDate"
+    label = "Appointment Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup RelatedRecordId {
+    apiName = "AppointmentScheduleLog.RelatedRecordId"
+    relationshipName = "RelatedRecord"
+    referenceTo = [
+      salesforce.Event,
+      salesforce.ResourceAbsence,
+      salesforce.ServiceAppointment,
+    ]
+    label = "Related Record ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number ResourceUtilization {
+    apiName = "AppointmentScheduleLog.ResourceUtilization"
+    label = "Resource Utilization"
+    precision = 18
+    scale = 2
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Checkbox IsUsedForResourceUtilization {
+    apiName = "AppointmentScheduleLog.IsUsedForResourceUtilization"
+    defaultValue = false
+    label = "Used for Resource Utilization"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist UsageType {
+    apiName = "AppointmentScheduleLog.UsageType"
+    valueSet = [
+      {
+        fullName = "LightningScheduler"
+        isActive = true
+        label = "Lightning Scheduler"
+        default = true
+      },
+      {
+        fullName = "FSL_Daily"
+        isActive = true
+        label = "FSL - Daily"
+        default = false
+      },
+      {
+        fullName = "FSL_Weekly"
+        isActive = true
+        label = "FSL - Weekly"
+        default = false
+      },
+      {
+        fullName = "FSL_Monthly"
+        isActive = true
+        label = "FSL - Monthly"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Usage Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

@@ -1,0 +1,7 @@
+salesforce.SharingRules Coupon {
+  fullName = "Coupon"
+  _parent = [
+    salesforce.Coupon,
+  ]
+  _alias = "Coupon"
+}

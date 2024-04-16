@@ -1,0 +1,508 @@
+type salesforce.WebCart {
+  salesforce.Lookup AccountId {
+    apiName = "WebCart.AccountId"
+    relationshipName = "Account"
+    referenceTo = [
+      salesforce.Account,
+    ]
+    label = "Account ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Address BillingAddress {
+    apiName = "WebCart.BillingAddress"
+    label = "Billing Address"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency GrandTotalAmount {
+    apiName = "WebCart.GrandTotalAmount"
+    label = "Grand Total Amount in Cart"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsRepricingNeeded {
+    apiName = "WebCart.IsRepricingNeeded"
+    defaultValue = false
+    label = "Is Repricing Needed"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsSecondary {
+    apiName = "WebCart.IsSecondary"
+    label = "Is Cart Secondary"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime LastRepricingDate {
+    apiName = "WebCart.LastRepricingDate"
+    label = "Last Repricing Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Name {
+    apiName = "WebCart.Name"
+    length = 255
+    _required = true
+    label = "Cart Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup OrderOwnerId {
+    apiName = "WebCart.OrderOwnerId"
+    relationshipName = "OrderOwner"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "User ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "WebCart.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup PaymentGroupId {
+    apiName = "WebCart.PaymentGroupId"
+    relationshipName = "PaymentGroup"
+    referenceTo = [
+      salesforce.PaymentGroup,
+    ]
+    label = "Payment Group ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup PaymentMethodId {
+    apiName = "WebCart.PaymentMethodId"
+    relationshipName = "PaymentMethod"
+    referenceTo = [
+      salesforce.AlternativePaymentMethod,
+      salesforce.CardPaymentMethod,
+      salesforce.DigitalWallet,
+    ]
+    label = "Payment Method ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text PoNumber {
+    apiName = "WebCart.PoNumber"
+    length = 80
+    label = "Purchase Order Number"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "WebCart.Status"
+    valueSet = [
+      {
+        fullName = "Active"
+        isActive = true
+        label = "Active"
+        default = false
+      },
+      {
+        fullName = "Closed"
+        isActive = true
+        label = "Closed"
+        default = false
+      },
+      {
+        fullName = "PendingClosed"
+        isActive = true
+        label = "Pending Closed"
+        default = false
+      },
+      {
+        fullName = "Processing"
+        isActive = true
+        label = "Processing"
+        default = false
+      },
+      {
+        fullName = "Checkout"
+        isActive = true
+        label = "Checkout"
+        default = false
+      },
+      {
+        fullName = "PendingDelete"
+        isActive = true
+        label = "Pending Delete"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Status"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Unknown TaxLocaleType {
+    apiName = "WebCart.TaxLocaleType"
+    _hidden_value = true
+  }
+  salesforce.Picklist TaxType {
+    apiName = "WebCart.TaxType"
+    valueSet = [
+      {
+        fullName = "Net"
+        isActive = true
+        label = "Net"
+        default = false
+      },
+      {
+        fullName = "Gross"
+        isActive = true
+        label = "Gross"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Tax Policy for Cart"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Summary TotalAdjustmentAmount {
+    apiName = "WebCart.TotalAdjustmentAmount"
+    label = "Total Quantity Based and Promotional Adjustment Amount in Cart"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency TotalAmount {
+    apiName = "WebCart.TotalAmount"
+    label = "Total Amount in Cart"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency TotalAmountAfterAllAdjustments {
+    apiName = "WebCart.TotalAmountAfterAllAdjustments"
+    label = "Cart Total Adjusted Price"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalChargeAmount {
+    apiName = "WebCart.TotalChargeAmount"
+    label = "Total Charge Amount in Cart"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalChargeTaxAmount {
+    apiName = "WebCart.TotalChargeTaxAmount"
+    label = "Total Charge Tax Amount in Cart"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalLineItemsWithErrors {
+    apiName = "WebCart.TotalLineItemsWithErrors"
+    label = "Total Line Items with Errors"
+    precision = 9
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalListAmount {
+    apiName = "WebCart.TotalListAmount"
+    label = "Total List Amount in Cart"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalProductAmount {
+    apiName = "WebCart.TotalProductAmount"
+    label = "Total Product Amount in Cart"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalProductCount {
+    apiName = "WebCart.TotalProductCount"
+    label = "Total Quantity in the Cart"
+    precision = 18
+    scale = 0
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalProductLineItemCount {
+    apiName = "WebCart.TotalProductLineItemCount"
+    label = "Total Product Line Item Count"
+    precision = 9
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalProductListAmount {
+    apiName = "WebCart.TotalProductListAmount"
+    label = "Total Product List Amount in Cart"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalProductTaxAmount {
+    apiName = "WebCart.TotalProductTaxAmount"
+    label = "Total Product Tax Amount in Cart"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalPromoAdjustmentAmount {
+    apiName = "WebCart.TotalPromoAdjustmentAmount"
+    label = "Cart Promotions Adjustment"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalPromoAdjustmentTaxAmount {
+    apiName = "WebCart.TotalPromoAdjustmentTaxAmount"
+    label = "Cart Promotions Tax Adjustment"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency TotalTaxAmount {
+    apiName = "WebCart.TotalTaxAmount"
+    label = "Total Tax Amount in Cart"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist Type {
+    apiName = "WebCart.Type"
+    valueSet = [
+      {
+        fullName = "Cart"
+        isActive = true
+        label = "Cart"
+        default = false
+      },
+      {
+        fullName = "Template"
+        isActive = true
+        label = "Template"
+        default = false
+      },
+      {
+        fullName = "ReadOnly"
+        isActive = true
+        label = "Read Only"
+        default = false
+      },
+      {
+        fullName = "PayNowReadOnly"
+        isActive = true
+        label = "Pay Now Read Only"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Summary UniqueProductCount {
+    apiName = "WebCart.UniqueProductCount"
+    label = "Unique Products (SKUs) in the Cart"
+    precision = 9
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup WebStoreId {
+    apiName = "WebCart.WebStoreId"
+    relationshipName = "WebStore"
+    referenceTo = [
+      salesforce.WebStore,
+    ]
+    _required = true
+    label = "Store ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "WebCart.Id"
+    label = "Cart ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WebCart.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WebCart.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WebCart.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WebCart.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WebCart.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WebCart.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Phone GuestPhoneNumber {
+    apiName = "WebCart.GuestPhoneNumber"
+    label = "Phone Number for Guest User"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Email GuestEmailAddress {
+    apiName = "WebCart.GuestEmailAddress"
+    label = "Email address for Guest User"
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Text GuestFirstName {
+    apiName = "WebCart.GuestFirstName"
+    length = 255
+    label = "First Name for Guest User"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text GuestLastName {
+    apiName = "WebCart.GuestLastName"
+    length = 255
+    label = "Last Name for Guest User"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text GuestSecondName {
+    apiName = "WebCart.GuestSecondName"
+    length = 255
+    label = "Second Name for Guest User"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text GuestCompanyName {
+    apiName = "WebCart.GuestCompanyName"
+    length = 255
+    label = "Name of the company"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text InventoryReservationIdentifier {
+    apiName = "WebCart.InventoryReservationIdentifier"
+    length = 255
+    label = "The inventory reservation identifier."
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+}

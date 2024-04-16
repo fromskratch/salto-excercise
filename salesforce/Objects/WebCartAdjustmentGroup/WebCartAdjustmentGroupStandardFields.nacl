@@ -1,0 +1,255 @@
+type salesforce.WebCartAdjustmentGroup {
+  salesforce.Lookup AdjustmentBasisReferenceId {
+    apiName = "WebCartAdjustmentGroup.AdjustmentBasisReferenceId"
+    relationshipName = "AdjustmentBasisReference"
+    referenceTo = [
+      salesforce.Coupon,
+    ]
+    label = "Coupon ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist AdjustmentSource {
+    apiName = "WebCartAdjustmentGroup.AdjustmentSource"
+    valueSet = [
+      {
+        fullName = "System"
+        isActive = true
+        label = "System"
+        default = false
+      },
+      {
+        fullName = "Discretionary"
+        isActive = true
+        label = "Discretionary"
+        default = false
+      },
+      {
+        fullName = "Promotion"
+        isActive = true
+        label = "Promotion"
+        default = false
+      },
+      {
+        fullName = "Rule"
+        isActive = true
+        label = "Rule"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Adjustment Source"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist AdjustmentTargetType {
+    apiName = "WebCartAdjustmentGroup.AdjustmentTargetType"
+    valueSet = [
+      {
+        fullName = "Cart"
+        isActive = true
+        label = "Cart"
+        default = false
+      },
+      {
+        fullName = "Item"
+        isActive = true
+        label = "Item"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Target Type for the Adjustment"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist AdjustmentType {
+    apiName = "WebCartAdjustmentGroup.AdjustmentType"
+    valueSet = [
+      {
+        fullName = "AdjustmentPercentage"
+        isActive = true
+        label = "Percentage"
+        default = false
+      },
+      {
+        fullName = "AdjustmentAmount"
+        isActive = true
+        label = "Amount"
+        default = false
+      },
+      {
+        fullName = "OverrideAmount"
+        isActive = true
+        label = "Override"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Adjustment Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number AdjustmentValue {
+    apiName = "WebCartAdjustmentGroup.AdjustmentValue"
+    _required = true
+    label = "Adjustment Value"
+    precision = 18
+    scale = 2
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.MasterDetail CartId {
+    apiName = "WebCartAdjustmentGroup.CartId"
+    relationshipName = "Cart"
+    referenceTo = [
+      salesforce.WebCart,
+    ]
+    _required = true
+    label = "Cart ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "WebCartAdjustmentGroup.Description"
+    length = 32000
+    label = "Description"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup PriceAdjustmentCauseId {
+    apiName = "WebCartAdjustmentGroup.PriceAdjustmentCauseId"
+    relationshipName = "PriceAdjustmentCause"
+    referenceTo = [
+      salesforce.Promotion,
+    ]
+    _required = true
+    label = "Promotion ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Priority {
+    apiName = "WebCartAdjustmentGroup.Priority"
+    label = "Priority Order for Adjustments"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Currency TaxAmount {
+    apiName = "WebCartAdjustmentGroup.TaxAmount"
+    label = "Tax Amount"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 18
+    queryable = true
+  }
+  salesforce.Currency TotalAmount {
+    apiName = "WebCartAdjustmentGroup.TotalAmount"
+    label = "Total Adjustment Amount"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 18
+    queryable = true
+  }
+  salesforce.Currency TotalAmountWithTax {
+    apiName = "WebCartAdjustmentGroup.TotalAmountWithTax"
+    label = "Total Adjustment Amount With Tax"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "WebCartAdjustmentGroup.Id"
+    label = "Cart Adjustment Group ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WebCartAdjustmentGroup.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "WebCartAdjustmentGroup.Name"
+    length = 255
+    _required = true
+    label = "Cart Adjustment Group Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WebCartAdjustmentGroup.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WebCartAdjustmentGroup.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WebCartAdjustmentGroup.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WebCartAdjustmentGroup.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WebCartAdjustmentGroup.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

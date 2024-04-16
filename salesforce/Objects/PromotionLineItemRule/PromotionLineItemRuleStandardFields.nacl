@@ -1,0 +1,220 @@
+type salesforce.PromotionLineItemRule {
+  salesforce.Lookup AssociatedReferenceId {
+    apiName = "PromotionLineItemRule.AssociatedReferenceId"
+    relationshipName = "AssociatedReference"
+    referenceTo = [
+      salesforce.PromotionQualifier,
+      salesforce.PromotionTarget,
+    ]
+    _required = true
+    label = "Associated Reference ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Picklist AssociatedType {
+    apiName = "PromotionLineItemRule.AssociatedType"
+    valueSet = [
+      {
+        fullName = "PromotionQualifier"
+        isActive = true
+        label = "Promotion Qualifier"
+        default = false
+      },
+      {
+        fullName = "PromotionTarget"
+        isActive = true
+        label = "Promotion Target"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Associated Type"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Picklist OperatorType {
+    apiName = "PromotionLineItemRule.OperatorType"
+    valueSet = [
+      {
+        fullName = "EQUAL_TO"
+        isActive = true
+        label = "Equal to"
+        default = true
+      },
+      {
+        fullName = "NOT_EQUAL_TO"
+        isActive = true
+        label = "Not Equal to"
+        default = false
+      },
+      {
+        fullName = "GREATER_THAN"
+        isActive = true
+        label = "Greater than"
+        default = false
+      },
+      {
+        fullName = "GREATER_THAN_OR_EQUAL_TO"
+        isActive = true
+        label = "Greater than or equal to"
+        default = false
+      },
+      {
+        fullName = "LESS_THAN"
+        isActive = true
+        label = "Less than"
+        default = false
+      },
+      {
+        fullName = "LESS_THAN_OR_EQUAL_TO"
+        isActive = true
+        label = "Less than or equal to"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Operator Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "PromotionLineItemRule.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist Type {
+    apiName = "PromotionLineItemRule.Type"
+    valueSet = [
+      {
+        fullName = "Product"
+        isActive = true
+        label = "Product"
+        default = false
+      },
+      {
+        fullName = "ProductCategory"
+        isActive = true
+        label = "Product Category"
+        default = false
+      },
+      {
+        fullName = "Price"
+        isActive = true
+        label = "Price"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup TypeReferenceId {
+    apiName = "PromotionLineItemRule.TypeReferenceId"
+    relationshipName = "TypeReference"
+    referenceTo = [
+      salesforce.Product2,
+      salesforce.ProductCategory,
+    ]
+    label = "Type Reference ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text TypeValue {
+    apiName = "PromotionLineItemRule.TypeValue"
+    length = 255
+    label = "Type Value"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "PromotionLineItemRule.Id"
+    label = "Promotion Line Item Rule ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "PromotionLineItemRule.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "PromotionLineItemRule.Name"
+    label = "Promotion Line Item Rule Name"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "PromotionLineItemRule.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "PromotionLineItemRule.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "PromotionLineItemRule.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "PromotionLineItemRule.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "PromotionLineItemRule.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

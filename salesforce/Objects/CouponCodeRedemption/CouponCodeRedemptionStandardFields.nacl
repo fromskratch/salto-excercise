@@ -1,0 +1,123 @@
+type salesforce.CouponCodeRedemption {
+  serviceid Id {
+    apiName = "CouponCodeRedemption.Id"
+    label = "Coupon Code Redemption ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "CouponCodeRedemption.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "CouponCodeRedemption.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "CouponCodeRedemption.Name"
+    length = 255
+    _required = true
+    label = "Coupon Code Redemption Number"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "CouponCodeRedemption.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "CouponCodeRedemption.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "CouponCodeRedemption.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "CouponCodeRedemption.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "CouponCodeRedemption.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CouponId {
+    apiName = "CouponCodeRedemption.CouponId"
+    relationshipName = "Coupon"
+    referenceTo = [
+      salesforce.Coupon,
+    ]
+    _required = true
+    label = "Coupon ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text Transaction {
+    apiName = "CouponCodeRedemption.Transaction"
+    length = 255
+    _required = true
+    label = "Transaction"
+    createable = true
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Buyer {
+    apiName = "CouponCodeRedemption.Buyer"
+    length = 255
+    _required = true
+    label = "Buyer"
+    createable = true
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+}

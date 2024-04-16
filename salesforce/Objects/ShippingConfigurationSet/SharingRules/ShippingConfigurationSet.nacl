@@ -1,0 +1,7 @@
+salesforce.SharingRules ShippingConfigurationSet {
+  fullName = "ShippingConfigurationSet"
+  _parent = [
+    salesforce.ShippingConfigurationSet,
+  ]
+  _alias = "ShippingConfigurationSet"
+}

@@ -1,0 +1,9 @@
+salesforce.ListView Location_all_locations {
+  fullName = "Location.all_locations"
+  filterScope = "Everything"
+  label = "All Locations"
+  _parent = [
+    salesforce.Location,
+  ]
+  _alias = "All Locations"
+}

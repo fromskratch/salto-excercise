@@ -1,0 +1,9 @@
+salesforce.ListView EngagementChannelWorkType_All_EngagementChannelWorkTypes {
+  fullName = "EngagementChannelWorkType.All_EngagementChannelWorkTypes"
+  filterScope = "Everything"
+  label = "All Engagement Channel Work Types"
+  _parent = [
+    salesforce.EngagementChannelWorkType,
+  ]
+  _alias = "All Engagement Channel Work Types"
+}

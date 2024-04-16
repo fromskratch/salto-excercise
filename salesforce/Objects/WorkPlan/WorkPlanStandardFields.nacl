@@ -1,0 +1,166 @@
+type salesforce.WorkPlan {
+  salesforce.LongTextArea Description {
+    apiName = "WorkPlan.Description"
+    length = 32000
+    label = "Description"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number ExecutionOrder {
+    apiName = "WorkPlan.ExecutionOrder"
+    label = "Execution Order"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Text Name {
+    apiName = "WorkPlan.Name"
+    length = 255
+    _required = true
+    label = "Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "WorkPlan.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ParentRecordId {
+    apiName = "WorkPlan.ParentRecordId"
+    relationshipName = "ParentRecord"
+    referenceTo = [
+      salesforce.ChangeRequest,
+      salesforce.WorkOrder,
+      salesforce.WorkOrderLineItem,
+    ]
+    _required = true
+    label = "Parent Record ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text ParentRecordType {
+    apiName = "WorkPlan.ParentRecordType"
+    length = 50
+    label = "Parent Record Type"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup WorkOrderId {
+    apiName = "WorkPlan.WorkOrderId"
+    relationshipName = "WorkOrder"
+    referenceTo = [
+      salesforce.WorkOrder,
+    ]
+    label = "Work Order ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup WorkOrderLineItemId {
+    apiName = "WorkPlan.WorkOrderLineItemId"
+    relationshipName = "WorkOrderLineItem"
+    referenceTo = [
+      salesforce.WorkOrderLineItem,
+    ]
+    label = "Work Order Line Item ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup WorkPlanTemplateId {
+    apiName = "WorkPlan.WorkPlanTemplateId"
+    relationshipName = "WorkPlanTemplate"
+    referenceTo = [
+      salesforce.WorkPlanTemplate,
+    ]
+    label = "Work Plan Template ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "WorkPlan.Id"
+    label = "Work Plan ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WorkPlan.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WorkPlan.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WorkPlan.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WorkPlan.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WorkPlan.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WorkPlan.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

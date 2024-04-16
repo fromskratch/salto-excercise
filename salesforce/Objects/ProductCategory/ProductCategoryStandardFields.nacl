@@ -1,0 +1,133 @@
+type salesforce.ProductCategory {
+  salesforce.MasterDetail CatalogId {
+    apiName = "ProductCategory.CatalogId"
+    relationshipName = "Catalog"
+    referenceTo = [
+      salesforce.ProductCatalog,
+    ]
+    _required = true
+    label = "Catalog ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.TextArea Description {
+    apiName = "ProductCategory.Description"
+    label = "Description"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsNavigational {
+    apiName = "ProductCategory.IsNavigational"
+    defaultValue = false
+    label = "Show In Menu"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Name {
+    apiName = "ProductCategory.Name"
+    length = 200
+    _required = true
+    label = "Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Hierarchy ParentCategoryId {
+    apiName = "ProductCategory.ParentCategoryId"
+    relationshipName = "ParentCategory"
+    referenceTo = [
+      salesforce.ProductCategory,
+    ]
+    label = "Category ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number SortOrder {
+    apiName = "ProductCategory.SortOrder"
+    label = "Sort Order"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ProductCategory.Id"
+    label = "Category ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ProductCategory.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ProductCategory.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ProductCategory.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ProductCategory.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ProductCategory.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ProductCategory.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary NumberOfProducts {
+    apiName = "ProductCategory.NumberOfProducts"
+    label = "Number of Products"
+    precision = 9
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

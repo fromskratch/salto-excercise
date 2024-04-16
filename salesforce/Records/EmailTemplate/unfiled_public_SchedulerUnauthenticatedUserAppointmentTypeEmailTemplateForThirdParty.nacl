@@ -1,0 +1,13 @@
+salesforce.EmailTemplate unfiled_public_SchedulerUnauthenticatedUserAppointmentTypeEmailTemplateForThirdParty@zcd {
+  available = true
+  description = "Email template for confirmation of an appointment when appointments are scheduled using appointment types with third party video applications."
+  encodingKey = "ISO-8859-1"
+  name = "Appointment for Unauthenticated User using Appointment Types - For third party."
+  style = "none"
+  subject = "{!Organization.Name}:Appointment Confirmation."
+  type = "custom"
+  uiType = "Aloha"
+  fullName = "unfiled$public/SchedulerUnauthenticatedUserAppointmentTypeEmailTemplateForThirdParty"
+  content = file("salesforce/Records/EmailTemplate/unfiled$public/SchedulerUnauthenticatedUserAppointmentTypeEmailTemplateForThirdParty/SchedulerUnauthenticatedUserAppointmentTypeEmailTemplateForThirdParty.email")
+  _alias = "unfiled$public/SchedulerUnauthenticatedUserAppointmentTypeEmailTemplateForThirdParty"
+}

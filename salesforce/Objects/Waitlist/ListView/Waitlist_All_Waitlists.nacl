@@ -1,0 +1,9 @@
+salesforce.ListView Waitlist_All_Waitlists {
+  fullName = "Waitlist.All_Waitlists"
+  filterScope = "Everything"
+  label = "All Waitlists"
+  _parent = [
+    salesforce.Waitlist,
+  ]
+  _alias = "All Waitlists"
+}

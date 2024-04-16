@@ -1,0 +1,126 @@
+type salesforce.TopicAssignment {
+  serviceid Id {
+    apiName = "TopicAssignment.Id"
+    label = "Topic Assignment ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup TopicId {
+    apiName = "TopicAssignment.TopicId"
+    relationshipName = "Topic"
+    referenceTo = [
+      salesforce.Topic,
+    ]
+    _required = true
+    label = "Topic ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup EntityId {
+    apiName = "TopicAssignment.EntityId"
+    relationshipName = "Entity"
+    referenceTo = [
+      salesforce.Account,
+      salesforce.Asset,
+      salesforce.Campaign,
+      salesforce.Case,
+      salesforce.ChangeRequest,
+      salesforce.Contact,
+      "ContentDocument",
+      salesforce.Contract,
+      salesforce.Event,
+      salesforce.FeedItem,
+      salesforce.Incident,
+      salesforce.Lead,
+      salesforce.Opportunity,
+      salesforce.Order,
+      salesforce.Problem,
+      salesforce.ResourceAbsence,
+      salesforce.ResourcePreference,
+      salesforce.ReturnOrder,
+      salesforce.ReturnOrderLineItem,
+      salesforce.ServiceAppointment,
+      salesforce.ServiceResource,
+      salesforce.ServiceResourceSkill,
+      salesforce.ServiceTerritory,
+      salesforce.ServiceTerritoryMember,
+      salesforce.Shift,
+      salesforce.Shipment,
+      salesforce.Solution,
+      salesforce.Task,
+      salesforce.WorkOrder,
+      salesforce.WorkOrderLineItem,
+      salesforce.WorkPlan,
+      salesforce.WorkPlanTemplate,
+      salesforce.WorkPlanTemplateEntry,
+      salesforce.WorkStep,
+      salesforce.WorkStepTemplate,
+    ]
+    _required = true
+    label = "Entity ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text EntityKeyPrefix {
+    apiName = "TopicAssignment.EntityKeyPrefix"
+    length = 3
+    _required = true
+    label = "Record Key Prefix"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text EntityType {
+    apiName = "TopicAssignment.EntityType"
+    length = 80
+    label = "Object Type"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "TopicAssignment.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "TopicAssignment.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "TopicAssignment.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "TopicAssignment.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

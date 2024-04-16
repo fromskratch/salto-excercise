@@ -1,0 +1,108 @@
+type salesforce.OperatingHoursHoliday {
+  salesforce.Text DateAndTime {
+    apiName = "OperatingHoursHoliday.DateAndTime"
+    length = 255
+    label = "Date and Time"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup HolidayId {
+    apiName = "OperatingHoursHoliday.HolidayId"
+    relationshipName = "Holiday"
+    referenceTo = [
+      salesforce.Holiday,
+    ]
+    _required = true
+    label = "Holiday ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MasterDetail OperatingHoursId {
+    apiName = "OperatingHoursHoliday.OperatingHoursId"
+    relationshipName = "OperatingHours"
+    referenceTo = [
+      salesforce.OperatingHours,
+    ]
+    _required = true
+    label = "Operating Hour ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "OperatingHoursHoliday.Id"
+    label = "Operating Hour ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "OperatingHoursHoliday.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber OperatingHoursHolidayNumber {
+    apiName = "OperatingHoursHoliday.OperatingHoursHolidayNumber"
+    label = "Operating Hours Holiday Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "OperatingHoursHoliday.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "OperatingHoursHoliday.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "OperatingHoursHoliday.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "OperatingHoursHoliday.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "OperatingHoursHoliday.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

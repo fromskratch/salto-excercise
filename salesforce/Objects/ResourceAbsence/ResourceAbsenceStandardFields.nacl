@@ -1,0 +1,152 @@
+type salesforce.ResourceAbsence {
+  salesforce.Address Address {
+    apiName = "ResourceAbsence.Address"
+    label = "Address"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "ResourceAbsence.Description"
+    length = 32000
+    label = "Description"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime End {
+    apiName = "ResourceAbsence.End"
+    _required = true
+    label = "End Time"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MasterDetail ResourceId {
+    apiName = "ResourceAbsence.ResourceId"
+    relationshipName = "Resource"
+    referenceTo = [
+      salesforce.ServiceResource,
+    ]
+    _required = true
+    label = "Resource ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime Start {
+    apiName = "ResourceAbsence.Start"
+    _required = true
+    label = "Start Time"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Type {
+    apiName = "ResourceAbsence.Type"
+    valueSet = [
+      {
+        fullName = "Vacation"
+        isActive = true
+        label = "Vacation"
+        default = true
+      },
+      {
+        fullName = "Meeting"
+        isActive = true
+        label = "Meeting"
+        default = false
+      },
+      {
+        fullName = "Training"
+        isActive = true
+        label = "Training"
+        default = false
+      },
+      {
+        fullName = "Medical"
+        isActive = true
+        label = "Medical"
+        default = false
+      },
+    ]
+    restricted = false
+    _required = true
+    label = "Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ResourceAbsence.Id"
+    label = "Absence ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ResourceAbsence.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber AbsenceNumber {
+    apiName = "ResourceAbsence.AbsenceNumber"
+    label = "Absence Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ResourceAbsence.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ResourceAbsence.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ResourceAbsence.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ResourceAbsence.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ResourceAbsence.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

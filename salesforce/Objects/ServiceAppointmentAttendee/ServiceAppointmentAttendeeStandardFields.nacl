@@ -1,0 +1,123 @@
+type salesforce.ServiceAppointmentAttendee {
+  salesforce.Lookup AttendeeId {
+    apiName = "ServiceAppointmentAttendee.AttendeeId"
+    relationshipName = "Attendee"
+    referenceTo = [
+      salesforce.Account,
+      salesforce.Contact,
+      salesforce.Lead,
+    ]
+    label = "Attendee ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Email Email {
+    apiName = "ServiceAppointmentAttendee.Email"
+    label = "Email"
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Lookup ServiceAppointmentId {
+    apiName = "ServiceAppointmentAttendee.ServiceAppointmentId"
+    relationshipName = "ServiceAppointment"
+    referenceTo = [
+      salesforce.ServiceAppointment,
+    ]
+    _required = true
+    label = "Service Appointment ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Unknown Status {
+    apiName = "ServiceAppointmentAttendee.Status"
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "ServiceAppointmentAttendee.Id"
+    label = "Service Appointment Attendee ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "ServiceAppointmentAttendee.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ServiceAppointmentAttendee.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber AttendeeIdentifier {
+    apiName = "ServiceAppointmentAttendee.AttendeeIdentifier"
+    label = "Attendee Identifier"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ServiceAppointmentAttendee.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ServiceAppointmentAttendee.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ServiceAppointmentAttendee.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ServiceAppointmentAttendee.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ServiceAppointmentAttendee.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

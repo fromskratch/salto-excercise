@@ -1,0 +1,21 @@
+salesforce.ListView ServiceAppointment_All_ServiceAppointments {
+  fullName = "ServiceAppointment.All_ServiceAppointments"
+  columns = [
+    "Name",
+    "SchedStartTime",
+    "SchedEndTime",
+    "ServiceTerritory",
+    "Status",
+    "WorkTypeName",
+    "WorkType",
+    "AdditionalInformation",
+    "Account",
+    "ParentRecord",
+  ]
+  filterScope = "Everything"
+  label = "All Service Appointments"
+  _parent = [
+    salesforce.ServiceAppointment,
+  ]
+  _alias = "All Service Appointments"
+}

@@ -1,0 +1,50 @@
+type salesforce.ProductAttributeSet {
+  annotations {
+    serviceid metadataType {
+    }
+    boolean hasMetaFile {
+    }
+    string folderType {
+    }
+    string folderContentType {
+    }
+    string suffix {
+    }
+    string dirName {
+    }
+  }
+  serviceid fullName {
+  }
+  string description {
+  }
+  string developerName {
+  }
+  string masterLabel {
+  }
+  salesforce.ProductAttributeSetItem productAttributeSetItems {
+  }
+  string internalId {
+    _hidden_value = true
+    localOnly = true
+  }
+  suffix = "productAttributeSet"
+  dirName = "productAttributeSets"
+  metadataType = "ProductAttributeSet"
+  _important_values = [
+    {
+      value = "fullName"
+      highlighted = true
+      indexed = false
+    },
+    {
+      value = "masterLabel"
+      highlighted = true
+      indexed = false
+    },
+    {
+      value = "description"
+      highlighted = true
+      indexed = false
+    },
+  ]
+}

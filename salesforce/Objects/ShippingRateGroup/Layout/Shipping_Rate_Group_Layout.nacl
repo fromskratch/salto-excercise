@@ -1,0 +1,41 @@
+salesforce.Layout ShippingRateGroup_Shipping_Rate_Group_Layout@bsss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.ShippingRateGroup.field.ShippingProfileId
+            },
+          ]
+        },
+        {
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "ShippingRateGroup-Shipping Rate Group Layout"
+  _parent = [
+    salesforce.ShippingRateGroup,
+  ]
+  _alias = "ShippingRateGroup-Shipping Rate Group Layout"
+}

@@ -1,0 +1,7 @@
+salesforce.CommerceSettings {
+  fullName = "Commerce"
+  commerceConciergeEnabled = "false"
+  commerceDiscoveryExpansion = "false"
+  commerceEnabled = "false"
+  _alias = "Commerce"
+}

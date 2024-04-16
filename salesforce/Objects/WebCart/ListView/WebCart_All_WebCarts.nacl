@@ -1,0 +1,29 @@
+salesforce.ListView WebCart_All_WebCarts {
+  fullName = "WebCart.All_WebCarts"
+  columns = [
+    "Name",
+    "CreatedDate",
+    "GrandTotalAmount",
+    "Status",
+    "Owner",
+    "Account",
+  ]
+  filterScope = "Everything"
+  filters = [
+    {
+      field = "Status"
+      operation = "equals"
+      value = "A"
+    },
+    {
+      field = "Type"
+      operation = "equals"
+      value = "C"
+    },
+  ]
+  label = "All Active Carts"
+  _parent = [
+    salesforce.WebCart,
+  ]
+  _alias = "All Active Carts"
+}

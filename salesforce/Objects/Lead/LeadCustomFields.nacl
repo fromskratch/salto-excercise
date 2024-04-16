@@ -1,0 +1,87 @@
+type salesforce.Lead {
+  salesforce.Text CurrentGenerators__c {
+    apiName = "Lead.CurrentGenerators__c"
+    externalId = false
+    label = "Current Generator(s)"
+    length = 100
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Number NumberofLocations__c {
+    apiName = "Lead.NumberofLocations__c"
+    externalId = false
+    label = "Number of Locations"
+    precision = 3
+    scale = 0
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Primary__c {
+    apiName = "Lead.Primary__c"
+    externalId = false
+    label = "Primary"
+    valueSet = [
+      {
+        fullName = "No"
+        default = false
+        label = "No"
+      },
+      {
+        fullName = "Yes"
+        default = false
+        label = "Yes"
+      },
+    ]
+    sorted = false
+    restricted = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist ProductInterest__c {
+    apiName = "Lead.ProductInterest__c"
+    externalId = false
+    label = "Product Interest"
+    valueSet = [
+      {
+        fullName = "GC1000 series"
+        default = false
+        label = "GC1000 series"
+      },
+      {
+        fullName = "GC5000 series"
+        default = false
+        label = "GC5000 series"
+      },
+      {
+        fullName = "GC3000 series"
+        default = false
+        label = "GC3000 series"
+      },
+    ]
+    sorted = false
+    restricted = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text SICCode__c {
+    apiName = "Lead.SICCode__c"
+    externalId = false
+    label = "SIC Code"
+    length = 15
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text score {
+     length = 4
+  }
+}

@@ -1,0 +1,128 @@
+type salesforce.WaitlistServiceResource {
+  salesforce.Picklist AccessLevel {
+    apiName = "WaitlistServiceResource.AccessLevel"
+    valueSet = [
+      {
+        fullName = "Default"
+        isActive = true
+        label = "Default"
+        default = true
+      },
+      {
+        fullName = "Enhanced"
+        isActive = true
+        label = "Enhanced"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Access Level"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsAvailable {
+    apiName = "WaitlistServiceResource.IsAvailable"
+    defaultValue = false
+    label = "Available"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MasterDetail ServiceResourceId {
+    apiName = "WaitlistServiceResource.ServiceResourceId"
+    relationshipName = "ServiceResource"
+    referenceTo = [
+      salesforce.ServiceResource,
+    ]
+    _required = true
+    label = "Resource ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.MasterDetail WaitlistId {
+    apiName = "WaitlistServiceResource.WaitlistId"
+    relationshipName = "Waitlist"
+    referenceTo = [
+      salesforce.Waitlist,
+    ]
+    _required = true
+    label = "Waitlist ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "WaitlistServiceResource.Id"
+    label = "Waitlist Service Resource ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WaitlistServiceResource.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "WaitlistServiceResource.Name"
+    label = "Name"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WaitlistServiceResource.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WaitlistServiceResource.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WaitlistServiceResource.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WaitlistServiceResource.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WaitlistServiceResource.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

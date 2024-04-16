@@ -1,0 +1,130 @@
+type salesforce.ProductCategoryProduct {
+  salesforce.Checkbox IsPrimaryCategory {
+    apiName = "ProductCategoryProduct.IsPrimaryCategory"
+    defaultValue = false
+    label = "Is Primary Category"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MasterDetail ProductCategoryId {
+    apiName = "ProductCategoryProduct.ProductCategoryId"
+    relationshipName = "ProductCategory"
+    referenceTo = [
+      salesforce.ProductCategory,
+    ]
+    _required = true
+    label = "Category ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup ProductId {
+    apiName = "ProductCategoryProduct.ProductId"
+    relationshipName = "Product"
+    referenceTo = [
+      salesforce.Product2,
+    ]
+    _required = true
+    label = "Product ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ProductCategoryProduct.Id"
+    label = "Product Category Product ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ProductCategoryProduct.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "ProductCategoryProduct.Name"
+    label = "Name"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ProductCategoryProduct.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ProductCategoryProduct.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ProductCategoryProduct.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ProductCategoryProduct.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ProductCategoryProduct.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CatalogId {
+    apiName = "ProductCategoryProduct.CatalogId"
+    relationshipName = "Catalog"
+    referenceTo = [
+      salesforce.ProductCatalog,
+    ]
+    _required = true
+    label = "Catalog ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text ProductToCategory {
+    apiName = "ProductCategoryProduct.ProductToCategory"
+    length = 30
+    _required = true
+    label = "Product/Category Concatenation"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+}

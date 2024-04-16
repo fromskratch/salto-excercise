@@ -1,0 +1,159 @@
+type salesforce.InventoryItemReservation {
+  salesforce.Text ErrorCode {
+    apiName = "InventoryItemReservation.ErrorCode"
+    length = 255
+    label = "Error Code"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.LongTextArea ErrorMessage {
+    apiName = "InventoryItemReservation.ErrorMessage"
+    length = 2000
+    label = "Error Message"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MasterDetail InventoryReservationId {
+    apiName = "InventoryItemReservation.InventoryReservationId"
+    relationshipName = "InventoryReservation"
+    referenceTo = [
+      salesforce.InventoryReservation,
+    ]
+    _required = true
+    label = "Inventory Reservation ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup ItemReservationSourceId {
+    apiName = "InventoryItemReservation.ItemReservationSourceId"
+    relationshipName = "ItemReservationSource"
+    referenceTo = [
+      salesforce.CartItem,
+    ]
+    label = "Item Reservation Source ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup ProductId {
+    apiName = "InventoryItemReservation.ProductId"
+    relationshipName = "Product"
+    referenceTo = [
+      salesforce.Product2,
+    ]
+    _required = true
+    label = "Product ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Number Quantity {
+    apiName = "InventoryItemReservation.Quantity"
+    _required = true
+    label = "Quantity"
+    precision = 18
+    scale = 0
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Lookup ReservedAtLocationId {
+    apiName = "InventoryItemReservation.ReservedAtLocationId"
+    relationshipName = "ReservedAtLocation"
+    referenceTo = [
+      salesforce.Location,
+      salesforce.LocationGroup,
+    ]
+    label = "Reserved At Location ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "InventoryItemReservation.Id"
+    label = "Inventory Item Reservation ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "InventoryItemReservation.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber InventoryItemReservationName {
+    apiName = "InventoryItemReservation.InventoryItemReservationName"
+    label = "Inventory Item Reservation Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "InventoryItemReservation.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "InventoryItemReservation.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "InventoryItemReservation.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "InventoryItemReservation.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "InventoryItemReservation.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text StockKeepingUnit {
+    apiName = "InventoryItemReservation.StockKeepingUnit"
+    length = 255
+    label = "Stock Keeping Unit"
+    createable = true
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+}

@@ -1,0 +1,97 @@
+salesforce.Layout WorkPlanTemplateEntry_Work_Plan_Template_Entry_Layout@bssss {
+  excludeButtons = [
+    "Submit",
+  ]
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.WorkPlanTemplateEntry.field.WorkPlanTemplateEntryNumber
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WorkPlanTemplateEntry.field.WorkStepTemplateId
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.WorkPlanTemplateEntry.field.WorkPlanTemplateId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.WorkPlanTemplateEntry.field.ExecutionOrder
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "System Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.WorkPlanTemplateEntry.field.CreatedById
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.WorkPlanTemplateEntry.field.LastModifiedById
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Custom Links"
+      style = "CustomLinks"
+    },
+  ]
+  relatedLists = [
+    {
+      relatedList = "RelatedEntityHistoryList"
+    },
+    {
+      fields = [
+        "TASK.SUBJECT",
+        "TASK.WHO_NAME",
+        "ACTIVITY.TASK",
+        "TASK.DUE_DATE",
+        "TASK.STATUS",
+        "TASK.PRIORITY",
+        "CORE.USERS.FULL_NAME",
+      ]
+      relatedList = "RelatedActivityList"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "WorkPlanTemplateEntry-Work Plan Template Entry Layout"
+  _parent = [
+    salesforce.WorkPlanTemplateEntry,
+  ]
+  _alias = "WorkPlanTemplateEntry-Work Plan Template Entry Layout"
+}

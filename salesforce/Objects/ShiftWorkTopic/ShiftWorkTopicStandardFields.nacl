@@ -1,0 +1,125 @@
+type salesforce.ShiftWorkTopic {
+  salesforce.Checkbox AreAllTopicsSupported {
+    apiName = "ShiftWorkTopic.AreAllTopicsSupported"
+    defaultValue = false
+    label = "All Topics Supported"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number MaxAppointments {
+    apiName = "ShiftWorkTopic.MaxAppointments"
+    label = "Maximum Appointment"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.MasterDetail ShiftId {
+    apiName = "ShiftWorkTopic.ShiftId"
+    relationshipName = "Shift"
+    referenceTo = [
+      salesforce.Shift,
+    ]
+    _required = true
+    label = "Shift ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup WorkTypeGroupId {
+    apiName = "ShiftWorkTopic.WorkTypeGroupId"
+    relationshipName = "WorkTypeGroup"
+    referenceTo = [
+      salesforce.WorkTypeGroup,
+    ]
+    label = "Work Type Group ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup WorkTypeId {
+    apiName = "ShiftWorkTopic.WorkTypeId"
+    relationshipName = "WorkType"
+    referenceTo = [
+      salesforce.WorkType,
+    ]
+    label = "Work Type ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ShiftWorkTopic.Id"
+    label = "Shift Work Topic ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ShiftWorkTopic.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "ShiftWorkTopic.Name"
+    label = "Name"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ShiftWorkTopic.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ShiftWorkTopic.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ShiftWorkTopic.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ShiftWorkTopic.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ShiftWorkTopic.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

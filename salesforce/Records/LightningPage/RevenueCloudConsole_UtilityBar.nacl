@@ -1,0 +1,30 @@
+salesforce.LightningPage RevenueCloudConsole_UtilityBar {
+  description = "The default utility bar for the Subscription Management application."
+  flexiPageRegions = [
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentName = "console:history"
+            identifier = "console_history"
+          }
+        },
+        {
+          componentInstance = {
+            componentName = "notes:utilityBarNoteList"
+            identifier = "notes_utilityBarNoteList"
+          }
+        },
+      ]
+      name = "utilityItems"
+      type = "Region"
+    },
+  ]
+  masterLabel = "Subscription Management App Utility Bar"
+  template = {
+    name = "one:utilityBarTemplateDesktop"
+  }
+  type = "UtilityBar"
+  fullName = "RevenueCloudConsole_UtilityBar"
+  _alias = "RevenueCloudConsole_UtilityBar"
+}

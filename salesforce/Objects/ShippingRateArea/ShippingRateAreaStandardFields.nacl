@@ -1,0 +1,104 @@
+type salesforce.ShippingRateArea {
+  serviceid Id {
+    apiName = "ShippingRateArea.Id"
+    label = "ShippingZone ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ShippingRateArea.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "ShippingRateArea.Name"
+    length = 255
+    _required = true
+    label = "ShippingZone Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ShippingRateArea.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ShippingRateArea.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ShippingRateArea.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ShippingRateArea.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ShippingRateArea.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ShippingRateGroupId {
+    apiName = "ShippingRateArea.ShippingRateGroupId"
+    relationshipName = "ShippingRateGroup"
+    referenceTo = [
+      salesforce.ShippingRateGroup,
+    ]
+    _required = true
+    label = "ShippingRateGroup ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.LongTextArea Countries {
+    apiName = "ShippingRateArea.Countries"
+    length = 2000
+    label = "Countries"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Regions {
+    apiName = "ShippingRateArea.Regions"
+    length = 8000
+    label = "Regions"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

@@ -1,0 +1,9 @@
+salesforce.ListView LocationGroup_LocationGroup {
+  fullName = "LocationGroup.LocationGroup"
+  filterScope = "Everything"
+  label = "All"
+  _parent = [
+    salesforce.LocationGroup,
+  ]
+  _alias = "All"
+}

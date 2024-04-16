@@ -1,0 +1,55 @@
+salesforce.Layout CartDeliveryGroupMethod_Cart_Delivery_Group_Method_Layout@bssss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.CartDeliveryGroupMethod.field.CartCheckoutSessionId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartDeliveryGroupMethod.field.CartDeliveryGroupId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.CartDeliveryGroupMethod.field.WebCartId
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.CartDeliveryGroupMethod.field.ShippingFee
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "CartDeliveryGroupMethod-Cart Delivery Group Method Layout"
+  _parent = [
+    salesforce.CartDeliveryGroupMethod,
+  ]
+  _alias = "CartDeliveryGroupMethod-Cart Delivery Group Method Layout"
+}

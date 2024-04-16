@@ -1,0 +1,7 @@
+salesforce.SharingRules Incident {
+  fullName = "Incident"
+  _parent = [
+    salesforce.Incident,
+  ]
+  _alias = "Incident"
+}

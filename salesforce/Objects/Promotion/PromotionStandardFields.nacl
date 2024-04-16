@@ -1,0 +1,281 @@
+type salesforce.Promotion {
+  salesforce.Unknown AreQualItemsExclFromDiscounts {
+    apiName = "Promotion.AreQualItemsExclFromDiscounts"
+    _hidden_value = true
+  }
+  salesforce.Lookup CampaignId {
+    apiName = "Promotion.CampaignId"
+    relationshipName = "Campaign"
+    referenceTo = [
+      salesforce.Campaign,
+    ]
+    label = "Campaign ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "Promotion.Description"
+    length = 1000
+    label = "Description"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Unknown DiscountOrder {
+    apiName = "Promotion.DiscountOrder"
+    inlineHelpText = "Select whether to apply discounts to the most expensive or least expensive products first."
+    _hidden_value = true
+  }
+  salesforce.Unknown DiscountRestriction {
+    apiName = "Promotion.DiscountRestriction"
+    inlineHelpText = "Restrict which products can be discounted."
+    _hidden_value = true
+  }
+  salesforce.Text DisplayName {
+    apiName = "Promotion.DisplayName"
+    length = 255
+    label = "Display Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime EndDateTime {
+    apiName = "Promotion.EndDateTime"
+    label = "End Datetime"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist ExclusivityType {
+    apiName = "Promotion.ExclusivityType"
+    inlineHelpText = "To combine the promotion with other promotions, select No. To prevent combining the promotion with promotions of the same class, select Class. To let it be the only promotion used for an entire order, select Global."
+    valueSet = [
+      {
+        fullName = "No"
+        isActive = true
+        label = "No"
+        default = false
+      },
+      {
+        fullName = "Class"
+        isActive = true
+        label = "Class"
+        default = true
+      },
+      {
+        fullName = "Global"
+        isActive = true
+        label = "Global"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Exclusivity Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsActive {
+    apiName = "Promotion.IsActive"
+    defaultValue = false
+    label = "Active"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsAutomatic {
+    apiName = "Promotion.IsAutomatic"
+    defaultValue = false
+    label = "Automatic"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsCommercePromotion {
+    apiName = "Promotion.IsCommercePromotion"
+    defaultValue = false
+    label = "Commerce Promotion"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsQualCriteriaNotRequiredPerApplication {
+    apiName = "Promotion.IsQualCriteriaNotRequiredPerApplication"
+    defaultValue = false
+    label = "Qualifying Criteria Not Required Per Application"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsTiered {
+    apiName = "Promotion.IsTiered"
+    inlineHelpText = "This setting is permanent and can't be changed after the promotion is saved. Create a new promotion instead."
+    defaultValue = false
+    label = "Tiered Promotion"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Number MaximumUsageCount {
+    apiName = "Promotion.MaximumUsageCount"
+    inlineHelpText = "Enter the maximum number of times this promotion can apply to a cart. The default value is 1."
+    label = "Maximum Applications Per Cart"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Text Name {
+    apiName = "Promotion.Name"
+    length = 255
+    _required = true
+    label = "Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.LongTextArea Objective {
+    apiName = "Promotion.Objective"
+    length = 1000
+    label = "Objective"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "Promotion.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number PriorityNumber {
+    apiName = "Promotion.PriorityNumber"
+    label = "Priority Number"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Picklist QualifierCriteria {
+    apiName = "Promotion.QualifierCriteria"
+    inlineHelpText = "Define whether a cart must meet the criteria for any qualifier or all qualifiers"
+    valueSet = [
+      {
+        fullName = "All"
+        isActive = true
+        label = "All"
+        default = false
+      },
+      {
+        fullName = "Any"
+        isActive = true
+        label = "Any"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Qualifier Criteria"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime StartDateTime {
+    apiName = "Promotion.StartDateTime"
+    label = "Start Datetime"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Unknown TargetCriteria {
+    apiName = "Promotion.TargetCriteria"
+    inlineHelpText = "Define whether a cart must meet the criteria for any target or all targets."
+    _hidden_value = true
+  }
+  salesforce.Html TermsAndConditions {
+    apiName = "Promotion.TermsAndConditions"
+    length = 4000
+    label = "Terms and Conditions"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "Promotion.Id"
+    label = "Promotion ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "Promotion.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "Promotion.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "Promotion.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "Promotion.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "Promotion.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "Promotion.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

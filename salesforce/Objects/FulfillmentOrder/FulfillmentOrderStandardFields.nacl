@@ -1,0 +1,585 @@
+type salesforce.FulfillmentOrder {
+  salesforce.Lookup AccountId {
+    apiName = "FulfillmentOrder.AccountId"
+    relationshipName = "Account"
+    referenceTo = [
+      salesforce.Account,
+    ]
+    label = "Account ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup BillToContactId {
+    apiName = "FulfillmentOrder.BillToContactId"
+    relationshipName = "BillToContact"
+    referenceTo = [
+      salesforce.Contact,
+    ]
+    label = "Contact ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup FulfilledFromLocationId {
+    apiName = "FulfillmentOrder.FulfilledFromLocationId"
+    relationshipName = "FulfilledFromLocation"
+    referenceTo = [
+      salesforce.Location,
+    ]
+    label = "Fulfilled From Location ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Email FulfilledToEmailAddress {
+    apiName = "FulfillmentOrder.FulfilledToEmailAddress"
+    label = "Fulfilled To Email Address"
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Text FulfilledToName {
+    apiName = "FulfillmentOrder.FulfilledToName"
+    length = 255
+    _required = true
+    label = "Order Recipient"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Phone FulfilledToPhone {
+    apiName = "FulfillmentOrder.FulfilledToPhone"
+    label = "Fulfilled To Phone"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Summary GrandTotalAmount {
+    apiName = "FulfillmentOrder.GrandTotalAmount"
+    label = "Total with Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup InvoiceId {
+    apiName = "FulfillmentOrder.InvoiceId"
+    relationshipName = "Invoice"
+    referenceTo = [
+      salesforce.Invoice,
+    ]
+    label = "Invoice ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsReship {
+    apiName = "FulfillmentOrder.IsReship"
+    defaultValue = false
+    label = "Reship"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsSuspended {
+    apiName = "FulfillmentOrder.IsSuspended"
+    defaultValue = false
+    label = "Is Suspended"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Summary ItemCount {
+    apiName = "FulfillmentOrder.ItemCount"
+    label = "Total Quantity"
+    precision = 18
+    scale = 0
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist Status {
+    apiName = "FulfillmentOrder.Status"
+    valueSet = [
+      {
+        fullName = "Draft"
+        isActive = true
+        label = "Draft"
+        default = false
+      },
+      {
+        fullName = "Allocated"
+        isActive = true
+        label = "Allocated"
+        default = false
+      },
+      {
+        fullName = "Assigned"
+        isActive = true
+        label = "Assigned"
+        default = false
+      },
+      {
+        fullName = "Pickpack"
+        isActive = true
+        label = "Pickpack"
+        default = false
+      },
+      {
+        fullName = "Fulfilled"
+        isActive = true
+        label = "Fulfilled"
+        default = false
+      },
+      {
+        fullName = "Cancelled"
+        isActive = true
+        label = "Cancelled"
+        default = false
+      },
+      {
+        fullName = "Rejected"
+        isActive = true
+        label = "Rejected"
+        default = false
+      },
+      {
+        fullName = "Printed"
+        isActive = true
+        label = "Printed"
+        default = false
+      },
+      {
+        fullName = "Pick Complete"
+        isActive = true
+        label = "Pick Complete"
+        default = false
+      },
+      {
+        fullName = "Pack Complete"
+        isActive = true
+        label = "Pack Complete"
+        default = false
+      },
+    ]
+    restricted = false
+    _required = true
+    label = "Status"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist TaxLocaleType {
+    apiName = "FulfillmentOrder.TaxLocaleType"
+    valueSet = [
+      {
+        fullName = "Net"
+        isActive = true
+        label = "Net"
+        default = false
+      },
+      {
+        fullName = "Gross"
+        isActive = true
+        label = "Gross"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Tax Locale Type"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Summary TotalAdjustmentAmount {
+    apiName = "FulfillmentOrder.TotalAdjustmentAmount"
+    label = "Product Adjustments"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalAdjustmentAmtWithTax {
+    apiName = "FulfillmentOrder.TotalAdjustmentAmtWithTax"
+    label = "Product Adjustments with Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalAdjustmentTaxAmount {
+    apiName = "FulfillmentOrder.TotalAdjustmentTaxAmount"
+    label = "Product Adjustments Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalAmount {
+    apiName = "FulfillmentOrder.TotalAmount"
+    label = "Pretax Total"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalDeliveryAdjustAmount {
+    apiName = "FulfillmentOrder.TotalDeliveryAdjustAmount"
+    label = "Shipping Adjustments"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalDeliveryAdjustAmtWithTax {
+    apiName = "FulfillmentOrder.TotalDeliveryAdjustAmtWithTax"
+    label = "Shipping Adjustments with Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalDeliveryAdjustTaxAmount {
+    apiName = "FulfillmentOrder.TotalDeliveryAdjustTaxAmount"
+    label = "Shipping Adjustments Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalDeliveryAmount {
+    apiName = "FulfillmentOrder.TotalDeliveryAmount"
+    label = "Shipping Subtotal"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalDeliveryAmtWithTax {
+    apiName = "FulfillmentOrder.TotalDeliveryAmtWithTax"
+    label = "Shipping Subtotal with Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalDeliveryTaxAmount {
+    apiName = "FulfillmentOrder.TotalDeliveryTaxAmount"
+    label = "Shipping Subtotal Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalProductAmount {
+    apiName = "FulfillmentOrder.TotalProductAmount"
+    label = "Product Subtotal"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalProductAmtWithTax {
+    apiName = "FulfillmentOrder.TotalProductAmtWithTax"
+    label = "Product Subtotal with Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalProductTaxAmount {
+    apiName = "FulfillmentOrder.TotalProductTaxAmount"
+    label = "Product Subtotal Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalTaxAmount {
+    apiName = "FulfillmentOrder.TotalTaxAmount"
+    label = "Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist Type {
+    apiName = "FulfillmentOrder.Type"
+    valueSet = [
+      {
+        fullName = "Warehouse"
+        isActive = true
+        label = "Warehouse"
+        default = false
+      },
+      {
+        fullName = "Retail Store"
+        isActive = true
+        label = "Retail Store"
+        default = false
+      },
+      {
+        fullName = "In Store Pickup"
+        isActive = true
+        label = "In Store Pickup"
+        default = false
+      },
+      {
+        fullName = "Supplier"
+        isActive = true
+        label = "Supplier"
+        default = false
+      },
+      {
+        fullName = "Download"
+        isActive = true
+        label = "Download"
+        default = false
+      },
+      {
+        fullName = "Email"
+        isActive = true
+        label = "Email"
+        default = false
+      },
+    ]
+    restricted = false
+    label = "Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "FulfillmentOrder.Id"
+    label = "Fulfillment Order ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "FulfillmentOrder.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "FulfillmentOrder.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber FulfillmentOrderNumber {
+    apiName = "FulfillmentOrder.FulfillmentOrderNumber"
+    label = "Fulfillment Order Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "FulfillmentOrder.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "FulfillmentOrder.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "FulfillmentOrder.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "FulfillmentOrder.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "FulfillmentOrder.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Address FulfilledToAddress {
+    apiName = "FulfillmentOrder.FulfilledToAddress"
+    label = "Fulfilled To Address"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist StatusCategory {
+    apiName = "FulfillmentOrder.StatusCategory"
+    valueSet = [
+      {
+        fullName = "DRAFT"
+        isActive = true
+        label = "Draft"
+        default = false
+      },
+      {
+        fullName = "ACTIVATED"
+        isActive = true
+        label = "Activated"
+        default = false
+      },
+      {
+        fullName = "FULFILLING"
+        isActive = true
+        label = "Fulfilling"
+        default = false
+      },
+      {
+        fullName = "CLOSED"
+        isActive = true
+        label = "Closed"
+        default = false
+      },
+      {
+        fullName = "CANCELLED"
+        isActive = true
+        label = "Canceled"
+        default = false
+      },
+      {
+        fullName = "REJECTED"
+        isActive = true
+        label = "Rejected"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Status Category"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist TypeCategory {
+    apiName = "FulfillmentOrder.TypeCategory"
+    valueSet = [
+      {
+        fullName = "PHYSICAL"
+        isActive = true
+        label = "Physical"
+        default = false
+      },
+      {
+        fullName = "DROPSHIP"
+        isActive = true
+        label = "Drop Ship"
+        default = false
+      },
+      {
+        fullName = "DIGITAL"
+        isActive = true
+        label = "Digital"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Type Category"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalFeeAmount {
+    apiName = "FulfillmentOrder.TotalFeeAmount"
+    label = "Fee Subtotal"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalFeeTaxAmount {
+    apiName = "FulfillmentOrder.TotalFeeTaxAmount"
+    label = "Fee Subtotal Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OrderId {
+    apiName = "FulfillmentOrder.OrderId"
+    relationshipName = "Order"
+    referenceTo = [
+      salesforce.Order,
+    ]
+    label = "Order ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Summary TotalFeeAdjustAmount {
+    apiName = "FulfillmentOrder.TotalFeeAdjustAmount"
+    label = "Fee Adjustments"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalFeeAdjustTaxAmount {
+    apiName = "FulfillmentOrder.TotalFeeAdjustTaxAmount"
+    label = "Fee Adjustments Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalFeeAmtWithTax {
+    apiName = "FulfillmentOrder.TotalFeeAmtWithTax"
+    label = "Fee Subtotal with Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalFeeAdjustAmtWithTax {
+    apiName = "FulfillmentOrder.TotalFeeAdjustAmtWithTax"
+    label = "Fee Adjustments with Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

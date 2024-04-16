@@ -1,0 +1,12 @@
+salesforce.ListView ProductCategory_Category_Hierarchy_SM {
+  fullName = "ProductCategory.Category_Hierarchy_SM"
+  columns = [
+    "Name",
+  ]
+  filterScope = "Everything"
+  label = "Subscription Management Categories"
+  _parent = [
+    salesforce.ProductCategory,
+  ]
+  _alias = "Subscription Management Categories"
+}

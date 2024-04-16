@@ -1,0 +1,4 @@
+salesforce.SharingRules CommerceJobStatus {
+  fullName = "CommerceJobStatus"
+  _alias = "CommerceJobStatus"
+}

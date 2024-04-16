@@ -1,0 +1,59 @@
+salesforce.Layout FulfillmentOrderItemTax_Fulfillment_Order_Item_Tax_Layout@bssss {
+  layoutSections = [
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = true
+      label = "Fulfillment Order Item Tax Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.FulfillmentOrderItemTax.field.Type
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.FulfillmentOrderItemTax.field.Description
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.FulfillmentOrderItemTax.field.FulfillmentOrderItemAdjustId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.FulfillmentOrderItemTax.field.Amount
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.FulfillmentOrderItemTax.field.Rate
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "FulfillmentOrderItemTax-Fulfillment Order Item Tax Layout"
+  _parent = [
+    salesforce.FulfillmentOrderItemTax,
+  ]
+  _alias = "FulfillmentOrderItemTax-Fulfillment Order Item Tax Layout"
+}

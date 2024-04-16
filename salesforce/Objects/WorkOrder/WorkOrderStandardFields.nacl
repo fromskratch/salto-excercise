@@ -1,0 +1,510 @@
+type salesforce.WorkOrder {
+  salesforce.Lookup AccountId {
+    apiName = "WorkOrder.AccountId"
+    relationshipName = "Account"
+    referenceTo = [
+      salesforce.Account,
+    ]
+    label = "Account ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Address Address {
+    apiName = "WorkOrder.Address"
+    label = "Address"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup AssetId {
+    apiName = "WorkOrder.AssetId"
+    relationshipName = "Asset"
+    referenceTo = [
+      salesforce.Asset,
+    ]
+    label = "Asset ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup BusinessHoursId {
+    apiName = "WorkOrder.BusinessHoursId"
+    relationshipName = "BusinessHours"
+    referenceTo = [
+      "BusinessHours",
+    ]
+    label = "Business Hours ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup CaseId {
+    apiName = "WorkOrder.CaseId"
+    relationshipName = "Case"
+    referenceTo = [
+      salesforce.Case,
+    ]
+    label = "Case ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup ContactId {
+    apiName = "WorkOrder.ContactId"
+    relationshipName = "Contact"
+    referenceTo = [
+      salesforce.Contact,
+    ]
+    label = "Contact ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "WorkOrder.Description"
+    length = 32000
+    label = "Description"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Percent Discount {
+    apiName = "WorkOrder.Discount"
+    label = "Discount"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 5
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number Duration {
+    apiName = "WorkOrder.Duration"
+    label = "Duration"
+    precision = 18
+    scale = 2
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Picklist DurationType {
+    apiName = "WorkOrder.DurationType"
+    valueSet = [
+      {
+        fullName = "Hours"
+        isActive = true
+        label = "Hours"
+        default = true
+      },
+      {
+        fullName = "Minutes"
+        isActive = true
+        label = "Minutes"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Duration Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime EndDate {
+    apiName = "WorkOrder.EndDate"
+    label = "End Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup EntitlementId {
+    apiName = "WorkOrder.EntitlementId"
+    relationshipName = "Entitlement"
+    referenceTo = [
+      salesforce.Entitlement,
+    ]
+    label = "Entitlement ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Currency GrandTotal {
+    apiName = "WorkOrder.GrandTotal"
+    label = "Grand Total"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsClosed {
+    apiName = "WorkOrder.IsClosed"
+    defaultValue = false
+    label = "Is Closed"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsStopped {
+    apiName = "WorkOrder.IsStopped"
+    defaultValue = false
+    label = "Stopped"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Summary LineItemCount {
+    apiName = "WorkOrder.LineItemCount"
+    label = "Line Items"
+    precision = 9
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LocationId {
+    apiName = "WorkOrder.LocationId"
+    relationshipName = "Location"
+    referenceTo = [
+      salesforce.Location,
+    ]
+    label = "Location ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text MilestoneStatus {
+    apiName = "WorkOrder.MilestoneStatus"
+    length = 30
+    label = "Milestone Status"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Unknown MilestoneStatusIcon {
+    apiName = "WorkOrder.MilestoneStatusIcon"
+    _hidden_value = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "WorkOrder.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ParentWorkOrderId {
+    apiName = "WorkOrder.ParentWorkOrderId"
+    relationshipName = "ParentWorkOrder"
+    referenceTo = [
+      salesforce.WorkOrder,
+    ]
+    label = "Parent Work Order ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup Pricebook2Id {
+    apiName = "WorkOrder.Pricebook2Id"
+    relationshipName = "Pricebook2"
+    referenceTo = [
+      salesforce.Pricebook2,
+    ]
+    label = "Price Book ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Priority {
+    apiName = "WorkOrder.Priority"
+    restricted = false
+    label = "Priority"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.WorkOrderPriority
+  }
+  salesforce.Lookup RootWorkOrderId {
+    apiName = "WorkOrder.RootWorkOrderId"
+    relationshipName = "RootWorkOrder"
+    referenceTo = [
+      salesforce.WorkOrder,
+    ]
+    label = "Root Work Order ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number ServiceAppointmentCount {
+    apiName = "WorkOrder.ServiceAppointmentCount"
+    label = "Service Appointment Count"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ServiceContractId {
+    apiName = "WorkOrder.ServiceContractId"
+    relationshipName = "ServiceContract"
+    referenceTo = [
+      salesforce.ServiceContract,
+    ]
+    label = "Service Contract ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup ServiceTerritoryId {
+    apiName = "WorkOrder.ServiceTerritoryId"
+    relationshipName = "ServiceTerritory"
+    referenceTo = [
+      salesforce.ServiceTerritory,
+    ]
+    label = "Territory ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime SlaExitDate {
+    apiName = "WorkOrder.SlaExitDate"
+    label = "Entitlement Process End Time"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SlaStartDate {
+    apiName = "WorkOrder.SlaStartDate"
+    label = "Entitlement Process Start Time"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime StartDate {
+    apiName = "WorkOrder.StartDate"
+    label = "Start Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "WorkOrder.Status"
+    restricted = false
+    label = "Status"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.WorkOrderStatus
+  }
+  salesforce.Picklist StatusCategory {
+    apiName = "WorkOrder.StatusCategory"
+    valueSet = [
+      {
+        fullName = "New"
+        isActive = true
+        label = "New"
+        default = false
+      },
+      {
+        fullName = "InProgress"
+        isActive = true
+        label = "In Progress"
+        default = false
+      },
+      {
+        fullName = "OnHold"
+        isActive = true
+        label = "On Hold"
+        default = false
+      },
+      {
+        fullName = "Completed"
+        isActive = true
+        label = "Completed"
+        default = false
+      },
+      {
+        fullName = "Closed"
+        isActive = true
+        label = "Closed"
+        default = false
+      },
+      {
+        fullName = "None"
+        isActive = true
+        label = "None"
+        default = true
+      },
+      {
+        fullName = "CannotComplete"
+        isActive = true
+        label = "Cannot Complete"
+        default = false
+      },
+      {
+        fullName = "Canceled"
+        isActive = true
+        label = "Canceled"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Status Category"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime StopStartDate {
+    apiName = "WorkOrder.StopStartDate"
+    label = "Stopped Since"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Subject {
+    apiName = "WorkOrder.Subject"
+    length = 255
+    label = "Subject"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Summary Subtotal {
+    apiName = "WorkOrder.Subtotal"
+    label = "Subtotal"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency Tax {
+    apiName = "WorkOrder.Tax"
+    label = "Tax"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 18
+    queryable = true
+  }
+  salesforce.Summary TotalPrice {
+    apiName = "WorkOrder.TotalPrice"
+    label = "Total Price"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup WorkTypeId {
+    apiName = "WorkOrder.WorkTypeId"
+    relationshipName = "WorkType"
+    referenceTo = [
+      salesforce.WorkType,
+    ]
+    label = "Work Type ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "WorkOrder.Id"
+    label = "Work Order ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WorkOrder.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber WorkOrderNumber {
+    apiName = "WorkOrder.WorkOrderNumber"
+    label = "Work Order Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WorkOrder.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WorkOrder.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WorkOrder.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WorkOrder.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WorkOrder.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number DurationInMinutes {
+    apiName = "WorkOrder.DurationInMinutes"
+    label = "Duration in Minutes"
+    precision = 18
+    scale = 2
+    createable = false
+    updateable = false
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+}

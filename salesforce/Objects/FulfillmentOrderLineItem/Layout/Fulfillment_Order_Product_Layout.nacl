@@ -1,0 +1,146 @@
+salesforce.Layout FulfillmentOrderLineItem_Fulfillment_Order_Product_Layout@bsss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "FulfillmentOrderLineItemInformation"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.FulfillmentOrderLineItem.field.OrderItemId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.FulfillmentOrderLineItem.field.Quantity
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.FulfillmentOrderLineItem.field.Description
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.FulfillmentOrderLineItem.field.OriginalQuantity
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.FulfillmentOrderLineItem.field.QuantityUnitOfMeasure
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Totals"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.FulfillmentOrderLineItem.field.UnitPrice
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.FulfillmentOrderLineItem.field.TotalLineAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrderLineItem.field.TotalAdjustmentAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrderLineItem.field.TotalPrice
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrderLineItem.field.TotalLineTaxAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrderLineItem.field.TotalAdjustmentTaxAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrderLineItem.field.TotalTaxAmount
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "TotalsWithTax"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.FulfillmentOrderLineItem.field.GrossUnitPrice
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrderLineItem.field.TotalLineAmountWithTax
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrderLineItem.field.TotalAdjustmentAmountWithTax
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.FulfillmentOrderLineItem.field.TotalAmount
+            },
+          ]
+        },
+      ]
+      style = "OneColumn"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  relatedLists = [
+    {
+      fields = [
+        "Shipment",
+        "Name",
+        "TrackingNumber",
+        "TrackingUrl",
+        "ExpectedDeliveryDate",
+        "Quantity",
+      ]
+      relatedList = "ShipmentItems"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "FulfillmentOrderLineItem-Fulfillment Order Product Layout"
+  _parent = [
+    salesforce.FulfillmentOrderLineItem,
+  ]
+  _alias = "FulfillmentOrderLineItem-Fulfillment Order Product Layout"
+}

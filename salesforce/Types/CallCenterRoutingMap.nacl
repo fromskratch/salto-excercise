@@ -1,0 +1,57 @@
+type salesforce.CallCenterRoutingMap {
+  annotations {
+    serviceid metadataType {
+    }
+    boolean hasMetaFile {
+    }
+    string folderType {
+    }
+    string folderContentType {
+    }
+    string suffix {
+    }
+    string dirName {
+    }
+  }
+  serviceid fullName {
+  }
+  string callCenter {
+    foreignKeyDomain = [
+      salesforce.CallCenter,
+    ]
+  }
+  string developerName {
+  }
+  string externalId {
+  }
+  string masterLabel {
+  }
+  string quickConnect {
+  }
+  string referenceRecord {
+    foreignKeyDomain = [
+      salesforce.Queue,
+      salesforce.Skill,
+      salesforce.User,
+    ]
+  }
+  string internalId {
+    _hidden_value = true
+    localOnly = true
+  }
+  suffix = "callCenterRoutingMap"
+  dirName = "callCenterRoutingMaps"
+  metadataType = "CallCenterRoutingMap"
+  _important_values = [
+    {
+      value = "fullName"
+      highlighted = true
+      indexed = false
+    },
+    {
+      value = "masterLabel"
+      highlighted = true
+      indexed = false
+    },
+  ]
+}

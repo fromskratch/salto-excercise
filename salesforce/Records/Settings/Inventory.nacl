@@ -1,0 +1,6 @@
+salesforce.InventorySettings {
+  fullName = "Inventory"
+  enableOCIB2CIntegration = "false"
+  enableOmniChannelInventory = "false"
+  _alias = "Inventory"
+}

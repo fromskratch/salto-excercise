@@ -1,0 +1,269 @@
+type salesforce.ContractLineItem {
+  salesforce.Lookup AssetId {
+    apiName = "ContractLineItem.AssetId"
+    relationshipName = "Asset"
+    referenceTo = [
+      salesforce.Asset,
+    ]
+    label = "Asset ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "ContractLineItem.Description"
+    length = 32000
+    label = "Description"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Percent Discount {
+    apiName = "ContractLineItem.Discount"
+    label = "Discount"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 5
+    queryable = true
+  }
+  salesforce.Date EndDate {
+    apiName = "ContractLineItem.EndDate"
+    label = "End Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Currency ListPrice {
+    apiName = "ContractLineItem.ListPrice"
+    label = "List Price"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LocationId {
+    apiName = "ContractLineItem.LocationId"
+    relationshipName = "Location"
+    referenceTo = [
+      salesforce.Location,
+    ]
+    label = "Location ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup ParentContractLineItemId {
+    apiName = "ContractLineItem.ParentContractLineItemId"
+    relationshipName = "ParentContractLineItem"
+    referenceTo = [
+      salesforce.ContractLineItem,
+    ]
+    label = "Contract Line Item ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup PricebookEntryId {
+    apiName = "ContractLineItem.PricebookEntryId"
+    relationshipName = "PricebookEntry"
+    referenceTo = [
+      salesforce.PricebookEntry,
+    ]
+    _required = true
+    label = "Price Book Entry ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup Product2Id {
+    apiName = "ContractLineItem.Product2Id"
+    relationshipName = "Product2"
+    referenceTo = [
+      salesforce.Product2,
+    ]
+    label = "Product ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number Quantity {
+    apiName = "ContractLineItem.Quantity"
+    _required = true
+    label = "Quantity"
+    precision = 12
+    scale = 2
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Lookup RootContractLineItemId {
+    apiName = "ContractLineItem.RootContractLineItemId"
+    relationshipName = "RootContractLineItem"
+    referenceTo = [
+      salesforce.ContractLineItem,
+    ]
+    label = "Contract Line Item ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.MasterDetail ServiceContractId {
+    apiName = "ContractLineItem.ServiceContractId"
+    relationshipName = "ServiceContract"
+    referenceTo = [
+      salesforce.ServiceContract,
+    ]
+    _required = true
+    label = "Service Contract ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Date StartDate {
+    apiName = "ContractLineItem.StartDate"
+    label = "Start Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "ContractLineItem.Status"
+    valueSet = [
+      {
+        fullName = "Inactive"
+        isActive = true
+        label = "Inactive"
+        default = false
+      },
+      {
+        fullName = "Active"
+        isActive = true
+        label = "Active"
+        default = false
+      },
+      {
+        fullName = "Expired"
+        isActive = true
+        label = "Expired"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Status"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Unknown StatusIndicator {
+    apiName = "ContractLineItem.StatusIndicator"
+    _hidden_value = true
+  }
+  salesforce.Currency Subtotal {
+    apiName = "ContractLineItem.Subtotal"
+    label = "Subtotal "
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency TotalPrice {
+    apiName = "ContractLineItem.TotalPrice"
+    label = "Total Price"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency UnitPrice {
+    apiName = "ContractLineItem.UnitPrice"
+    _required = true
+    label = "Sales Price"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 18
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ContractLineItem.Id"
+    label = "Contract Line Item ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ContractLineItem.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber LineItemNumber {
+    apiName = "ContractLineItem.LineItemNumber"
+    label = "Line Item Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ContractLineItem.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ContractLineItem.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ContractLineItem.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ContractLineItem.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ContractLineItem.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

@@ -1,0 +1,97 @@
+type salesforce.WebStoreCatalog {
+  salesforce.MasterDetail ProductCatalogId {
+    apiName = "WebStoreCatalog.ProductCatalogId"
+    relationshipName = "ProductCatalog"
+    referenceTo = [
+      salesforce.ProductCatalog,
+    ]
+    _required = true
+    label = "Catalog ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.MasterDetail SalesStoreId {
+    apiName = "WebStoreCatalog.SalesStoreId"
+    relationshipName = "SalesStore"
+    referenceTo = [
+      salesforce.WebStore,
+    ]
+    _required = true
+    label = "Store ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "WebStoreCatalog.Id"
+    label = "Store Catalog ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WebStoreCatalog.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "WebStoreCatalog.Name"
+    label = "Store Catalog Name"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WebStoreCatalog.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WebStoreCatalog.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WebStoreCatalog.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WebStoreCatalog.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WebStoreCatalog.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

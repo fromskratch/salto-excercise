@@ -1,0 +1,64 @@
+type salesforce.ServiceAISetupField {
+  annotations {
+    serviceid metadataType {
+    }
+    boolean hasMetaFile {
+    }
+    string folderType {
+    }
+    string folderContentType {
+    }
+    string suffix {
+    }
+    string dirName {
+    }
+  }
+  serviceid fullName {
+  }
+  string entity {
+  }
+  string field {
+  }
+  string fieldMappingType {
+    _restriction = {
+      enforce_value = false
+      values = [
+        "ARTICLE_ANSWER",
+        "ARTICLE_CONTENT",
+        "ARTICLE_QUESTION",
+        "ARTICLE_SUMMARY",
+        "ARTICLE_TITLE",
+        "CASE_DESC",
+        "CASE_SUBJ",
+      ]
+    }
+  }
+  number fieldPosition {
+  }
+  string name {
+  }
+  string setupDefinition {
+    foreignKeyDomain = [
+      salesforce.ServiceAISetupDefinition,
+    ]
+  }
+  string internalId {
+    _hidden_value = true
+    localOnly = true
+  }
+  suffix = "serviceAISetupField"
+  dirName = "serviceAISetupFields"
+  metadataType = "ServiceAISetupField"
+  _important_values = [
+    {
+      value = "fullName"
+      highlighted = true
+      indexed = false
+    },
+    {
+      value = "name"
+      highlighted = true
+      indexed = false
+    },
+  ]
+}

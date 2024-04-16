@@ -1,0 +1,176 @@
+type salesforce.Coupon {
+  salesforce.Text CouponCode {
+    apiName = "Coupon.CouponCode"
+    length = 255
+    _required = true
+    label = "Coupon Code"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "Coupon.Description"
+    length = 1000
+    label = "Description"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime EndDateTime {
+    apiName = "Coupon.EndDateTime"
+    label = "End DateTime"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup PromotionId {
+    apiName = "Coupon.PromotionId"
+    relationshipName = "Promotion"
+    referenceTo = [
+      salesforce.Promotion,
+    ]
+    _required = true
+    label = "Promotion ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Number RedemptionLimitAllBuyers {
+    apiName = "Coupon.RedemptionLimitAllBuyers"
+    inlineHelpText = "Number of times this coupon can be used in total."
+    label = "Redemption Limit All Buyers"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Number RedemptionLimitPerBuyer {
+    apiName = "Coupon.RedemptionLimitPerBuyer"
+    inlineHelpText = "Number of times this coupon can be used per customer."
+    label = "Redemption Limit Per Buyer"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.DateTime StartDateTime {
+    apiName = "Coupon.StartDateTime"
+    label = "Start DateTime"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "Coupon.Status"
+    valueSet = [
+      {
+        fullName = "Active"
+        isActive = true
+        label = "Active"
+        default = false
+      },
+      {
+        fullName = "Inactive"
+        isActive = true
+        label = "Inactive"
+        default = true
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Status"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "Coupon.Id"
+    label = "Coupon ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "Coupon.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "Coupon.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "Coupon.Name"
+    label = "Coupon Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "Coupon.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "Coupon.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "Coupon.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "Coupon.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "Coupon.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

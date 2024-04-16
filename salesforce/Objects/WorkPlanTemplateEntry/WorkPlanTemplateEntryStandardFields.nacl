@@ -1,0 +1,107 @@
+type salesforce.WorkPlanTemplateEntry {
+  salesforce.Number ExecutionOrder {
+    apiName = "WorkPlanTemplateEntry.ExecutionOrder"
+    label = "Execution Order"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.MasterDetail WorkPlanTemplateId {
+    apiName = "WorkPlanTemplateEntry.WorkPlanTemplateId"
+    relationshipName = "WorkPlanTemplate"
+    referenceTo = [
+      salesforce.WorkPlanTemplate,
+    ]
+    _required = true
+    label = "Work Plan Template ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup WorkStepTemplateId {
+    apiName = "WorkPlanTemplateEntry.WorkStepTemplateId"
+    relationshipName = "WorkStepTemplate"
+    referenceTo = [
+      salesforce.WorkStepTemplate,
+    ]
+    _required = true
+    label = "Work Step Template ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "WorkPlanTemplateEntry.Id"
+    label = "Work Plan Template Entry ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WorkPlanTemplateEntry.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber WorkPlanTemplateEntryNumber {
+    apiName = "WorkPlanTemplateEntry.WorkPlanTemplateEntryNumber"
+    label = "Name"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WorkPlanTemplateEntry.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WorkPlanTemplateEntry.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WorkPlanTemplateEntry.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WorkPlanTemplateEntry.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WorkPlanTemplateEntry.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

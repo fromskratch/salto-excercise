@@ -1,0 +1,184 @@
+type salesforce.WebStoreInventorySource {
+  salesforce.Number InventoryCacheTtl {
+    apiName = "WebStoreInventorySource.InventoryCacheTtl"
+    inlineHelpText = "Enter a value for the Inventory Cache Time To Live that's between 300 and 14400."
+    label = "Inventory Cache Time To Live (Seconds)."
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Picklist InventoryDimension {
+    apiName = "WebStoreInventorySource.InventoryDimension"
+    inlineHelpText = "Fulfillment options."
+    valueSet = [
+      {
+        fullName = "OnHand"
+        isActive = true
+        label = "On Hand"
+        default = false
+      },
+      {
+        fullName = "AvailableToFulfill"
+        isActive = true
+        label = "Available to Fulfill"
+        default = false
+      },
+      {
+        fullName = "AvailableToOrder"
+        isActive = true
+        label = "Available to Order"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Inventory Dimension"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Unknown IsEnabled {
+    apiName = "WebStoreInventorySource.IsEnabled"
+    _hidden_value = true
+  }
+  salesforce.Text LocationSourceExtRef {
+    apiName = "WebStoreInventorySource.LocationSourceExtRef"
+    length = 255
+    label = "Location Source External Reference"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LocationSourceId {
+    apiName = "WebStoreInventorySource.LocationSourceId"
+    inlineHelpText = "Default location or location group for inventory reservations."
+    relationshipName = "LocationSource"
+    referenceTo = [
+      salesforce.Location,
+      salesforce.LocationGroup,
+    ]
+    _required = true
+    label = "Location Source ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number ReservationDurationInSeconds {
+    apiName = "WebStoreInventorySource.ReservationDurationInSeconds"
+    inlineHelpText = "Enter a value for the reservation time limit that's between 300 and 14400."
+    _required = true
+    label = "Reservation Duration (Seconds)"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.MasterDetail WebStoreId {
+    apiName = "WebStoreInventorySource.WebStoreId"
+    relationshipName = "WebStore"
+    referenceTo = [
+      salesforce.WebStore,
+    ]
+    _required = true
+    label = "Store ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "WebStoreInventorySource.Id"
+    label = "Web Store Inventory Source ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WebStoreInventorySource.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "WebStoreInventorySource.Name"
+    label = "Web Store Inventory Source Name"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WebStoreInventorySource.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WebStoreInventorySource.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WebStoreInventorySource.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WebStoreInventorySource.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WebStoreInventorySource.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDefault {
+    apiName = "WebStoreInventorySource.IsDefault"
+    defaultValue = false
+    label = "Default"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsBopisEnabled {
+    apiName = "WebStoreInventorySource.IsBopisEnabled"
+    defaultValue = false
+    label = "BOPIS Enabled"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

@@ -1,0 +1,237 @@
+type salesforce.CartValidationOutput {
+  serviceid Id {
+    apiName = "CartValidationOutput.Id"
+    label = "Cart Validation Output ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "CartValidationOutput.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "CartValidationOutput.Name"
+    length = 255
+    _required = true
+    label = "Cart Validation Output"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "CartValidationOutput.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "CartValidationOutput.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "CartValidationOutput.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "CartValidationOutput.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "CartValidationOutput.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CartId {
+    apiName = "CartValidationOutput.CartId"
+    relationshipName = "Cart"
+    referenceTo = [
+      salesforce.WebCart,
+    ]
+    _required = true
+    label = "Cart ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup RelatedEntityId {
+    apiName = "CartValidationOutput.RelatedEntityId"
+    relationshipName = "RelatedEntity"
+    referenceTo = [
+      salesforce.CartDeliveryGroup,
+      salesforce.CartItem,
+      salesforce.CartTax,
+      salesforce.WebCart,
+    ]
+    _required = true
+    label = "Cart Delivery Group ID or Cart Item ID or Web Cart ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup BackgroundOperationId {
+    apiName = "CartValidationOutput.BackgroundOperationId"
+    relationshipName = "BackgroundOperation"
+    referenceTo = [
+      "BackgroundOperation",
+    ]
+    label = "Background Operation ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Type {
+    apiName = "CartValidationOutput.Type"
+    valueSet = [
+      {
+        fullName = "Inventory"
+        isActive = true
+        label = "Inventory"
+        default = false
+      },
+      {
+        fullName = "Taxes"
+        isActive = true
+        label = "Taxes"
+        default = false
+      },
+      {
+        fullName = "Pricing"
+        isActive = true
+        label = "Pricing"
+        default = false
+      },
+      {
+        fullName = "Promotions"
+        isActive = true
+        label = "Promotions"
+        default = false
+      },
+      {
+        fullName = "Shipping"
+        isActive = true
+        label = "Shipping"
+        default = false
+      },
+      {
+        fullName = "ShippingPromotions"
+        isActive = true
+        label = "ShippingPromotions"
+        default = false
+      },
+      {
+        fullName = "Entitlement"
+        isActive = true
+        label = "Entitlement"
+        default = false
+      },
+      {
+        fullName = "SystemError"
+        isActive = true
+        label = "SystemError"
+        default = false
+      },
+      {
+        fullName = "Other"
+        isActive = true
+        label = "Other"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Level {
+    apiName = "CartValidationOutput.Level"
+    valueSet = [
+      {
+        fullName = "Info"
+        isActive = true
+        label = "Info"
+        default = false
+      },
+      {
+        fullName = "Error"
+        isActive = true
+        label = "Error"
+        default = false
+      },
+      {
+        fullName = "Warning"
+        isActive = true
+        label = "Warning"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Level"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Message {
+    apiName = "CartValidationOutput.Message"
+    length = 255
+    label = "Message"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Checkbox IsDismissed {
+    apiName = "CartValidationOutput.IsDismissed"
+    defaultValue = false
+    label = "Is Dismissed"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text RelatedEntityPrefix {
+    apiName = "CartValidationOutput.RelatedEntityPrefix"
+    length = 3
+    label = "Related Entity Prefix"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+}

@@ -1,0 +1,4 @@
+salesforce.EinsteinAISettings {
+  fullName = "EinsteinAI"
+  _alias = "EinsteinAI"
+}

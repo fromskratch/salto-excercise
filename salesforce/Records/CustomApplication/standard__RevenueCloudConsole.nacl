@@ -1,0 +1,34 @@
+salesforce.CustomApplication standard__RevenueCloudConsole {
+  formFactors = [
+    "Large",
+  ]
+  isNavAutoTempTabsDisabled = false
+  isNavPersonalizationDisabled = false
+  isNavTabPersistenceDisabled = false
+  isOmniPinnedViewEnabled = false
+  label = "Subscription Management"
+  navType = "Console"
+  tabs = [
+    "standard-Product2",
+    "standard-Pricebook2",
+  ]
+  uiType = "Lightning"
+  utilityBar = "RevenueCloudConsole_UtilityBar"
+  workspaceConfig = {
+    mappings = [
+      {
+        tab = "standard-Pricebook2"
+      },
+      {
+        tab = "standard-Product2"
+      },
+    ]
+  }
+  fullName = "standard__RevenueCloudConsole"
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningPage.instance.RevenueCloudConsole_UtilityBar
+    },
+  ]
+  _alias = "Subscription Management (standard)"
+}

@@ -1,0 +1,83 @@
+salesforce.Layout WebCartAdjustmentGroup_Cart_Adjustment_Group_Layout@bsss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.WebCartAdjustmentGroup.field.CartId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WebCartAdjustmentGroup.field.Description
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WebCartAdjustmentGroup.field.TotalAmount
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WebCartAdjustmentGroup.field.TaxAmount
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.WebCartAdjustmentGroup.field.TotalAmountWithTax
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WebCartAdjustmentGroup.field.AdjustmentSource
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WebCartAdjustmentGroup.field.AdjustmentType
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WebCartAdjustmentGroup.field.AdjustmentValue
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WebCartAdjustmentGroup.field.AdjustmentTargetType
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WebCartAdjustmentGroup.field.PriceAdjustmentCauseId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WebCartAdjustmentGroup.field.AdjustmentBasisReferenceId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WebCartAdjustmentGroup.field.Priority
+            },
+          ]
+        },
+      ]
+      style = "OneColumn"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "WebCartAdjustmentGroup-Cart Adjustment Group Layout"
+  _parent = [
+    salesforce.WebCartAdjustmentGroup,
+  ]
+  _alias = "WebCartAdjustmentGroup-Cart Adjustment Group Layout"
+}

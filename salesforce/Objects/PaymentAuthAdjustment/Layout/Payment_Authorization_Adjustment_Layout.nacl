@@ -1,0 +1,184 @@
+salesforce.Layout PaymentAuthAdjustment_Payment_Authorization_Adjustment_Layout@bsss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = true
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.PaymentAuthAdjustment.field.PaymentAuthAdjustmentNumber
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.PaymentAuthAdjustment.field.AccountId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.PaymentAuthAdjustment.field.Amount
+            },
+            {
+              behavior = "Required"
+              field = salesforce.PaymentAuthAdjustment.field.Type
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.PaymentAuthAdjustment.field.EffectiveDate
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.PaymentAuthAdjustment.field.Comments
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.PaymentAuthAdjustment.field.Status
+            },
+            {
+              behavior = "Required"
+              field = salesforce.PaymentAuthAdjustment.field.PaymentAuthorizationId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.PaymentAuthAdjustment.field.ProcessingMode
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.PaymentAuthAdjustment.field.Date
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "AdditionalInformation"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.PaymentAuthAdjustment.field.SfResultCode
+            },
+          ]
+        },
+        {
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "GatewayDetails"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.PaymentAuthAdjustment.field.GatewayDate
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.PaymentAuthAdjustment.field.GatewayResultCode
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.PaymentAuthAdjustment.field.GatewayRefNumber
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.PaymentAuthAdjustment.field.GatewayResultCodeDescription
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.PaymentAuthAdjustment.field.GatewayRefDetails
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "SystemInformation"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.PaymentAuthAdjustment.field.CreatedById
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.PaymentAuthAdjustment.field.CreatedDate
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.PaymentAuthAdjustment.field.MacAddress
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.PaymentAuthAdjustment.field.Phone
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.PaymentAuthAdjustment.field.LastModifiedById
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.PaymentAuthAdjustment.field.LastModifiedDate
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.PaymentAuthAdjustment.field.IpAddress
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.PaymentAuthAdjustment.field.Email
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "PaymentAuthAdjustment-Payment Authorization Adjustment Layout"
+  _parent = [
+    salesforce.PaymentAuthAdjustment,
+  ]
+  _alias = "PaymentAuthAdjustment-Payment Authorization Adjustment Layout"
+}

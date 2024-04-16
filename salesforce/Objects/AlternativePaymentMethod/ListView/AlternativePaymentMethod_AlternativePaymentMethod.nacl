@@ -1,0 +1,9 @@
+salesforce.ListView AlternativePaymentMethod_AlternativePaymentMethod {
+  fullName = "AlternativePaymentMethod.AlternativePaymentMethod"
+  filterScope = "Everything"
+  label = "All"
+  _parent = [
+    salesforce.AlternativePaymentMethod,
+  ]
+  _alias = "All"
+}

@@ -1,0 +1,97 @@
+type salesforce.PromotionSegmentBuyerGroup {
+  salesforce.Lookup BuyerGroupId {
+    apiName = "PromotionSegmentBuyerGroup.BuyerGroupId"
+    relationshipName = "BuyerGroup"
+    referenceTo = [
+      salesforce.BuyerGroup,
+    ]
+    _required = true
+    label = "Buyer Group ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.MasterDetail PromotionSegmentId {
+    apiName = "PromotionSegmentBuyerGroup.PromotionSegmentId"
+    relationshipName = "PromotionSegment"
+    referenceTo = [
+      salesforce.PromotionSegment,
+    ]
+    _required = true
+    label = "Promotion Segment ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "PromotionSegmentBuyerGroup.Id"
+    label = "Promotion Segment Buyer Group ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "PromotionSegmentBuyerGroup.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "PromotionSegmentBuyerGroup.Name"
+    label = "Promotion Segment Buyer Group Name"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "PromotionSegmentBuyerGroup.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "PromotionSegmentBuyerGroup.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "PromotionSegmentBuyerGroup.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "PromotionSegmentBuyerGroup.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "PromotionSegmentBuyerGroup.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

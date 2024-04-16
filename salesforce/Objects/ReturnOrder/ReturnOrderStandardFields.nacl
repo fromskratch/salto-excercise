@@ -1,0 +1,522 @@
+type salesforce.ReturnOrder {
+  salesforce.Lookup AccountId {
+    apiName = "ReturnOrder.AccountId"
+    relationshipName = "Account"
+    referenceTo = [
+      salesforce.Account,
+    ]
+    label = "Account ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup CaseId {
+    apiName = "ReturnOrder.CaseId"
+    relationshipName = "Case"
+    referenceTo = [
+      salesforce.Case,
+    ]
+    label = "Case ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup ContactId {
+    apiName = "ReturnOrder.ContactId"
+    relationshipName = "Contact"
+    referenceTo = [
+      salesforce.Contact,
+    ]
+    label = "Contact ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "ReturnOrder.Description"
+    length = 32000
+    label = "Description"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup DestinationLocationId {
+    apiName = "ReturnOrder.DestinationLocationId"
+    relationshipName = "DestinationLocation"
+    referenceTo = [
+      salesforce.Location,
+    ]
+    label = "Destination Location ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime ExpectedArrivalDate {
+    apiName = "ReturnOrder.ExpectedArrivalDate"
+    label = "Expected Arrival Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime ExpirationDate {
+    apiName = "ReturnOrder.ExpirationDate"
+    label = "Expiration Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Summary GrandTotalAmount {
+    apiName = "ReturnOrder.GrandTotalAmount"
+    label = "Total with Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist LifeCycleType {
+    apiName = "ReturnOrder.LifeCycleType"
+    valueSet = [
+      {
+        fullName = "MANAGED"
+        isActive = true
+        label = "Managed"
+        default = false
+      },
+      {
+        fullName = "UNMANAGED"
+        isActive = true
+        label = "Unmanaged"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Life Cycle Type"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OrderId {
+    apiName = "ReturnOrder.OrderId"
+    relationshipName = "Order"
+    referenceTo = [
+      salesforce.Order,
+    ]
+    label = "Order ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "ReturnOrder.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ReturnedById {
+    apiName = "ReturnOrder.ReturnedById"
+    relationshipName = "ReturnedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Returned By ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Address ShipFromAddress {
+    apiName = "ReturnOrder.ShipFromAddress"
+    label = "Ship From Address"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist ShipmentType {
+    apiName = "ReturnOrder.ShipmentType"
+    valueSet = [
+      {
+        fullName = "Standard"
+        isActive = true
+        label = "Standard"
+        default = true
+      },
+      {
+        fullName = "Rush"
+        isActive = true
+        label = "Rush"
+        default = false
+      },
+      {
+        fullName = "Overnight"
+        isActive = true
+        label = "Overnight"
+        default = false
+      },
+      {
+        fullName = "Next Business Day"
+        isActive = true
+        label = "Next Business Day"
+        default = false
+      },
+      {
+        fullName = "Pick Up"
+        isActive = true
+        label = "Pick Up"
+        default = false
+      },
+    ]
+    restricted = false
+    label = "Shipment Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup SourceLocationId {
+    apiName = "ReturnOrder.SourceLocationId"
+    relationshipName = "SourceLocation"
+    referenceTo = [
+      salesforce.Location,
+    ]
+    label = "Source Location ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "ReturnOrder.Status"
+    valueSet = [
+      {
+        fullName = "Draft"
+        isActive = true
+        label = "Draft"
+        default = true
+      },
+      {
+        fullName = "Submitted"
+        isActive = true
+        label = "Submitted"
+        default = false
+      },
+      {
+        fullName = "Approved"
+        isActive = true
+        label = "Approved"
+        default = false
+      },
+      {
+        fullName = "Canceled"
+        isActive = true
+        label = "Canceled"
+        default = false
+      },
+      {
+        fullName = "Closed"
+        isActive = true
+        label = "Closed"
+        default = false
+      },
+    ]
+    restricted = false
+    label = "Status"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist StatusCategory {
+    apiName = "ReturnOrder.StatusCategory"
+    valueSet = [
+      {
+        fullName = "Draft"
+        isActive = true
+        label = "Draft"
+        default = false
+      },
+      {
+        fullName = "Activated"
+        isActive = true
+        label = "Activated"
+        default = true
+      },
+      {
+        fullName = "Closed"
+        isActive = true
+        label = "Closed"
+        default = false
+      },
+      {
+        fullName = "Canceled"
+        isActive = true
+        label = "Canceled"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Status Category"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist TaxLocaleType {
+    apiName = "ReturnOrder.TaxLocaleType"
+    valueSet = [
+      {
+        fullName = "Net"
+        isActive = true
+        label = "Net"
+        default = false
+      },
+      {
+        fullName = "Gross"
+        isActive = true
+        label = "Gross"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Tax Locale Type"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalAmount {
+    apiName = "ReturnOrder.TotalAmount"
+    label = "Pretax Total"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalDeliveryAdjustAmount {
+    apiName = "ReturnOrder.TotalDeliveryAdjustAmount"
+    label = "Shipping Adjustments"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalDeliveryAdjustAmtWithTax {
+    apiName = "ReturnOrder.TotalDeliveryAdjustAmtWithTax"
+    label = "Shipping Adjustments with Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalDeliveryAdjustTaxAmount {
+    apiName = "ReturnOrder.TotalDeliveryAdjustTaxAmount"
+    label = "Shipping Adjustments Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalDeliveryAmount {
+    apiName = "ReturnOrder.TotalDeliveryAmount"
+    label = "Shipping Subtotal"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalDeliveryAmtWithTax {
+    apiName = "ReturnOrder.TotalDeliveryAmtWithTax"
+    label = "Shipping Subtotal with Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalDeliveryTaxAmount {
+    apiName = "ReturnOrder.TotalDeliveryTaxAmount"
+    label = "Shipping Subtotal Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalProductAdjustAmount {
+    apiName = "ReturnOrder.TotalProductAdjustAmount"
+    label = "Product Adjustments"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalProductAdjustAmtWithTax {
+    apiName = "ReturnOrder.TotalProductAdjustAmtWithTax"
+    label = "Product Adjustments with Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalProductAdjustTaxAmount {
+    apiName = "ReturnOrder.TotalProductAdjustTaxAmount"
+    label = "Product Adjustments Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalProductAmount {
+    apiName = "ReturnOrder.TotalProductAmount"
+    label = "Product Subtotal"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalProductAmtWithTax {
+    apiName = "ReturnOrder.TotalProductAmtWithTax"
+    label = "Product Subtotal with Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalProductTaxAmount {
+    apiName = "ReturnOrder.TotalProductTaxAmount"
+    label = "Product Subtotal Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalTaxAmount {
+    apiName = "ReturnOrder.TotalTaxAmount"
+    label = "Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "ReturnOrder.Id"
+    label = "Return Order ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ReturnOrder.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber ReturnOrderNumber {
+    apiName = "ReturnOrder.ReturnOrderNumber"
+    label = "Return Order Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ReturnOrder.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ReturnOrder.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ReturnOrder.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ReturnOrder.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ReturnOrder.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalFeeAmount {
+    apiName = "ReturnOrder.TotalFeeAmount"
+    label = "Fee Subtotal"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalFeeTaxAmount {
+    apiName = "ReturnOrder.TotalFeeTaxAmount"
+    label = "Fee Subtotal Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalFeeAdjustAmount {
+    apiName = "ReturnOrder.TotalFeeAdjustAmount"
+    label = "Fee Adjustments"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalFeeAdjustTaxAmount {
+    apiName = "ReturnOrder.TotalFeeAdjustTaxAmount"
+    label = "Fee Adjustments Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalFeeAmtWithTax {
+    apiName = "ReturnOrder.TotalFeeAmtWithTax"
+    label = "Fee Subtotal with Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary TotalFeeAdjustAmtWithTax {
+    apiName = "ReturnOrder.TotalFeeAdjustAmtWithTax"
+    label = "Fee Adjustments with Tax"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

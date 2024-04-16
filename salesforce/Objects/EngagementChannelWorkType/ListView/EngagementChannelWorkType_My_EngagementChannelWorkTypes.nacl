@@ -1,0 +1,9 @@
+salesforce.ListView EngagementChannelWorkType_My_EngagementChannelWorkTypes {
+  fullName = "EngagementChannelWorkType.My_EngagementChannelWorkTypes"
+  filterScope = "Mine"
+  label = "My Engagement Channel Work Types"
+  _parent = [
+    salesforce.EngagementChannelWorkType,
+  ]
+  _alias = "My Engagement Channel Work Types"
+}

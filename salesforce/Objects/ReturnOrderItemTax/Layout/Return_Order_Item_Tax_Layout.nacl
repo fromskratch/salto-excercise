@@ -1,0 +1,71 @@
+salesforce.Layout ReturnOrderItemTax_Return_Order_Item_Tax_Layout@bssss {
+  layoutSections = [
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = true
+      label = "Return Order Item Tax Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.ReturnOrderItemTax.field.ReturnOrderLineItemId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.ReturnOrderItemTax.field.ReturnOrderItemAdjustmentId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.ReturnOrderItemTax.field.Type
+            },
+            {
+              behavior = "Required"
+              field = salesforce.ReturnOrderItemTax.field.TaxEffectiveDate
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.ReturnOrderItemTax.field.Description
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.ReturnOrderItemTax.field.ReturnOrderId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.ReturnOrderItemTax.field.Amount
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.ReturnOrderItemTax.field.Rate
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "ReturnOrderItemTax-Return Order Item Tax Layout"
+  _parent = [
+    salesforce.ReturnOrderItemTax,
+  ]
+  _alias = "ReturnOrderItemTax-Return Order Item Tax Layout"
+}

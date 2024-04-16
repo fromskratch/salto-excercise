@@ -1,0 +1,294 @@
+type salesforce.Shift {
+  salesforce.Text BackgroundColor {
+    apiName = "Shift.BackgroundColor"
+    inlineHelpText = "Set a background color to highlight shifts in the schedule view."
+    length = 7
+    label = "Background Color"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime EndTime {
+    apiName = "Shift.EndTime"
+    _required = true
+    label = "End Time"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Label {
+    apiName = "Shift.Label"
+    length = 255
+    label = "Label"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "Shift.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Date RecurrenceEndDate {
+    apiName = "Shift.RecurrenceEndDate"
+    label = "Recurrence End Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text RecurrencePattern {
+    apiName = "Shift.RecurrencePattern"
+    length = 255
+    label = "Recurrence Pattern"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Date RecurrenceStartDate {
+    apiName = "Shift.RecurrenceStartDate"
+    label = "Recurrence Start Date"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup ServiceResourceId {
+    apiName = "Shift.ServiceResourceId"
+    relationshipName = "ServiceResource"
+    referenceTo = [
+      salesforce.ServiceResource,
+    ]
+    label = "Service Resource ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup ServiceTerritoryId {
+    apiName = "Shift.ServiceTerritoryId"
+    relationshipName = "ServiceTerritory"
+    referenceTo = [
+      salesforce.ServiceTerritory,
+    ]
+    label = "Service Territory ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime StartTime {
+    apiName = "Shift.StartTime"
+    _required = true
+    label = "Start Time"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "Shift.Status"
+    valueSet = [
+      {
+        fullName = "Tentative"
+        isActive = true
+        label = "Tentative"
+        default = true
+      },
+      {
+        fullName = "Published"
+        isActive = true
+        label = "Published"
+        default = false
+      },
+      {
+        fullName = "Confirmed"
+        isActive = true
+        label = "Confirmed"
+        default = false
+      },
+    ]
+    restricted = false
+    _required = true
+    label = "Status"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist StatusCategory {
+    apiName = "Shift.StatusCategory"
+    valueSet = [
+      {
+        fullName = "Tentative"
+        isActive = true
+        label = "Tentative"
+        default = false
+      },
+      {
+        fullName = "Published"
+        isActive = true
+        label = "Published"
+        default = false
+      },
+      {
+        fullName = "Confirmed"
+        isActive = true
+        label = "Confirmed"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Status Category"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist TimeSlotType {
+    apiName = "Shift.TimeSlotType"
+    valueSet = [
+      {
+        fullName = "Normal"
+        isActive = true
+        label = "Normal"
+        default = true
+      },
+      {
+        fullName = "Extended"
+        isActive = true
+        label = "Extended"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Time Slot Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Type {
+    apiName = "Shift.Type"
+    valueSet = [
+      {
+        fullName = "Regular"
+        isActive = true
+        label = "Regular"
+        default = true
+      },
+      {
+        fullName = "Recurring"
+        isActive = true
+        label = "Recurring"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Type"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup WorkTypeGroupId {
+    apiName = "Shift.WorkTypeGroupId"
+    relationshipName = "WorkTypeGroup"
+    referenceTo = [
+      salesforce.WorkTypeGroup,
+    ]
+    label = "Work Type Group ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup WorkTypeId {
+    apiName = "Shift.WorkTypeId"
+    relationshipName = "WorkType"
+    referenceTo = [
+      salesforce.WorkType,
+    ]
+    label = "Work Type ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "Shift.Id"
+    label = "Shift ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "Shift.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber ShiftNumber {
+    apiName = "Shift.ShiftNumber"
+    label = "Shift Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "Shift.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "Shift.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "Shift.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "Shift.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "Shift.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

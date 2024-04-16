@@ -1,0 +1,170 @@
+salesforce.Layout AlternativePaymentMethod_Alternative_Payment_Method_Layout@bsss {
+  layoutSections = [
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = true
+      label = "Alternative Payment Method"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.AlternativePaymentMethod.field.NickName
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AlternativePaymentMethod.field.AccountId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.AlternativePaymentMethod.field.ProcessingMode
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.AlternativePaymentMethod.field.Email
+            },
+            {
+              behavior = "Required"
+              field = salesforce.AlternativePaymentMethod.field.Status
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AlternativePaymentMethod.field.IsAutoPayEnabled
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "GatewayDetails"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.AlternativePaymentMethod.field.PaymentGatewayId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AlternativePaymentMethod.field.GatewayTokenDetails
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.AlternativePaymentMethod.field.GatewayToken
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "AdditionalInformation"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.AlternativePaymentMethod.field.CompanyName
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AlternativePaymentMethod.field.Comments
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.AlternativePaymentMethod.field.PaymentMethodAddress
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "SystemInformation"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.AlternativePaymentMethod.field.CreatedById
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.AlternativePaymentMethod.field.CreatedDate
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AlternativePaymentMethod.field.MacAddress
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AlternativePaymentMethod.field.Phone
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.AlternativePaymentMethod.field.LastModifiedById
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.AlternativePaymentMethod.field.LastModifiedDate
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AlternativePaymentMethod.field.IpAddress
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.AlternativePaymentMethod.field.AuditEmail
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "AlternativePaymentMethod-Alternative Payment Method Layout"
+  _parent = [
+    salesforce.AlternativePaymentMethod,
+  ]
+  _alias = "AlternativePaymentMethod-Alternative Payment Method Layout"
+}

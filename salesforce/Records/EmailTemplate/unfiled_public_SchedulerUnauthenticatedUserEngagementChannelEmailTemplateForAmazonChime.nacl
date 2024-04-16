@@ -1,0 +1,13 @@
+salesforce.EmailTemplate unfiled_public_SchedulerUnauthenticatedUserEngagementChannelEmailTemplateForAmazonChime@zcd {
+  available = true
+  description = "Email template for confirmation of an appointment when appointments are scheduled using engagement channels with Amazon Chime."
+  encodingKey = "ISO-8859-1"
+  name = "Appointment for Unauthenticated User using Engagement Channels-For Amazon Chime."
+  style = "none"
+  subject = "{!Organization.Name}:Appointment Confirmation."
+  type = "custom"
+  uiType = "Aloha"
+  fullName = "unfiled$public/SchedulerUnauthenticatedUserEngagementChannelEmailTemplateForAmazonChime"
+  content = file("salesforce/Records/EmailTemplate/unfiled$public/SchedulerUnauthenticatedUserEngagementChannelEmailTemplateForAmazonChime/SchedulerUnauthenticatedUserEngagementChannelEmailTemplateForAmazonChime.email")
+  _alias = "unfiled$public/SchedulerUnauthenticatedUserEngagementChannelEmailTemplateForAmazonChime"
+}

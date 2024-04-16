@@ -1,0 +1,9 @@
+salesforce.ListView ShiftWorkTopic_All_ShiftWorkTopics {
+  fullName = "ShiftWorkTopic.All_ShiftWorkTopics"
+  filterScope = "Everything"
+  label = "All Shift Work Topics"
+  _parent = [
+    salesforce.ShiftWorkTopic,
+  ]
+  _alias = "All Shift Work Topics"
+}

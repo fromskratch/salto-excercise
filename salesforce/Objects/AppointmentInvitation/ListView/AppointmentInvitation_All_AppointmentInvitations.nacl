@@ -1,0 +1,9 @@
+salesforce.ListView AppointmentInvitation_All_AppointmentInvitations {
+  fullName = "AppointmentInvitation.All_AppointmentInvitations"
+  filterScope = "Everything"
+  label = "All Appointment Invitations"
+  _parent = [
+    salesforce.AppointmentInvitation,
+  ]
+  _alias = "All Appointment Invitations"
+}

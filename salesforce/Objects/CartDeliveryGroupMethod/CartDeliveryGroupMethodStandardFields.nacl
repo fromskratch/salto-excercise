@@ -1,0 +1,192 @@
+type salesforce.CartDeliveryGroupMethod {
+  salesforce.Currency AdjustedShippingFee {
+    apiName = "CartDeliveryGroupMethod.AdjustedShippingFee"
+    label = "Adjusted Shipping Fee"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist Carrier {
+    apiName = "CartDeliveryGroupMethod.Carrier"
+    label = "Carrier"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup CartCheckoutSessionId {
+    apiName = "CartDeliveryGroupMethod.CartCheckoutSessionId"
+    relationshipName = "CartCheckoutSession"
+    referenceTo = [
+      salesforce.CartCheckoutSession,
+    ]
+    label = "Cart Checkout Session ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup CartDeliveryGroupId {
+    apiName = "CartDeliveryGroupMethod.CartDeliveryGroupId"
+    relationshipName = "CartDeliveryGroup"
+    referenceTo = [
+      salesforce.CartDeliveryGroup,
+    ]
+    _required = true
+    label = "Cart Delivery Group ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist ClassOfService {
+    apiName = "CartDeliveryGroupMethod.ClassOfService"
+    label = "Class Of Service"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsActive {
+    apiName = "CartDeliveryGroupMethod.IsActive"
+    defaultValue = false
+    label = "Is Active"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup ProductId {
+    apiName = "CartDeliveryGroupMethod.ProductId"
+    relationshipName = "Product"
+    referenceTo = [
+      salesforce.Product2,
+    ]
+    label = "Product ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text ReferenceNumber {
+    apiName = "CartDeliveryGroupMethod.ReferenceNumber"
+    length = 255
+    label = "Reference Number"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Currency ShippingFee {
+    apiName = "CartDeliveryGroupMethod.ShippingFee"
+    _required = true
+    label = "Shipping Fee"
+    createable = true
+    updateable = true
+    scale = 0
+    precision = 18
+    queryable = true
+  }
+  salesforce.Summary TotalAdjustmentAmount {
+    apiName = "CartDeliveryGroupMethod.TotalAdjustmentAmount"
+    label = "Total Adjustment Amount"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.MasterDetail WebCartId {
+    apiName = "CartDeliveryGroupMethod.WebCartId"
+    relationshipName = "WebCart"
+    referenceTo = [
+      salesforce.WebCart,
+    ]
+    _required = true
+    label = "Cart ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "CartDeliveryGroupMethod.Id"
+    label = "Cart Delivery Group Method ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "CartDeliveryGroupMethod.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "CartDeliveryGroupMethod.Name"
+    length = 255
+    _required = true
+    label = "Name"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "CartDeliveryGroupMethod.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "CartDeliveryGroupMethod.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "CartDeliveryGroupMethod.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "CartDeliveryGroupMethod.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "CartDeliveryGroupMethod.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text ExternalProvider {
+    apiName = "CartDeliveryGroupMethod.ExternalProvider"
+    length = 255
+    label = "External Provider"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+}

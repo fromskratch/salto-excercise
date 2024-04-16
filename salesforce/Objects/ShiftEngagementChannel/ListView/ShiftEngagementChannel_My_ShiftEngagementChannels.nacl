@@ -1,0 +1,9 @@
+salesforce.ListView ShiftEngagementChannel_My_ShiftEngagementChannels {
+  fullName = "ShiftEngagementChannel.My_ShiftEngagementChannels"
+  filterScope = "Mine"
+  label = "My Shift Engagement Channels"
+  _parent = [
+    salesforce.ShiftEngagementChannel,
+  ]
+  _alias = "My Shift Engagement Channels"
+}

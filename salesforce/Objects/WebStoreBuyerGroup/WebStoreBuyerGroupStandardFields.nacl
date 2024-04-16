@@ -1,0 +1,97 @@
+type salesforce.WebStoreBuyerGroup {
+  salesforce.Lookup BuyerGroupId {
+    apiName = "WebStoreBuyerGroup.BuyerGroupId"
+    relationshipName = "BuyerGroup"
+    referenceTo = [
+      salesforce.BuyerGroup,
+    ]
+    _required = true
+    label = "Buyer Group ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MasterDetail WebStoreId {
+    apiName = "WebStoreBuyerGroup.WebStoreId"
+    relationshipName = "WebStore"
+    referenceTo = [
+      salesforce.WebStore,
+    ]
+    _required = true
+    label = "Store ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "WebStoreBuyerGroup.Id"
+    label = "Store Buyer Group ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WebStoreBuyerGroup.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "WebStoreBuyerGroup.Name"
+    label = "Store Buyer Group Name"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WebStoreBuyerGroup.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WebStoreBuyerGroup.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WebStoreBuyerGroup.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WebStoreBuyerGroup.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WebStoreBuyerGroup.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

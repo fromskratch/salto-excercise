@@ -1,0 +1,1644 @@
+type salesforce.VoiceCall {
+  salesforce.Lookup ActivityId {
+    apiName = "VoiceCall.ActivityId"
+    relationshipName = "Activity"
+    referenceTo = [
+      salesforce.Task,
+    ]
+    label = "Activity ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CallAcceptDateTime {
+    apiName = "VoiceCall.CallAcceptDateTime"
+    label = "Call Accepted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CallConnectDateTime {
+    apiName = "VoiceCall.CallConnectDateTime"
+    label = "Call Connected"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text CallDisposition {
+    apiName = "VoiceCall.CallDisposition"
+    length = 255
+    label = "Call Status"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number CallDurationInSeconds {
+    apiName = "VoiceCall.CallDurationInSeconds"
+    label = "Call Duration"
+    precision = 8
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CallEndDateTime {
+    apiName = "VoiceCall.CallEndDateTime"
+    _required = true
+    label = "Call Ended"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist CallOrigin {
+    apiName = "VoiceCall.CallOrigin"
+    valueSet = [
+      {
+        fullName = "Preview"
+        isActive = true
+        label = "Preview"
+        default = false
+      },
+      {
+        fullName = "Progressive"
+        isActive = true
+        label = "Progressive"
+        default = false
+      },
+      {
+        fullName = "Voicemail"
+        isActive = true
+        label = "Voicemail"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Call Origin"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CallQueuedDateTime {
+    apiName = "VoiceCall.CallQueuedDateTime"
+    label = "Call Entered Queue"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist CallResolution {
+    apiName = "VoiceCall.CallResolution"
+    valueSet = [
+      {
+        fullName = "Resolved"
+        isActive = true
+        label = "Resolved"
+        default = false
+      },
+    ]
+    restricted = false
+    label = "Call Resolution"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CallStartDateTime {
+    apiName = "VoiceCall.CallStartDateTime"
+    _required = true
+    label = "Call Started"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist CallType {
+    apiName = "VoiceCall.CallType"
+    valueSet = [
+      {
+        fullName = "Internal"
+        isActive = true
+        label = "Internal"
+        default = false
+      },
+      {
+        fullName = "Inbound"
+        isActive = true
+        label = "Inbound"
+        default = false
+      },
+      {
+        fullName = "Outbound"
+        isActive = true
+        label = "Outbound"
+        default = false
+      },
+      {
+        fullName = "Coach"
+        isActive = true
+        label = "Coach"
+        default = false
+      },
+      {
+        fullName = "Bridge"
+        isActive = true
+        label = "Bridge"
+        default = false
+      },
+      {
+        fullName = "Transfer"
+        isActive = true
+        label = "Transfer"
+        default = false
+      },
+      {
+        fullName = "Callback"
+        isActive = true
+        label = "Callback"
+        default = false
+      },
+      {
+        fullName = "InternalCall"
+        isActive = true
+        label = "Internal Call"
+        default = false
+      },
+    ]
+    restricted = true
+    _required = true
+    label = "Call Type"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CallerId {
+    apiName = "VoiceCall.CallerId"
+    relationshipName = "Caller"
+    referenceTo = [
+      "ConversationParticipant",
+    ]
+    label = "Caller ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number CustomerHoldDuration {
+    apiName = "VoiceCall.CustomerHoldDuration"
+    label = "Customer Hold Duration"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "VoiceCall.Description"
+    length = 32000
+    label = "Description"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text DisconnectReason {
+    apiName = "VoiceCall.DisconnectReason"
+    length = 255
+    label = "Disconnect Reason"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup EndUserId {
+    apiName = "VoiceCall.EndUserId"
+    relationshipName = "EndUser"
+    referenceTo = [
+      salesforce.MessagingEndUser,
+    ]
+    label = "Messaging User ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Phone FromPhoneNumber {
+    apiName = "VoiceCall.FromPhoneNumber"
+    _required = true
+    label = "Caller Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsRecorded {
+    apiName = "VoiceCall.IsRecorded"
+    defaultValue = false
+    label = "Is Call Recorded"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number LongestHoldDuration {
+    apiName = "VoiceCall.LongestHoldDuration"
+    label = "Longest Hold Duration"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup NextCallId {
+    apiName = "VoiceCall.NextCallId"
+    relationshipName = "NextCall"
+    referenceTo = [
+      salesforce.VoiceCall,
+    ]
+    label = "Next Call ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number NumberOfHolds {
+    apiName = "VoiceCall.NumberOfHolds"
+    label = "Number Of Holds"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "VoiceCall.OwnerId"
+    relationshipName = "Owner"
+    referenceTo = [
+      salesforce.Group,
+      salesforce.User,
+    ]
+    label = "Owner ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup PreviousCallId {
+    apiName = "VoiceCall.PreviousCallId"
+    relationshipName = "PreviousCall"
+    referenceTo = [
+      salesforce.VoiceCall,
+    ]
+    label = "Previous Call ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number QualityScore {
+    apiName = "VoiceCall.QualityScore"
+    label = "Mean Opinion Score"
+    precision = 18
+    scale = 2
+    createable = false
+    updateable = false
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text QueueName {
+    apiName = "VoiceCall.QueueName"
+    length = 255
+    label = "Queue Name"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup RecipientId {
+    apiName = "VoiceCall.RecipientId"
+    relationshipName = "Recipient"
+    referenceTo = [
+      "ConversationParticipant",
+    ]
+    label = "Recipient ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup RelatedRecordId {
+    apiName = "VoiceCall.RelatedRecordId"
+    relationshipName = "RelatedRecord"
+    referenceTo = [
+      salesforce.Account,
+      salesforce.Case,
+      salesforce.Contact,
+      salesforce.Lead,
+      salesforce.Opportunity,
+    ]
+    label = "RelatedRecord ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Phone ToPhoneNumber {
+    apiName = "VoiceCall.ToPhoneNumber"
+    _required = true
+    label = "Recipient Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup UserId {
+    apiName = "VoiceCall.UserId"
+    relationshipName = "User"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "User ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text VendorCallKey {
+    apiName = "VoiceCall.VendorCallKey"
+    length = 255
+    label = "Vendor Call Key"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "VoiceCall.Name"
+    label = "Name"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "VoiceCall.Id"
+    label = "Voice Call ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "VoiceCall.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "VoiceCall.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "VoiceCall.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "VoiceCall.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "VoiceCall.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "VoiceCall.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number Price {
+    apiName = "VoiceCall.Price"
+    label = "Price"
+    precision = 18
+    scale = 2
+    createable = false
+    updateable = false
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist CurrencyCode {
+    apiName = "VoiceCall.CurrencyCode"
+    valueSet = [
+      {
+        fullName = "AED"
+        isActive = true
+        label = "AED - UAE Dirham"
+        default = false
+      },
+      {
+        fullName = "AFN"
+        isActive = true
+        label = "AFN - Afghanistan Afghani (New)"
+        default = false
+      },
+      {
+        fullName = "ALL"
+        isActive = true
+        label = "ALL - Albanian Lek"
+        default = false
+      },
+      {
+        fullName = "AMD"
+        isActive = true
+        label = "AMD - Armenian Dram"
+        default = false
+      },
+      {
+        fullName = "ANG"
+        isActive = true
+        label = "ANG - Neth Antilles Guilder"
+        default = false
+      },
+      {
+        fullName = "AOA"
+        isActive = true
+        label = "AOA - Angola Kwanza"
+        default = false
+      },
+      {
+        fullName = "ARS"
+        isActive = true
+        label = "ARS - Argentine Peso"
+        default = false
+      },
+      {
+        fullName = "AUD"
+        isActive = true
+        label = "AUD - Australian Dollar"
+        default = false
+      },
+      {
+        fullName = "AWG"
+        isActive = true
+        label = "AWG - Aruba Florin"
+        default = false
+      },
+      {
+        fullName = "AZN"
+        isActive = true
+        label = "AZN - Azerbaijan Manat"
+        default = false
+      },
+      {
+        fullName = "BAM"
+        isActive = true
+        label = "BAM - Convertible Marks"
+        default = false
+      },
+      {
+        fullName = "BBD"
+        isActive = true
+        label = "BBD - Barbados Dollar"
+        default = false
+      },
+      {
+        fullName = "BDT"
+        isActive = true
+        label = "BDT - Bangladesh Taka"
+        default = false
+      },
+      {
+        fullName = "BGN"
+        isActive = true
+        label = "BGN - Bulgarian Lev"
+        default = false
+      },
+      {
+        fullName = "BHD"
+        isActive = true
+        label = "BHD - Bahraini Dinar"
+        default = false
+      },
+      {
+        fullName = "BIF"
+        isActive = true
+        label = "BIF - Burundi Franc"
+        default = false
+      },
+      {
+        fullName = "BMD"
+        isActive = true
+        label = "BMD - Bermuda Dollar"
+        default = false
+      },
+      {
+        fullName = "BND"
+        isActive = true
+        label = "BND - Brunei Dollar"
+        default = false
+      },
+      {
+        fullName = "BOB"
+        isActive = true
+        label = "BOB - Bolivian Boliviano"
+        default = false
+      },
+      {
+        fullName = "BOV"
+        isActive = true
+        label = "BOV - Bolivia Mvdol"
+        default = false
+      },
+      {
+        fullName = "BRL"
+        isActive = true
+        label = "BRL - Brazilian Real"
+        default = false
+      },
+      {
+        fullName = "BSD"
+        isActive = true
+        label = "BSD - Bahamian Dollar"
+        default = false
+      },
+      {
+        fullName = "BTN"
+        isActive = true
+        label = "BTN - Bhutan Ngultrum"
+        default = false
+      },
+      {
+        fullName = "BWP"
+        isActive = true
+        label = "BWP - Botswana Pula"
+        default = false
+      },
+      {
+        fullName = "BYN"
+        isActive = true
+        label = "BYN - Belarusian Ruble"
+        default = false
+      },
+      {
+        fullName = "BYR"
+        isActive = true
+        label = "BYR - Belarusian Ruble"
+        default = false
+      },
+      {
+        fullName = "BZD"
+        isActive = true
+        label = "BZD - Belize Dollar"
+        default = false
+      },
+      {
+        fullName = "CAD"
+        isActive = true
+        label = "CAD - Canadian Dollar"
+        default = false
+      },
+      {
+        fullName = "CDF"
+        isActive = true
+        label = "CDF - Franc Congolais"
+        default = false
+      },
+      {
+        fullName = "CHF"
+        isActive = true
+        label = "CHF - Swiss Franc"
+        default = false
+      },
+      {
+        fullName = "CLF"
+        isActive = true
+        label = "CLF - Unidades de fomento"
+        default = false
+      },
+      {
+        fullName = "CLP"
+        isActive = true
+        label = "CLP - Chilean Peso"
+        default = false
+      },
+      {
+        fullName = "CNH"
+        isActive = true
+        label = "CNH - Chinese Yuan (Offshore)"
+        default = false
+      },
+      {
+        fullName = "CNY"
+        isActive = true
+        label = "CNY - Chinese Yuan"
+        default = false
+      },
+      {
+        fullName = "COP"
+        isActive = true
+        label = "COP - Colombian Peso"
+        default = false
+      },
+      {
+        fullName = "CRC"
+        isActive = true
+        label = "CRC - Costa Rica Colon"
+        default = false
+      },
+      {
+        fullName = "CUC"
+        isActive = true
+        label = "CUC - Cuban Peso Convertible"
+        default = false
+      },
+      {
+        fullName = "CVE"
+        isActive = true
+        label = "CVE - Cape Verde Escudo"
+        default = false
+      },
+      {
+        fullName = "CZK"
+        isActive = true
+        label = "CZK - Czech Koruna"
+        default = false
+      },
+      {
+        fullName = "DJF"
+        isActive = true
+        label = "DJF - Dijibouti Franc"
+        default = false
+      },
+      {
+        fullName = "DKK"
+        isActive = true
+        label = "DKK - Danish Krone"
+        default = false
+      },
+      {
+        fullName = "DOP"
+        isActive = true
+        label = "DOP - Dominican Peso"
+        default = false
+      },
+      {
+        fullName = "DZD"
+        isActive = true
+        label = "DZD - Algerian Dinar"
+        default = false
+      },
+      {
+        fullName = "EEK"
+        isActive = true
+        label = "EEK - Estonian Kroon"
+        default = false
+      },
+      {
+        fullName = "EGP"
+        isActive = true
+        label = "EGP - Egyptian Pound"
+        default = false
+      },
+      {
+        fullName = "ERN"
+        isActive = true
+        label = "ERN - Eritrea Nakfa"
+        default = false
+      },
+      {
+        fullName = "ETB"
+        isActive = true
+        label = "ETB - Ethiopian Birr"
+        default = false
+      },
+      {
+        fullName = "EUR"
+        isActive = true
+        label = "EUR - Euro"
+        default = false
+      },
+      {
+        fullName = "FJD"
+        isActive = true
+        label = "FJD - Fiji Dollar"
+        default = false
+      },
+      {
+        fullName = "FKP"
+        isActive = true
+        label = "FKP - Falkland Islands Pound"
+        default = false
+      },
+      {
+        fullName = "GBP"
+        isActive = true
+        label = "GBP - British Pound"
+        default = false
+      },
+      {
+        fullName = "GEL"
+        isActive = true
+        label = "GEL - Georgia Lari"
+        default = false
+      },
+      {
+        fullName = "GHS"
+        isActive = true
+        label = "GHS - Ghanaian Cedi"
+        default = false
+      },
+      {
+        fullName = "GIP"
+        isActive = true
+        label = "GIP - Gibraltar Pound"
+        default = false
+      },
+      {
+        fullName = "GMD"
+        isActive = true
+        label = "GMD - Gambian Dalasi"
+        default = false
+      },
+      {
+        fullName = "GNF"
+        isActive = true
+        label = "GNF - Guinean Franc"
+        default = false
+      },
+      {
+        fullName = "GTQ"
+        isActive = true
+        label = "GTQ - Guatemala Quetzal"
+        default = false
+      },
+      {
+        fullName = "GYD"
+        isActive = true
+        label = "GYD - Guyana Dollar"
+        default = false
+      },
+      {
+        fullName = "HKD"
+        isActive = true
+        label = "HKD - Hong Kong Dollar"
+        default = false
+      },
+      {
+        fullName = "HNL"
+        isActive = true
+        label = "HNL - Honduras Lempira"
+        default = false
+      },
+      {
+        fullName = "HRK"
+        isActive = true
+        label = "HRK - Kuna"
+        default = false
+      },
+      {
+        fullName = "HTG"
+        isActive = true
+        label = "HTG - Haiti Gourde"
+        default = false
+      },
+      {
+        fullName = "HUF"
+        isActive = true
+        label = "HUF - Hungarian Forint"
+        default = false
+      },
+      {
+        fullName = "IDR"
+        isActive = true
+        label = "IDR - Indonesian Rupiah"
+        default = false
+      },
+      {
+        fullName = "ILS"
+        isActive = true
+        label = "ILS - Israeli Shekel"
+        default = false
+      },
+      {
+        fullName = "INR"
+        isActive = true
+        label = "INR - Indian Rupee"
+        default = false
+      },
+      {
+        fullName = "IQD"
+        isActive = true
+        label = "IQD - Iraqi Dinar"
+        default = false
+      },
+      {
+        fullName = "ISK"
+        isActive = true
+        label = "ISK - Iceland Krona"
+        default = false
+      },
+      {
+        fullName = "JMD"
+        isActive = true
+        label = "JMD - Jamaican Dollar"
+        default = false
+      },
+      {
+        fullName = "JOD"
+        isActive = true
+        label = "JOD - Jordanian Dinar"
+        default = false
+      },
+      {
+        fullName = "JPY"
+        isActive = true
+        label = "JPY - Japanese Yen"
+        default = false
+      },
+      {
+        fullName = "KES"
+        isActive = true
+        label = "KES - Kenyan Shilling"
+        default = false
+      },
+      {
+        fullName = "KGS"
+        isActive = true
+        label = "KGS - Kyrgyzstan Som"
+        default = false
+      },
+      {
+        fullName = "KHR"
+        isActive = true
+        label = "KHR - Cambodia Riel"
+        default = false
+      },
+      {
+        fullName = "KMF"
+        isActive = true
+        label = "KMF - Comorian Franc"
+        default = false
+      },
+      {
+        fullName = "KRW"
+        isActive = true
+        label = "KRW - Korean Won"
+        default = false
+      },
+      {
+        fullName = "KWD"
+        isActive = true
+        label = "KWD - Kuwaiti Dinar"
+        default = false
+      },
+      {
+        fullName = "KYD"
+        isActive = true
+        label = "KYD - Cayman Islands Dollar"
+        default = false
+      },
+      {
+        fullName = "KZT"
+        isActive = true
+        label = "KZT - Kazakhstan Tenge"
+        default = false
+      },
+      {
+        fullName = "LAK"
+        isActive = true
+        label = "LAK - Lao Kip"
+        default = false
+      },
+      {
+        fullName = "LBP"
+        isActive = true
+        label = "LBP - Lebanese Pound"
+        default = false
+      },
+      {
+        fullName = "LKR"
+        isActive = true
+        label = "LKR - Sri Lanka Rupee"
+        default = false
+      },
+      {
+        fullName = "LRD"
+        isActive = true
+        label = "LRD - Liberian Dollar"
+        default = false
+      },
+      {
+        fullName = "LSL"
+        isActive = true
+        label = "LSL - Lesotho Loti"
+        default = false
+      },
+      {
+        fullName = "LYD"
+        isActive = true
+        label = "LYD - Libyan Dinar"
+        default = false
+      },
+      {
+        fullName = "MAD"
+        isActive = true
+        label = "MAD - Moroccan Dirham"
+        default = false
+      },
+      {
+        fullName = "MDL"
+        isActive = true
+        label = "MDL - Moldovan Leu"
+        default = false
+      },
+      {
+        fullName = "MGA"
+        isActive = true
+        label = "MGA - Malagasy Ariary"
+        default = false
+      },
+      {
+        fullName = "MKD"
+        isActive = true
+        label = "MKD - Macedonian Denar"
+        default = false
+      },
+      {
+        fullName = "MMK"
+        isActive = true
+        label = "MMK - Myanmar Kyat"
+        default = false
+      },
+      {
+        fullName = "MNT"
+        isActive = true
+        label = "MNT - Mongolian Tugrik"
+        default = false
+      },
+      {
+        fullName = "MOP"
+        isActive = true
+        label = "MOP - Macau Pataca"
+        default = false
+      },
+      {
+        fullName = "MRO"
+        isActive = true
+        label = "MRO - Mauritanian Ougulya"
+        default = false
+      },
+      {
+        fullName = "MRU"
+        isActive = true
+        label = "MRU - Mauritanian Ougulya"
+        default = false
+      },
+      {
+        fullName = "MUR"
+        isActive = true
+        label = "MUR - Mauritius Rupee"
+        default = false
+      },
+      {
+        fullName = "MVR"
+        isActive = true
+        label = "MVR - Maldives Rufiyaa"
+        default = false
+      },
+      {
+        fullName = "MWK"
+        isActive = true
+        label = "MWK - Malawi Kwacha"
+        default = false
+      },
+      {
+        fullName = "MXN"
+        isActive = true
+        label = "MXN - Mexican Peso"
+        default = false
+      },
+      {
+        fullName = "MXV"
+        isActive = true
+        label = "MXV - Mexican Unidad de Inversion (UDI)"
+        default = false
+      },
+      {
+        fullName = "MYR"
+        isActive = true
+        label = "MYR - Malaysian Ringgit"
+        default = false
+      },
+      {
+        fullName = "MZN"
+        isActive = true
+        label = "MZN - Mozambique New Metical"
+        default = false
+      },
+      {
+        fullName = "NAD"
+        isActive = true
+        label = "NAD - Namibian Dollar"
+        default = false
+      },
+      {
+        fullName = "NGN"
+        isActive = true
+        label = "NGN - Nigerian Naira"
+        default = false
+      },
+      {
+        fullName = "NIO"
+        isActive = true
+        label = "NIO - Nicaragua Cordoba"
+        default = false
+      },
+      {
+        fullName = "NOK"
+        isActive = true
+        label = "NOK - Norwegian Krone"
+        default = false
+      },
+      {
+        fullName = "NPR"
+        isActive = true
+        label = "NPR - Nepalese Rupee"
+        default = false
+      },
+      {
+        fullName = "NZD"
+        isActive = true
+        label = "NZD - New Zealand Dollar"
+        default = false
+      },
+      {
+        fullName = "OMR"
+        isActive = true
+        label = "OMR - Omani Rial"
+        default = false
+      },
+      {
+        fullName = "PAB"
+        isActive = true
+        label = "PAB - Panama Balboa"
+        default = false
+      },
+      {
+        fullName = "PEN"
+        isActive = true
+        label = "PEN - Peruvian Sol"
+        default = false
+      },
+      {
+        fullName = "PGK"
+        isActive = true
+        label = "PGK - Papua New Guinea Kina"
+        default = false
+      },
+      {
+        fullName = "PHP"
+        isActive = true
+        label = "PHP - Philippine Peso"
+        default = false
+      },
+      {
+        fullName = "PKR"
+        isActive = true
+        label = "PKR - Pakistani Rupee"
+        default = false
+      },
+      {
+        fullName = "PLN"
+        isActive = true
+        label = "PLN - Polish Zloty"
+        default = false
+      },
+      {
+        fullName = "PYG"
+        isActive = true
+        label = "PYG - Paraguayan Guarani"
+        default = false
+      },
+      {
+        fullName = "QAR"
+        isActive = true
+        label = "QAR - Qatar Rial"
+        default = false
+      },
+      {
+        fullName = "RON"
+        isActive = true
+        label = "RON - Romanian Leu"
+        default = false
+      },
+      {
+        fullName = "RSD"
+        isActive = true
+        label = "RSD - Serbian Dinar"
+        default = false
+      },
+      {
+        fullName = "RUB"
+        isActive = true
+        label = "RUB - Russian Rouble"
+        default = false
+      },
+      {
+        fullName = "RWF"
+        isActive = true
+        label = "RWF - Rwanda Franc"
+        default = false
+      },
+      {
+        fullName = "SAR"
+        isActive = true
+        label = "SAR - Saudi Arabian Riyal"
+        default = false
+      },
+      {
+        fullName = "SBD"
+        isActive = true
+        label = "SBD - Solomon Islands Dollar"
+        default = false
+      },
+      {
+        fullName = "SCR"
+        isActive = true
+        label = "SCR - Seychelles Rupee"
+        default = false
+      },
+      {
+        fullName = "SEK"
+        isActive = true
+        label = "SEK - Swedish Krona"
+        default = false
+      },
+      {
+        fullName = "SGD"
+        isActive = true
+        label = "SGD - Singapore Dollar"
+        default = false
+      },
+      {
+        fullName = "SHP"
+        isActive = true
+        label = "SHP - St Helena Pound"
+        default = false
+      },
+      {
+        fullName = "SLE"
+        isActive = true
+        label = "SLE - Sierra Leone Leone"
+        default = false
+      },
+      {
+        fullName = "SLL"
+        isActive = true
+        label = "SLL - Sierra Leone Leone"
+        default = false
+      },
+      {
+        fullName = "SOS"
+        isActive = true
+        label = "SOS - Somali Shilling"
+        default = false
+      },
+      {
+        fullName = "SRD"
+        isActive = true
+        label = "SRD - Surinam Dollar"
+        default = false
+      },
+      {
+        fullName = "SSP"
+        isActive = true
+        label = "SSP - South Sudan Pound"
+        default = false
+      },
+      {
+        fullName = "STD"
+        isActive = true
+        label = "STD - São Tomé and Príncipe Dobra"
+        default = false
+      },
+      {
+        fullName = "STN"
+        isActive = true
+        label = "STN - São Tomé and Príncipe Dobra"
+        default = false
+      },
+      {
+        fullName = "SZL"
+        isActive = true
+        label = "SZL - Eswatini Lilageni"
+        default = false
+      },
+      {
+        fullName = "THB"
+        isActive = true
+        label = "THB - Thai Baht"
+        default = false
+      },
+      {
+        fullName = "TJS"
+        isActive = true
+        label = "TJS - Tajik Somoni"
+        default = false
+      },
+      {
+        fullName = "TMT"
+        isActive = true
+        label = "TMT - Turkmenistan New Manat"
+        default = false
+      },
+      {
+        fullName = "TND"
+        isActive = true
+        label = "TND - Tunisian Dinar"
+        default = false
+      },
+      {
+        fullName = "TOP"
+        isActive = true
+        label = "TOP - Tonga Pa'anga"
+        default = false
+      },
+      {
+        fullName = "TRY"
+        isActive = true
+        label = "TRY - Turkish Lira (New)"
+        default = false
+      },
+      {
+        fullName = "TTD"
+        isActive = true
+        label = "TTD - Trinidad&Tobago Dollar"
+        default = false
+      },
+      {
+        fullName = "TWD"
+        isActive = true
+        label = "TWD - Taiwan Dollar"
+        default = false
+      },
+      {
+        fullName = "TZS"
+        isActive = true
+        label = "TZS - Tanzanian Shilling"
+        default = false
+      },
+      {
+        fullName = "UAH"
+        isActive = true
+        label = "UAH - Ukraine Hryvnia"
+        default = false
+      },
+      {
+        fullName = "UGX"
+        isActive = true
+        label = "UGX - Ugandan Shilling"
+        default = false
+      },
+      {
+        fullName = "USD"
+        isActive = true
+        label = "USD - U.S. Dollar"
+        default = false
+      },
+      {
+        fullName = "UYU"
+        isActive = true
+        label = "UYU - Uruguayan Peso"
+        default = false
+      },
+      {
+        fullName = "UZS"
+        isActive = true
+        label = "UZS - Uzbekistan Sum"
+        default = false
+      },
+      {
+        fullName = "VEF"
+        isActive = true
+        label = "VEF - Venezuelan Bolivar Fuerte"
+        default = false
+      },
+      {
+        fullName = "VES"
+        isActive = true
+        label = "VES - Venezuelan Bolívar Soberano"
+        default = false
+      },
+      {
+        fullName = "VND"
+        isActive = true
+        label = "VND - Vietnam Dong"
+        default = false
+      },
+      {
+        fullName = "VUV"
+        isActive = true
+        label = "VUV - Vanuatu Vatu"
+        default = false
+      },
+      {
+        fullName = "WST"
+        isActive = true
+        label = "WST - Samoa Tala"
+        default = false
+      },
+      {
+        fullName = "XAF"
+        isActive = true
+        label = "XAF - CFA Franc (BEAC)"
+        default = false
+      },
+      {
+        fullName = "XCD"
+        isActive = true
+        label = "XCD - East Caribbean Dollar"
+        default = false
+      },
+      {
+        fullName = "XOF"
+        isActive = true
+        label = "XOF - CFA Franc (BCEAO)"
+        default = false
+      },
+      {
+        fullName = "XPF"
+        isActive = true
+        label = "XPF - Pacific Franc"
+        default = false
+      },
+      {
+        fullName = "YER"
+        isActive = true
+        label = "YER - Yemen Riyal"
+        default = false
+      },
+      {
+        fullName = "ZAR"
+        isActive = true
+        label = "ZAR - South African Rand"
+        default = false
+      },
+      {
+        fullName = "ZMW"
+        isActive = true
+        label = "ZMW - Zambian Kwacha (New)"
+        default = false
+      },
+      {
+        fullName = "ZWL"
+        isActive = true
+        label = "ZWL - Zimbabwe Dollar"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Currency Code"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text VendorParentCallKey {
+    apiName = "VoiceCall.VendorParentCallKey"
+    length = 255
+    label = "Vendor Parent Call Key"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist VendorType {
+    apiName = "VoiceCall.VendorType"
+    valueSet = [
+      {
+        fullName = "Twilio"
+        isActive = true
+        label = "Twilio"
+        default = false
+      },
+      {
+        fullName = "Custom"
+        isActive = true
+        label = "Custom"
+        default = false
+      },
+      {
+        fullName = "TwilioTrial"
+        isActive = true
+        label = "TwilioTrial"
+        default = false
+      },
+      {
+        fullName = "ContactCenter"
+        isActive = true
+        label = "ContactCenter"
+        default = false
+      },
+      {
+        fullName = "RingCentral"
+        isActive = true
+        label = "RingCentral"
+        default = false
+      },
+      {
+        fullName = "DialPad"
+        isActive = true
+        label = "DialPad"
+        default = false
+      },
+      {
+        fullName = "AmazonConnect"
+        isActive = true
+        label = "AmazonConnect"
+        default = false
+      },
+      {
+        fullName = "AirCall"
+        isActive = true
+        label = "AirCall"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Vendor Type"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text ConferenceKey {
+    apiName = "VoiceCall.ConferenceKey"
+    length = 255
+    label = "Conference Key"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CallRecordingId {
+    apiName = "VoiceCall.CallRecordingId"
+    relationshipName = "CallRecording"
+    referenceTo = [
+      "VoiceCallRecording",
+    ]
+    label = "VoiceCallRecording ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist CallerIdType {
+    apiName = "VoiceCall.CallerIdType"
+    valueSet = [
+      {
+        fullName = "VendorLine"
+        isActive = true
+        label = "User"
+        default = false
+      },
+      {
+        fullName = "CompanyNumber"
+        isActive = true
+        label = "Company"
+        default = false
+      },
+      {
+        fullName = "LocalPresence"
+        isActive = true
+        label = "Local Presence"
+        default = false
+      },
+      {
+        fullName = "CustomCallerId"
+        isActive = true
+        label = "Custom Caller Id"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Caller Id"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CallCenterId {
+    apiName = "VoiceCall.CallCenterId"
+    relationshipName = "CallCenter"
+    referenceTo = [
+      salesforce.CallCenter,
+    ]
+    label = "Call Center ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ConversationId {
+    apiName = "VoiceCall.ConversationId"
+    relationshipName = "Conversation"
+    referenceTo = [
+      "Conversation",
+    ]
+    label = "Conversation ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup MediaProviderId {
+    apiName = "VoiceCall.MediaProviderId"
+    relationshipName = "MediaProvider"
+    referenceTo = [
+      salesforce.CallCoachingMediaProvider,
+    ]
+    label = "CallCoachingMediaProvider ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist SourceType {
+    apiName = "VoiceCall.SourceType"
+    valueSet = [
+      {
+        fullName = "Sales"
+        isActive = true
+        label = "Sales"
+        default = false
+      },
+      {
+        fullName = "Service"
+        isActive = true
+        label = "Service"
+        default = false
+      },
+    ]
+    restricted = true
+    label = "Source Type"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

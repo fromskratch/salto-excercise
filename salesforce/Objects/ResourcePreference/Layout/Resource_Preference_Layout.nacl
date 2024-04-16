@@ -1,0 +1,70 @@
+salesforce.Layout ResourcePreference_Resource_Preference_Layout@bss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.ResourcePreference.field.ServiceResourceId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.ResourcePreference.field.RelatedRecordId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.ResourcePreference.field.PreferenceType
+            },
+          ]
+        },
+      ]
+      style = "OneColumn"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = false
+      label = "System Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.ResourcePreference.field.CreatedById
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.ResourcePreference.field.LastModifiedById
+            },
+          ]
+        },
+      ]
+      style = "OneColumn"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Custom Links"
+      style = "CustomLinks"
+    },
+  ]
+  relatedLists = [
+    {
+      relatedList = "RelatedEntityHistoryList"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "ResourcePreference-Resource Preference Layout"
+  _parent = [
+    salesforce.ResourcePreference,
+  ]
+  _alias = "ResourcePreference-Resource Preference Layout"
+}

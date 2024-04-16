@@ -1,0 +1,106 @@
+salesforce.Layout WorkTypeGroup_Work_Type_Group_Layout@bsss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Description"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.WorkTypeGroup.field.Name
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.WorkTypeGroup.field.Description
+            },
+            {
+              behavior = "Required"
+              field = salesforce.WorkTypeGroup.field.GroupType
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.WorkTypeGroup.field.IsActive
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.WorkTypeGroup.field.AdditionalInformation
+            },
+          ]
+        },
+      ]
+      style = "OneColumn"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "System Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.WorkTypeGroup.field.CreatedById
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.WorkTypeGroup.field.OwnerId
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.WorkTypeGroup.field.LastModifiedById
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Custom Links"
+      style = "CustomLinks"
+    },
+  ]
+  relatedLists = [
+    {
+      relatedList = "RelatedEntityHistoryList"
+    },
+    {
+      fields = [
+        "CreatedDate",
+        "StepStatus",
+        "OriginalActor",
+        "Actor",
+        "Comments",
+      ]
+      relatedList = "RelatedProcessHistoryList"
+    },
+    {
+      relatedList = "RelatedFileList"
+    },
+    {
+      fields = [
+        "Name",
+        "WorkType",
+      ]
+      relatedList = "WorkTypeGroupMembers"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "WorkTypeGroup-Work Type Group Layout"
+  _parent = [
+    salesforce.WorkTypeGroup,
+  ]
+  _alias = "WorkTypeGroup-Work Type Group Layout"
+}

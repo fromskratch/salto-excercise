@@ -1,0 +1,9 @@
+salesforce.ListView Shift_All_Shifts {
+  fullName = "Shift.All_Shifts"
+  filterScope = "Everything"
+  label = "All Shifts"
+  _parent = [
+    salesforce.Shift,
+  ]
+  _alias = "All Shifts"
+}

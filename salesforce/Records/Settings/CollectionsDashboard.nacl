@@ -1,0 +1,5 @@
+salesforce.CollectionsDashboardSettings {
+  fullName = "CollectionsDashboard"
+  enableCollectionsDashboard = "false"
+  _alias = "CollectionsDashboard"
+}

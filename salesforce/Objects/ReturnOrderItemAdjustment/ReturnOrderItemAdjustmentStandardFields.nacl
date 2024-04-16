@@ -1,0 +1,135 @@
+type salesforce.ReturnOrderItemAdjustment {
+  salesforce.Currency Amount {
+    apiName = "ReturnOrderItemAdjustment.Amount"
+    _required = true
+    label = "Adjustment"
+    createable = true
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "ReturnOrderItemAdjustment.Description"
+    length = 1175
+    label = "Description"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup ReturnOrderId {
+    apiName = "ReturnOrderItemAdjustment.ReturnOrderId"
+    relationshipName = "ReturnOrder"
+    referenceTo = [
+      salesforce.ReturnOrder,
+    ]
+    _required = true
+    label = "Return Order ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.MasterDetail ReturnOrderLineItemId {
+    apiName = "ReturnOrderItemAdjustment.ReturnOrderLineItemId"
+    relationshipName = "ReturnOrderLineItem"
+    referenceTo = [
+      salesforce.ReturnOrderLineItem,
+    ]
+    _required = true
+    label = "Return Order Line Item ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Currency TotalAmtWithTax {
+    apiName = "ReturnOrderItemAdjustment.TotalAmtWithTax"
+    label = "Adjustment with Tax"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency TotalTaxAmount {
+    apiName = "ReturnOrderItemAdjustment.TotalTaxAmount"
+    label = "Tax"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "ReturnOrderItemAdjustment.Id"
+    label = "Return Order Item Adjustment ID"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ReturnOrderItemAdjustment.IsDeleted"
+    defaultValue = false
+    label = "Deleted"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber ReturnOrderItemAdjustmentNumber {
+    apiName = "ReturnOrderItemAdjustment.ReturnOrderItemAdjustmentNumber"
+    label = "Return Order Item Adjustment Number"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ReturnOrderItemAdjustment.CreatedDate"
+    label = "Created Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ReturnOrderItemAdjustment.CreatedById"
+    relationshipName = "CreatedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Created By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ReturnOrderItemAdjustment.LastModifiedDate"
+    label = "Last Modified Date"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ReturnOrderItemAdjustment.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Last Modified By ID"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ReturnOrderItemAdjustment.SystemModstamp"
+    label = "System Modstamp"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

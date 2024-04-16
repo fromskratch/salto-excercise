@@ -43,6 +43,10 @@ salesforce.Layout Lead_Lead__28Sales_29_Layout@bspps {
               behavior = "Edit"
               field = salesforce.Lead.field.AnnualRevenue
             },
+            {
+              behavior = "Edit"
+              field = salesforce.Lead.field.Score__c
+            },
           ]
         },
         {

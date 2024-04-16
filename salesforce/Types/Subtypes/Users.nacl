@@ -13,7 +13,7 @@ type salesforce.Users {
     string dirName {
     }
   }
-  string user {
+  "List<string>" user {
   }
   metadataType = "Users"
 }

@@ -1,5 +1,6 @@
 salesforce.Layout Lead_Lead_Layout@bs {
   excludeButtons = [
+    "DataDotComClean",
     "Submit",
   ]
   layoutSections = [
@@ -11,6 +12,10 @@ salesforce.Layout Lead_Lead_Layout@bs {
       layoutColumns = [
         {
           layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.Lead.field.Score__c
+            },
             {
               behavior = "Edit"
               field = salesforce.Lead.field.OwnerId
@@ -274,44 +279,39 @@ salesforce.Layout Lead_Lead_Layout@bs {
         sortOrder = 15
       },
       {
-        actionName = "SendEmail"
+        actionName = "ChangeRecordType"
         actionType = "StandardButton"
         sortOrder = 16
       },
       {
-        actionName = "ChangeRecordType"
+        actionName = "Edit"
         actionType = "StandardButton"
         sortOrder = 17
       },
       {
-        actionName = "Edit"
+        actionName = "ChangeOwnerOne"
         actionType = "StandardButton"
         sortOrder = 18
       },
       {
-        actionName = "ChangeOwnerOne"
+        actionName = "Convert"
         actionType = "StandardButton"
         sortOrder = 19
       },
       {
-        actionName = "Convert"
-        actionType = "StandardButton"
-        sortOrder = 20
-      },
-      {
         actionName = "CallHighlightAction"
         actionType = "ProductivityAction"
-        sortOrder = 21
+        sortOrder = 20
       },
       {
         actionName = "SmsHighlightAction"
         actionType = "ProductivityAction"
-        sortOrder = 22
+        sortOrder = 21
       },
       {
         actionName = "EmailHighlightAction"
         actionType = "ProductivityAction"
-        sortOrder = 23
+        sortOrder = 22
       },
     ]
   }
@@ -413,7 +413,7 @@ salesforce.Layout Lead_Lead_Layout@bs {
   showRunAssignmentRulesCheckbox = true
   showSubmitAndAttachButton = false
   summaryLayout = {
-    masterLabel = "00h1a0000012AGz"
+    masterLabel = "00hak000002qXzy"
     sizeX = 4
     sizeY = 0
     summaryLayoutStyle = "Default"

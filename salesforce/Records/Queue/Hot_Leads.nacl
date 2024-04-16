@@ -1,0 +1,18 @@
+salesforce.Queue Hot_Leads {
+  fullName = "Hot_Leads"
+  doesSendEmailToMembers = false
+  name = "Hot"
+  queueMembers = {
+    users = {
+      user = [
+        "bcrichlow@cmedia.sandbox",
+        "jsmith@cmedia.sandbox",
+        "jordan@cmedia.sandbox",
+      ]
+    }
+  }
+  queueSobject = {
+    sobjectType = "Lead"
+  }
+  _alias = "Hot_Leads"
+}

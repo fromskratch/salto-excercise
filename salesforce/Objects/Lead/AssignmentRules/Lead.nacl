@@ -1,8 +1,24 @@
 salesforce.AssignmentRules Lead {
   assignmentRule = [
     {
-      fullName = "Standard"
+      fullName = "Hot%2FCold Leads"
       active = true
+      ruleEntry = [
+        {
+          assignedTo = salesforce.Queue.instance.Cold_Leads
+          assignedToType = "Queue"
+          formula = "VALUE( Score__c ) <= 49"
+        },
+        {
+          assignedTo = salesforce.Queue.instance.Hot_Leads
+          assignedToType = "Queue"
+          formula = "VALUE(Score__c) >= 50"
+        },
+      ]
+    },
+    {
+      fullName = "Standard"
+      active = false
       ruleEntry = [
         {
           assignedTo = "bcrichlow@cmedia.sandbox"

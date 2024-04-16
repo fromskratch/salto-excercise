@@ -81,7 +81,17 @@ type salesforce.Lead {
     caseSensitive = false
     queryable = true
   }
-  salesforce.Text score {
-     length = 4
+
+  salesforce.Text Score__c {
+    apiName = "Lead.Score__c"
+    description = "Score used to determine hot or cold leads"
+    externalId = false
+    label = "Score"
+    length = 5
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
   }
 }
